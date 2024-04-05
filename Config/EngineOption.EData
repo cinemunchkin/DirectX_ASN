@@ -1,0 +1,4 @@
+WindowTitle : [Title]
+WindowScale : [1280], [720]
+IsDebug : [false]
+ClearColor : R[0.5],G[0.5],B[0]
