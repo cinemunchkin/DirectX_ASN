@@ -14,3 +14,16 @@ enum class ECameraType
 	Perspective,
 	Orthographic,
 };
+
+enum class ETextureSampling
+{
+	NONE,
+	LINEAR,
+	POINT,
+};
+
+enum class EPivot
+{
+	BOT,
+	MAX,
+};

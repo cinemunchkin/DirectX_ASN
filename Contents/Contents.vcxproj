@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ContentsEnum.h" />
+    <ClInclude Include="PlayBack.h" />
     <ClInclude Include="Player.h">
       <SubType>
       </SubType>
@@ -31,12 +33,18 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="SamCore.h">
+    <ClInclude Include="CineCore.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="TitleGameMode.h" />
+    <ClInclude Include="TitleLogo.h">
       <SubType>
       </SubType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="PlayBack.cpp" />
     <ClCompile Include="Player.cpp">
       <SubType>
       </SubType>
@@ -53,7 +61,12 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="SamCore.cpp">
+    <ClCompile Include="CineCore.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="TitleGameMode.cpp" />
+    <ClCompile Include="TitleLogo.cpp">
       <SubType>
       </SubType>
     </ClCompile>

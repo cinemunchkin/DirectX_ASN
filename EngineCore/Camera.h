@@ -40,19 +40,30 @@ public:
 		return Projection;
 	}
 
+	void ViewPortSetting();
 
 protected:
+	void BeginPlay() override;
+	void Tick(float _DeltaTime) override;
 
 private:
+	bool IsFreeCamera = false;
+
 	float Near = 1.0f;
 	float Far = 10000.0f;
 
-	//ECameraType ProjectionType = ECameraType::Orthographic;
-	ECameraType ProjectionType = ECameraType::Perspective;
+	ECameraType ProjectionType = ECameraType::Orthographic;
 	float FOV = 60.0f;
 
 	FMatrix View;
 	FMatrix Projection;
+	D3D11_VIEWPORT ViewPort;
+
+	FTransform PrevTransform;
+
+	float FreeCameraMoveSpeed = 500.0f;
+
+	ECameraType PrevProjectionType = ECameraType::Orthographic;
 
 	void CameraTransformUpdate();
 };

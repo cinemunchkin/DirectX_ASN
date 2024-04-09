@@ -24,6 +24,7 @@
 struct ImageVSOutPut
 {
     float4 POSITION : SV_POSITION;
+    float4 TEXCOORD : TEXCOORD;
 };
 
 // 내가 여기에다가 스트럭트를 넣는다고 이게 쉐이더에서 
@@ -51,33 +52,93 @@ struct ImageVSOutPut
 
 // 버텍스 쉐이더에 넣어줄수 있
 
-ImageVSOutPut ImageShader_VS(FEngineVertex _Input)
+cbuffer FCuttingData : register(b2)
 {
-    ImageVSOutPut Out = (ImageVSOutPut) 0;
-    Out.POSITION = mul(_Input.POSITION, WVP);
-    return Out;
-}
-
-// 픽셀쉐이더의 상수버퍼 0번은 달라도 된다.
-cbuffer OutPutColor : register(b0)
-{
-    float4 MulColor;
-    float4 PlusColor;
+    //       0, 0
+    float4 CuttingPosition;
+    //      0.5 0.5
+    float4 CuttingSize;
 };
-
 
 struct ImagePSOutPut
 {
     float4 COLOR : SV_Target0;
 };
 
+
+ImageVSOutPut ImageShader_VS(FEngineVertex _Input)
+{
+    ImageVSOutPut Out = (ImageVSOutPut) 0;
+    Out.POSITION = mul(_Input.POSITION, WVP);
+    // Out.TEXCOORD = _Input.TEXCOORD;
+
+    
+    // 00,    1. 0
+    
+    
+    // 01,   1 1
+    
+    Out.TEXCOORD.x = (_Input.TEXCOORD.x * CuttingSize.x) + CuttingPosition.x;
+    Out.TEXCOORD.y = (_Input.TEXCOORD.y * CuttingSize.y) + CuttingPosition.y;
+    
+    // 00,    1. 0
+    
+    
+    // 01,   1 1
+    
+       // Rect에 존재하는 녀석이다.
+    // 0.5 0.5,    1. 0.5
+    
+    
+    // 0.5 1,    1 1
+
+    return Out;
+}
+
+// 텍스처는 상수버퍼와 슬롯을 공유하지 않습니다.
+// b0 buffer 0번 슬롯
+// t0 texture 0번 슬롯
+// s0 Sampler 0번 슬롯
+
+// 언리얼 엔진이나
+// 유니티는 OpenGL로도 내부가
+// 그래서 자기들만의 쉐이더 언어를 또 만듭니다.
+// 언리얼 쉐이더 랭귀지.
+// HLSL => OpenGL shader 언어로 변경하는 기능도 지원합니다.
+
+
+
+
+
+
+
+TextureSet(Image, 0)
+//Texture2D Image : register(t0); 
+//SamplerState Image_Sampler : register(s0);
+
+cbuffer ResultColorValue : register(b10)
+{
+    float4 PlusColor;
+};
+
+
 ImagePSOutPut ImageShader_PS(ImageVSOutPut _Input)
 {
         // 언어를 배울때는 왜 안돼 어리석은 초보적인 생각은 그만두고 배워야한다.
         // 그냥 구조체처럼 초기화 하는게 안되는데.
     ImagePSOutPut Out = (ImagePSOutPut) 0;
-    // Out.COLOR = Color;
-    Out.COLOR = float4(1.0f, 0.0f, 0.0f, 1.0f);
+    
+    // Name##.Sample(##Name##_Sampler, TEXCOORD.xy);
+    
+    // Rect에 존재하는 녀석이다.
+    // 00,    10
+    
+    
+    // 01,    11
+    Out.COLOR = Sampling(Image, _Input.TEXCOORD);
+    Out.COLOR.xyz += PlusColor.xyz;
+    // #define Sampling(Name, TEXCOORD) Name##.Sample(##Name##_Sampler, TEXCOORD.xy);
+    // Image.Sample(Image_Sampler, _Input.TEXCOORD.xy);
     
     return Out;
 }
