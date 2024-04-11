@@ -37,7 +37,7 @@ void APlayer::StateInit()
 			// 새로운 함수다.
 			// 스택이 달라진다.
 			// MyRender0->
-			MyRender->ChangeAnimation("AmeIdle");
+			MyRender->ChangeAnimation("Ina_Idle");
 		}
 	);
 
@@ -67,7 +67,7 @@ void APlayer::Idle(float _Update)
 
 void APlayer::RunStart()
 {
-	Renderer->ChangeAnimation("AmeRun");
+	Renderer->ChangeAnimation("Ina_Run");
 }
 
 void APlayer::Run(float _DeltaTime)
