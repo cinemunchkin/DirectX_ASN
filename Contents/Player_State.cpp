@@ -76,6 +76,13 @@ void APlayer::Run(float _DeltaTime)
 	std::shared_ptr<UCamera> Camera = GetWorld()->GetMainCamera();
 	float Speed = 500.0f;
 
+	if (true == IsAnykeyFree())
+	{
+
+		State.ChangeState("Idle");
+	}
+
+
 	if (true == IsPress('A'))
 	{
 		//SetActorScale3D(FVector(-64.0f, 64.0f, 100.0f));
@@ -84,42 +91,28 @@ void APlayer::Run(float _DeltaTime)
 		Camera->AddActorLocation(FVector::Left * _DeltaTime * Speed);
 		
 	}
-	if (true == IsUp('A'))
-	{
-
-		State.ChangeState("Idle");
-	}
-
+	
 	if (true == IsPress('D'))
 	{
 		SetActorScale3D({ GetActorScale3D().iX(), GetActorScale3D().iY() });
 		AddActorLocation(FVector::Right * _DeltaTime * Speed);
 		Camera->AddActorLocation(FVector::Right * _DeltaTime * Speed);
 	}
-	if (true == IsUp('D'))
-	{
-		State.ChangeState("Idle");
-	}
+
 
 	if (true == IsPress('W'))
 	{
 		AddActorLocation(FVector::Up * _DeltaTime * Speed);
 		Camera->AddActorLocation(FVector::Up * _DeltaTime * Speed);
 	}
-	if (true == IsUp('W'))
-	{
-		State.ChangeState("Idle");
-	}
+
 
 	if (true == IsPress('S'))
 	{
 		AddActorLocation(FVector::Down * _DeltaTime * Speed);
 		Camera->AddActorLocation(FVector::Down * _DeltaTime * Speed);
 	}
-	if (true == IsUp('S'))
-	{
-		State.ChangeState("Idle");
-	}
+	
 
 	if (true == IsPress(VK_NUMPAD1))
 	{
