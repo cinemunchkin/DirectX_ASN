@@ -1,13 +1,13 @@
 #include "PreCompile.h"
 #include "TitleLogo.h"
 
-ATitleLogo::ATitleLogo() 
+ATitleLogo::ATitleLogo()
 {
 	Renderer = CreateDefaultSubObject<USpriteRenderer>("Renderer");
 
 }
 
-ATitleLogo::~ATitleLogo() 
+ATitleLogo::~ATitleLogo()
 {
 }
 
@@ -20,9 +20,7 @@ void ATitleLogo::BeginPlay()
 
 	// Renderer->SetSprite("CharWalk1_0.png");
 
-	Renderer->CreateAnimation("Run", "Run", 0.1f);
-
-	Renderer->ChangeAnimation("Run");
+	Renderer->SetSprite("HoloTitle.png");
 
 }
 

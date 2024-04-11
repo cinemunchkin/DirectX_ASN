@@ -3,16 +3,16 @@
 #include "TitleLogo.h"
 #include <EngineCore/Camera.h>
 
-ATitleGameMode::ATitleGameMode() 
+ATitleGameMode::ATitleGameMode()
 {
 	InputOn();
 }
 
-ATitleGameMode::~ATitleGameMode() 
+ATitleGameMode::~ATitleGameMode()
 {
 }
 
-void ATitleGameMode::BeginPlay() 
+void ATitleGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 

@@ -329,7 +329,7 @@ public:
 		return "[X : " + std::to_string(X) + " Y : " + std::to_string(Y) + " Z : " + std::to_string(Z) + " W : " + std::to_string(W) + "]";
 	}
 
-	float4 Half2D()
+	float4 Half2D() const
 	{
 		return { hX(), hY() };
 	}
@@ -339,6 +339,15 @@ public:
 		return X == 0.0f && Y == 0.0f;
 	}
 
+	unsigned int uiX() const
+	{
+		return static_cast<unsigned int>(std::lround(X));
+	}
+
+	unsigned int uiY() const
+	{
+		return static_cast<unsigned int>(std::lround(Y));
+	}
 
 	int iX() const
 	{

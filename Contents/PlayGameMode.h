@@ -1,5 +1,21 @@
 #pragma once
 #include <EngineCore/GameMode.h>
+#include "PlayBack.h"
+#include "Player.h"
+
+struct FIntPoint
+{
+	union 
+	{
+		struct 
+		{
+			int X;
+			int Y;
+		};
+
+		__int64 Key;
+	};
+};
 
 // Ό³Έν :
 class APlayGameMode : public AGameMode
@@ -21,7 +37,18 @@ protected:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
+// 	std::map<__int64, std::shared_ptr<APlayBack>> Grounds;
+	std::vector<std::shared_ptr<APlayBack>> Grounds;
+	std::shared_ptr<APlayer> Player;
+
+	float4 IndexToCenterPos(FIntPoint _Index);
+
+	FIntPoint PosToIndex(float4 _Pos);
+
+	void InfinityGroundCheck();
+
 private:
+	FIntPoint CurIndex;
 
 };
 
