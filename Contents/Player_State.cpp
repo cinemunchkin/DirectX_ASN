@@ -79,6 +79,7 @@ void APlayer::Run(float _DeltaTime)
 	if (true == IsPress('A'))
 	{
 		//SetActorScale3D(FVector(-64.0f, 64.0f, 100.0f));
+		SetActorScale3D({ -GetActorScale3D().iX(), GetActorScale3D().iY() });
 		AddActorLocation(FVector::Left * _DeltaTime * Speed);
 		Camera->AddActorLocation(FVector::Left * _DeltaTime * Speed);
 		
@@ -91,7 +92,7 @@ void APlayer::Run(float _DeltaTime)
 
 	if (true == IsPress('D'))
 	{
-		//SetActorScale3D(FVector(64.0f, 64.0f, 100.0f));
+		SetActorScale3D({ GetActorScale3D().iX(), GetActorScale3D().iY() });
 		AddActorLocation(FVector::Right * _DeltaTime * Speed);
 		Camera->AddActorLocation(FVector::Right * _DeltaTime * Speed);
 	}
