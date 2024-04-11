@@ -44,5 +44,8 @@ private:
 	void RunStart();
 	void Run(float _DeltaTime);
 
+	void PlayerDir();
+		void PlayerDirCheck(float _DeltaTime);
+	
 };
 

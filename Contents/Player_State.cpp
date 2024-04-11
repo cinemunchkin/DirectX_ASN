@@ -31,6 +31,9 @@ void APlayer::StateInit()
 
 	USpriteRenderer* MyRender = Renderer;
 
+
+	
+
 	State.SetStartFunction("Idle", [=] // USpriteRenderer* MyRender = MyRender
 		{
 			// 메모리를 할당해서 MyRender를 같은 이름으로 복사한다.
@@ -50,7 +53,33 @@ void APlayer::StateInit()
 	std::shared_ptr<UCamera> Camera = GetWorld()->GetMainCamera();
 }
 
+void APlayer::PlayerDirCheck(float _Deltatime)
+{
+}
 
+
+
+void APlayer::PlayerDir()
+{
+
+	/*
+	자
+	만약 플레이어 방향이 
+	*/
+
+	if (true == GetActorScale3D().iX() < 0)
+	{
+		Renderer->SetDir(EEngineDir::Left);
+
+	}
+	else
+	{
+		Renderer->SetDir(EEngineDir::Right);
+
+	}
+	return;
+
+}
 void APlayer::Die(float _Update)
 {
 
@@ -63,6 +92,8 @@ void APlayer::Idle(float _Update)
 		State.ChangeState("Run");
 		return;
 	}
+	PlayerDir();
+	
 }
 
 void APlayer::RunStart()
@@ -82,6 +113,7 @@ void APlayer::Run(float _DeltaTime)
 		State.ChangeState("Idle");
 	}
 
+	
 
 	if (true == IsPress('A'))
 	{
@@ -146,5 +178,9 @@ void APlayer::Run(float _DeltaTime)
 	}
 
 	
+
+
+
+
 
 }
