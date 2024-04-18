@@ -39,7 +39,11 @@ void APlayer::BeginPlay()
 	CreatePlayerAnimation("AZKiPortrait");
 	CreatePlayerAnimation("Kronii");
 
-	Renderer->SetAutoSize(1.0f, true);
+	CreatePlayerAnimation("Ina");
+
+
+
+	Renderer->SetAutoSize(1.7f, true);
 	Renderer->SetOrder(ERenderOrder::Player);
 
 	AtkDir->SetOrder(ERenderOrder::Player);
@@ -63,12 +67,13 @@ void APlayer::Tick(float _DeltaTime)
 
 void APlayer::CreatePlayerAnimation(std::string _Name)
 {
+
 	Renderer->CreateAnimation(_Name + "_Idle", _Name, 0.1f, true, 0, 3);
-	Renderer->CreateAnimation(_Name + "_Run", _Name, 0.1f, true, 4, 9);
+	Renderer->CreateAnimation(_Name + "_Run", _Name, 0.1f, true, 24, 29);
 }
 
 void APlayer::CheckMouseAimMode()
-{
+{// 마우스 포인터
 	if (false == AHolo_Pointer::MouseAimOn)
 	{
 		AtkDir->SetSprite("spr_arrow_1.png");

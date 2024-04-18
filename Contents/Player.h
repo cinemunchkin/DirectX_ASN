@@ -50,7 +50,7 @@ private:
 	float4 Color;
 	float Angle;
 
-	std::string Name = "Kronii";
+	std::string Name = "Ina";
 	EPlayerDir PlayerDir = EPlayerDir::E;
 	int Hp = 100;
 	float Atk = 1;

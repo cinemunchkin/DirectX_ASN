@@ -1,7 +1,7 @@
 #pragma once
-#include "Weapon.h"
+#include "Holo_Weapon.h"
 
-class AMultiShot : public AWeapon
+class AMultiShot : public AHolo_Weapon
 {
 public:
 	// constrcuter destructer

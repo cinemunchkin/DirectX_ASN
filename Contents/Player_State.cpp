@@ -6,7 +6,7 @@
 
 void APlayer::StateInit()
 {
-	State.CreateState("Die");
+	//State.CreateState("Die");
 	State.CreateState("Idle");
 	State.CreateState("Run");
 
@@ -48,6 +48,7 @@ void APlayer::RunStart()
 }
 
 void APlayer::Run(float _DeltaTime)
+// AnykeyFree 로 수정하기
 {
 	Camera = GetWorld()->GetMainCamera();
 	

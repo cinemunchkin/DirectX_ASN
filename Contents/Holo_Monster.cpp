@@ -23,7 +23,9 @@ void AHolo_Monster::BeginPlay()
 	CreateHolo_MonsterAnimation("Takodachi");
 	CreateHolo_MonsterAnimation("KFP");
 
-	Renderer->SetAutoSize(1.0f, true);
+	CreateHolo_MonsterAnimation("Shubangelion");
+
+	Renderer->SetAutoSize(2.0f, true);
 	Renderer->ChangeAnimation(Name);
 	Renderer->SetOrder(ERenderOrder::MonsterUp);
 }
@@ -66,7 +68,10 @@ FVector AHolo_Monster::CreateGroupToPlayerDir()
 
 void AHolo_Monster::CreateHolo_MonsterAnimation(std::string _Name)
 {
-	Renderer->CreateAnimation(_Name, _Name, 0.1f, true, 0, 2);
+	Renderer->CreateAnimation(_Name, _Name, 0.1f, true, 0,7 );
+	/*
+	if(_name이 오리면 0~7까지 돌도록)
+	*/
 }
 
 void AHolo_Monster::Move(float _DeltaTime, EMonsterMoveType _MoveType)
