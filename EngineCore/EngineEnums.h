@@ -24,7 +24,9 @@ enum class ETextureSampling
 
 enum class EPivot
 {
+	RIGHT,
 	BOT,
+	LEFTTOP,
 	MAX,
 };
 
@@ -33,4 +35,10 @@ enum class EEngineDir
 	Left,
 	Right,
 	MAX,
+};
+
+enum class EDebugRenderType
+{
+	Rect,
+	CirCle
 };

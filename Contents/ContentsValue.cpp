@@ -1,4 +1,6 @@
 #include "PreCompile.h"
 #include "ContentsValue.h"
 
-const float4 ContentsValue::GroundTileSize = {1920.0f, 1920.0f };
+const float4 ContentsValue::GroundTileSize = {2560.0f, 2560.0f };
+
+float4 ContentsValue::PlayLevelMousePos = float4::Zero;

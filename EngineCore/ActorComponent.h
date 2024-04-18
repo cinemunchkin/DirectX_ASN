@@ -20,20 +20,19 @@ public:
 	UActorComponent& operator=(const UActorComponent& _Other) = delete;
 	UActorComponent& operator=(UActorComponent&& _Other) noexcept = delete;
 
-	bool IsActive()
+	AActor* GetActor()
 	{
-		return ActiveValue;
+		return Actor;
 	}
 
-	void SetActive(bool _Value)
+	virtual ULevel* GetWorld() override
 	{
-		ActiveValue = _Value;
+		return Actor->GetWorld();
 	}
 
 protected:
 
 private:
-	bool ActiveValue = true;
 
 	AActor* Actor = nullptr;
 

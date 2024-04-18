@@ -3,6 +3,9 @@
 #include <cmath>
 #include <Windows.h>
 
+#include <DirectXPackedVector.h> // 다이렉트벡터 헤더
+#include <DirectXCollision.h> 
+
 
 // 설명 :
 class UEngineMath
@@ -72,6 +75,8 @@ public:
 
 		float Arr1D[4];
 		float Arr2D[1][4];
+		DirectX::XMFLOAT3 DirectFloat3;
+		DirectX::XMFLOAT4 DirectFloat4;
 		DirectX::XMVECTOR DirectVector;
 	};
 
@@ -135,6 +140,23 @@ public:
 
 
 public:
+	void ABS3D()
+	{
+		X = fabs(X);
+		Y = fabs(Y);
+		Z = fabs(Z);
+	}
+
+	float4 ABS3DReturn()
+	{
+		float4 Result;
+		Result.X = fabs(X);
+		Result.Y = fabs(Y);
+		Result.Z = fabs(Z);
+		return Result;
+	}
+
+
 	static float4 VectorRotationZToDeg(float4 _OriginVector, float _Angle)
 	{
 		return VectorRotationZToRad(_OriginVector, _Angle * UEngineMath::DToR);
@@ -223,11 +245,61 @@ public:
 	}
 
 	// p1 p2          d1의 비율로 간다.
-	static float4 Lerp(float4 p1, float4 p2, float d1) 
+	static float4 Lerp(float4 p1, float4 p2, float d1)
 	{
 		return (p1 * (1.0f - d1)) + (p2 * d1);
 	}
 
+	float4 QuaternionToDeg() const
+	{
+		return QuaternionToRad() * UEngineMath::RToD;
+	}
+
+	// 그냥 언리얼에 있는 변환함수 배낌.
+	// 무슨 이론과 논리에 의해서 이게 되는지 난 모름
+	float4 QuaternionToRad() const
+	{
+		float4 result;
+
+		double sinrCosp = 2.0f * (W * Z + X * Y);
+		double cosrCosp = 1.0f - 2.0f * (Z * Z + X * X);
+		result.Z = static_cast<float>(atan2(sinrCosp, cosrCosp));
+
+		double pitchTest = W * X - Y * Z;
+		double asinThreshold = 0.4999995f;
+		double sinp = 2.0f * pitchTest;
+
+		if (pitchTest < -asinThreshold)
+		{
+			result.X = -(0.5f * UEngineMath::PI);
+		}
+		else if (pitchTest > asinThreshold)
+		{
+			result.X = (0.5f * UEngineMath::PI);
+		}
+		else
+		{
+			result.X = static_cast<float>(asin(sinp));
+		}
+
+		double sinyCosp = 2.0f * (W * Y + X * Z);
+		double cosyCosp = 1.0f - 2.0f * (X * X + Y * Y);
+		result.Y = static_cast<float>(atan2(sinyCosp, cosyCosp));
+
+		return result;
+	}
+
+
+	float4 DegToQuaternion() const
+	{
+		// 디그리 각도
+		float4 Result = *this;
+		// 라디안 각도
+		Result *= UEngineMath::DToR;
+		// 쿼터니온 으로 변환.
+		Result.DirectVector = DirectX::XMQuaternionRotationRollPitchYawFromVector(Result.DirectVector);
+		return Result;
+	}
 
 	float Size2D()
 	{
@@ -280,7 +352,7 @@ public:
 
 
 	// 나 자신이 길이 1짜리로 변경되는 것.
-	void Normalize2D() 
+	void Normalize2D()
 	{
 		float Size = Size2D();
 		if (0.0f < Size && false == isnan(Size))
@@ -351,13 +423,24 @@ public:
 
 	int iX() const
 	{
-		return std::lround(X);
+		return static_cast<int>(X);
 	}
 
 	int iY() const
 	{
+		return static_cast<int>(Y);
+	}
+
+	int iroundX() const
+	{
+		return std::lround(X);
+	}
+
+	int iroundY() const
+	{
 		return std::lround(Y);
 	}
+
 
 
 	float hX() const
@@ -502,23 +585,23 @@ public:
 	{
 		struct
 		{
-			float v00; 
-			float v01; 
+			float v00;
+			float v01;
 			float v02;
 			float v03;
 
-			float v10; 
-			float v11; 
+			float v10;
+			float v11;
 			float v12;
 			float v13;
 
-			float v20; 
-			float v21; 
+			float v20;
+			float v21;
 			float v22;
 			float v23;
 
-			float v30; 
-			float v31; 
+			float v30;
+			float v31;
 			float v32;
 			float v33;
 		};
@@ -618,6 +701,13 @@ public:
 	float4 BackVector()
 	{
 		return -ArrVector[2].Normalize3DReturn();
+	}
+
+	void Decompose(float4& _Scale, float4& _Rotation, float4& _Position)
+	{
+		// _Rotation => 이게 쿼터니온으로 나온다.
+
+		DirectX::XMMatrixDecompose(&_Scale.DirectVector, &_Rotation.DirectVector, &_Position.DirectVector, DirectMatrix);
 	}
 
 	void RotationDeg(const float4 _Value)
@@ -829,6 +919,12 @@ public:
 		//Arr2D[3][2] = -(_Near * _Far) / (_Far - _Near);
 	}
 
+	float4x4 InverseReturn()
+	{
+		float4x4 Result = *this;
+		Result.DirectMatrix = DirectX::XMMatrixInverse(nullptr, DirectMatrix);
+		return Result;
+	}
 
 	// 모니터 크기로 확장
 	void ViewPort(float _Width, float _Height, float _Left, float _Right, float _ZMin, float _ZMax)

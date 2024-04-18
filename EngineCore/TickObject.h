@@ -1,5 +1,8 @@
 #pragma once
 #include "EngineDefines.h"
+#include <functional>
+#include <memory>
+#include <EngineBase/EngineDebug.h>
 
 class UEngineTickCallBack
 {
@@ -15,7 +18,7 @@ class UTickObject
 public:
 	// constrcuter destructer
 	UTickObject();
-	~UTickObject();
+	virtual ~UTickObject();
 
 	// delete Function
 	UTickObject(const UTickObject& _Other) = delete;
@@ -60,6 +63,16 @@ public:
 		CallBacks.push_back(std::make_shared<UEngineTickCallBack>( _Time ,_CallBack ));
 	}
 
+	bool IsActive()
+	{
+		return ActiveValue;
+	}
+
+	void SetActive(bool _Value)
+	{
+		ActiveValue = _Value;
+	}
+
 protected:
 	virtual void BeginPlay();
 	virtual void Tick(float _DeltaTime);
@@ -68,6 +81,8 @@ protected:
 	virtual void LevelStart(ULevel* _PrevLevel) {};
 
 private:
+	bool ActiveValue = true;
+
 	int Order = 0;
 
 	std::vector<std::shared_ptr<UEngineTickCallBack>> CallBacks;

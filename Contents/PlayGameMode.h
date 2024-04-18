@@ -1,13 +1,14 @@
 #pragma once
 #include <EngineCore/GameMode.h>
-#include "PlayBack.h"
+#include "HoloCursor.h"
 #include "Player.h"
+#include "PlayBackGround.h"
 
 struct FIntPoint
 {
-	union 
+	union
 	{
-		struct 
+		struct
 		{
 			int X;
 			int Y;
@@ -17,7 +18,6 @@ struct FIntPoint
 	};
 };
 
-// 설명 :
 class APlayGameMode : public AGameMode
 {
 	GENERATED_BODY(AGameMode)
@@ -37,18 +37,37 @@ protected:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
-// 	std::map<__int64, std::shared_ptr<APlayBack>> Grounds;
-	std::vector<std::shared_ptr<APlayBack>> Grounds;
+	void LevelEnd(ULevel* _NextLevel);
+	void LevelStart(ULevel* _PrevLevel);
+
+	std::vector<std::shared_ptr<APlayBackGround>> BackGroundVector;
+
+	std::shared_ptr<AHoloCursor> Cursor;
 	std::shared_ptr<APlayer> Player;
 
 	float4 IndexToCenterPos(FIntPoint _Index);
-
 	FIntPoint PosToIndex(float4 _Pos);
 
 	void InfinityGroundCheck();
+	void SetGroundLocation();
+
+
+	// 몬스터 스폰 관련
+	void RandomSpawnMonster(std::string _Name, float _Size, float _Hp, float _Atk, float _Speed, float _Exp, EMonsterMoveType _MoveType, bool _Group, int _Quantity);
+	float4 RandomLocation(bool _Group);
+	
+	void SpawnMonsterTimeSet(float _DeltaTime, float _SpawnBegin, float _SpawnEnd, float _Term, std::string _Name, float _Size, float _Hp, float _Atk, float _Speed, float _Exp, EMonsterMoveType _MoveType, bool _Group = false, int _Quantity = 1);
+
+	void PlayDebugText();
 
 private:
 	FIntPoint CurIndex;
+
+	float4 GroupMonsterPos;
+	bool GroupSpawn = false;
+
+	float PlayTime = 0;
+	float SpawnTerm = 0;
 
 };
 

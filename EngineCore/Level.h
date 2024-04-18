@@ -1,6 +1,8 @@
 #pragma once
 #include "TickObject.h"
 #include <EngineBase/NameObject.h>
+#include <set>
+#include <map>
 
 
 
@@ -10,15 +12,19 @@
 class AActor;
 class UCamera;
 class URenderer;
+class UCollision;
 class AGameMode;
 class UEngineCore;
+class UWidget;
 class ULevel final : public UTickObject, public UNameObject
 {
 	GENERATED_BODY(UTickObject)
 
 	friend AActor;
 	friend URenderer;
+	friend UCollision;
 	friend UEngineCore;
+	friend UWidget;
 	static bool IsActorConstructer;
 
 public:
@@ -32,18 +38,21 @@ public:
 	ULevel& operator=(const ULevel& _Other) = delete;
 	ULevel& operator=(ULevel&& _Other) noexcept = delete;
 
+	template<typename ActorType, typename EnumType>
+	std::shared_ptr<ActorType> SpawnActor(std::string_view _Name, EnumType _Order)
+	{
+		return SpawnActor<ActorType>(_Name, static_cast<int>(_Order));
+	}
+
 	template<typename ActorType>
-	std::shared_ptr<ActorType> SpawnActor(std::string _Name, int _Order = 0)
+	std::shared_ptr<ActorType> SpawnActor(std::string_view _Name, int _Order = 0)
 	{
 		// 이 사이에서만 컴포넌트를 생성할수 있어야 한다.
 		IsActorConstructer = true;
 		std::shared_ptr<AActor> NewActor = std::make_shared<ActorType>();
-		ConstructorActor(NewActor);
+		ConstructorActor(NewActor, _Name, _Order);
 		IsActorConstructer = false;
 
-		// 이
-		//NewActor->SetWorld(this);
-		//NewActor->BeginPlay();
 		PushActor(NewActor);
 
 
@@ -56,12 +65,32 @@ public:
 		return MainCamera;
 	}
 
+	std::shared_ptr<AGameMode> GetGameMode()
+	{
+		return GameMode;
+	}
+
+	template<typename EnumType>
+	std::list<std::shared_ptr<AActor>> GetTickGroup(EnumType _Type)
+	{
+		return GetTickGroup(static_cast<int>(_Type));
+	}
+
+	// 복사. <= 부담이 만된다.
+	std::list<std::shared_ptr<AActor>> GetTickGroup(int _Order)
+	{
+		return Actors[_Order];
+	}
+
+
 protected:
 	void Tick(float _DeltaTime) override;
 	void Render(float _DeltaTime);
 
 	void LevelEnd(ULevel* _NextLevel) override;
 	void LevelStart(ULevel* _PrevLevel) override;
+
+	void Destroy();
 
 private:
 	std::shared_ptr<UCamera> MainCamera = nullptr;
@@ -72,10 +101,23 @@ private:
 
 	std::map<int, std::list<std::shared_ptr<URenderer>>> Renderers;
 
-	void ConstructorActor(std::shared_ptr<AActor> _Actor);
+	std::map<int, std::list<std::shared_ptr<UCollision>>> Collisions;
+
+	// Widget이라고 불리고
+	// 아예 액터랑 분리되어 있다.
+	std::map<int, std::list<std::shared_ptr<UWidget>>> Widgets;
+
+	void ConstructorActor(std::shared_ptr<AActor> _Actor, std::string_view _Name, int Order);
 	void PushActor(std::shared_ptr<AActor> _Actor);
 	void PushRenderer(std::shared_ptr<URenderer> _Renderer);
+	void PushCollision(std::shared_ptr<UCollision> _Collision);
+	void PushWidget(std::shared_ptr<UWidget> _Widget);
 	void ChangeOrderRenderer(std::shared_ptr<URenderer> _Renderer, int _PrevOrder, int _ChangeOrder);
-	
+	void ChangeOrderCollision(std::shared_ptr<UCollision> _Collision, int _PrevOrder, int _ChangeOrder);
+
+	void SetGameMode(std::shared_ptr<AGameMode> _GameMode)
+	{
+		GameMode = _GameMode;
+	}
 };
 

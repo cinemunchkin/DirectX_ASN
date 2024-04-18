@@ -2,14 +2,7 @@
 #include "Renderer.h"
 #include "EngineEnums.h"
 #include "EngineSprite.h"
-
-struct FCuttingData
-{
-	//       0, 0
-	float4 CuttingPosition;
-	//      0.5 0.5
-	float4 CuttingSize;
-};
+#include "EngineStruct.h"
 
 class UEngineSprite;
 class USpriteAnimation : public UNameObject
@@ -61,7 +54,6 @@ public:
 	USpriteRenderer& operator=(USpriteRenderer&& _Other) noexcept = delete;
 
 	void SetSprite(std::string_view _Name, UINT _Index = 0);
-	void SetPlusColor(float4 _Color);
 	void SetSamplering(ETextureSampling _Value);
 
 	void CreateAnimation(std::string_view _AnimationName, std::string_view _SpriteName, float _Inter = 0.1f, bool _Loop = true, int _Start = -1, int _End = -1);
@@ -77,7 +69,44 @@ public:
 
 	void SetDir(EEngineDir _Dir);
 
+	inline EEngineDir GetDir() const
+	{
+		return Dir;
+	}
+
 	bool IsCurAnimationEnd();
+
+	void SetPlusColor(float4 _Color)
+	{
+		ColorData.PlusColor = _Color;
+	}
+
+	void SetMulColor(float4 _Color)
+	{
+		ColorData.MulColor = _Color;
+	}
+
+	void SetAlpha(float _Alpha)
+	{
+		ColorData.AlphaColor.A = _Alpha;
+	}
+
+	void SetPivot(EPivot _Pivot)
+	{
+		Pivot = _Pivot;
+	}
+
+	inline FSpriteInfo GetCurInfo() const
+	{
+		return CurInfo;
+	}
+
+	void SetCurInfo(FSpriteInfo _CurInfo)
+	{
+		CurInfo = _CurInfo;
+		SetSpriteInfo(CurInfo);
+		CurAnimation = nullptr;
+	}
 	
 protected:
 	void Tick(float _DeltaTime) override;
@@ -87,15 +116,14 @@ private:
 	bool AutoSize = false;
 	float ScaleRatio = 1.0f;
 	FSpriteInfo CurInfo;
-
+	EPivot Pivot = EPivot::MAX;
 	EEngineDir Dir = EEngineDir::MAX;
-
-	FCuttingData CuttingDataValue;
-	float4 PlusColor = float4::Zero;
 	std::shared_ptr<UEngineTexture> CurTexture = nullptr;
 	std::map<std::string, std::shared_ptr<USpriteAnimation>> Animations;
 	std::shared_ptr<USpriteAnimation> CurAnimation = nullptr;
 	ETextureSampling SamplingValue = ETextureSampling::POINT;
 
+	ResultColorValue ColorData;
+	FCuttingData CuttingDataValue;
 };
 

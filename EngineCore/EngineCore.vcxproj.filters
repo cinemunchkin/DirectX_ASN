@@ -31,9 +31,6 @@
     <Filter Include="Object\Rendering">
       <UniqueIdentifier>{b1220329-bbb5-475a-af88-6656044db475}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object\Rendering\Component">
-      <UniqueIdentifier>{d6cf3cbc-9156-4119-87dc-ba04912b170b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Object\EngineContent">
       <UniqueIdentifier>{8297fd64-4ec6-41e4-9bae-de26c1c3d425}</UniqueIdentifier>
     </Filter>
@@ -76,6 +73,24 @@
     <Filter Include="Editor\Contents">
       <UniqueIdentifier>{6f96171b-a338-4dd1-824c-f6057bef5c52}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\Component\Collision">
+      <UniqueIdentifier>{47092953-4437-4651-853a-50671698e893}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Component\Rendering">
+      <UniqueIdentifier>{d6cf3cbc-9156-4119-87dc-ba04912b170b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{9b0ed79c-f0c6-474e-bfbd-abd9de47fd79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Component\Rendering\Contents">
+      <UniqueIdentifier>{f4e06e9e-bc13-44fa-8e23-d0b3130c7c5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\UI">
+      <UniqueIdentifier>{4e22d4e5-cecd-412a-a937-0d622dd5d416}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\UI\Contents">
+      <UniqueIdentifier>{6a17afd8-9664-4dbe-a520-7c63fe26b9ea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EngineCore.cpp">
@@ -109,7 +124,7 @@
       <Filter>Object\Component</Filter>
     </ClCompile>
     <ClCompile Include="Renderer.cpp">
-      <Filter>Object\Rendering\Component</Filter>
+      <Filter>Object\Component\Rendering</Filter>
     </ClCompile>
     <ClCompile Include="TickObject.cpp">
       <Filter>Object</Filter>
@@ -174,9 +189,6 @@
     <ClCompile Include="EngineSampler.cpp">
       <Filter>Resources\Texture</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteRenderer.cpp">
-      <Filter>Object\Rendering\Component</Filter>
-    </ClCompile>
     <ClCompile Include="EngineSprite.cpp">
       <Filter>Resources\Texture</Filter>
     </ClCompile>
@@ -216,6 +228,30 @@
     <ClCompile Include="EngineDebugMsgWindow.cpp">
       <Filter>Editor\Contents</Filter>
     </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>Object\Component\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineDebug3D.cpp">
+      <Filter>Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteRenderer.cpp">
+      <Filter>Object\Component\Rendering\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="TileRenderer.cpp">
+      <Filter>Object\Component\Rendering\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineStruct.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderUnit.cpp">
+      <Filter>Object\Component\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Widget.cpp">
+      <Filter>Object\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>Object\UI\Contents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EngineCore.h">
@@ -249,7 +285,7 @@
       <Filter>Object\Component</Filter>
     </ClInclude>
     <ClInclude Include="Renderer.h">
-      <Filter>Object\Rendering\Component</Filter>
+      <Filter>Object\Component\Rendering</Filter>
     </ClInclude>
     <ClInclude Include="TickObject.h">
       <Filter>Object</Filter>
@@ -317,9 +353,6 @@
     <ClInclude Include="ThirdParty\DirectxTex\inc\DirectXTex.h">
       <Filter>ThirdParty\DirectXTex\Inc</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteRenderer.h">
-      <Filter>Object\Rendering\Component</Filter>
-    </ClInclude>
     <ClInclude Include="EngineSprite.h">
       <Filter>Resources\Texture</Filter>
     </ClInclude>
@@ -364,6 +397,30 @@
     </ClInclude>
     <ClInclude Include="EngineDefines.h">
       <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Object\Component\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineDebug3D.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteRenderer.h">
+      <Filter>Object\Component\Rendering\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="TileRenderer.h">
+      <Filter>Object\Component\Rendering\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineStruct.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderUnit.h">
+      <Filter>Object\Component\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Widget.h">
+      <Filter>Object\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Object\UI\Contents</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
