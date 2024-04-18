@@ -36,8 +36,8 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="ContentsEnum.h" />
-    <ClInclude Include="ContentsValue.h" />
+    <ClInclude Include="Holo_ContentsEnum.h" />
+    <ClInclude Include="Holo_InGameValue.h" />
     <ClInclude Include="PlayBackGround.h">
       <SubType>
       </SubType>
@@ -85,7 +85,7 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="ContentsValue.cpp" />
+    <ClCompile Include="Holo_InGameValue.cpp" />
     <ClCompile Include="PlayBackGround.cpp">
       <SubType>
       </SubType>

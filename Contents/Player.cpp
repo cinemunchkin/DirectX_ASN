@@ -1,6 +1,6 @@
 #include "PreCompile.h"
 #include "Player.h"
-#include "ContentsValue.h"
+#include "Holo_InGameValue.h"
 #include <EngineCore/Renderer.h>
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineBase/EngineMath.h>
@@ -129,7 +129,7 @@ void APlayer::ChangeMouseAimAtkDir()
 {
 	if (true == AHolo_Pointer::MouseAimOn)
 	{
-		Angle = atan2f((ContentsValue::PlayLevelMousePos.Y - APlayer::PlayerPos.Y), (ContentsValue::PlayLevelMousePos.X - APlayer::PlayerPos.X)) * 180.0f / UEngineMath::PI;
+		Angle = atan2f((Holo_InGameValue::PlayLevelMousePos.Y - APlayer::PlayerPos.Y), (Holo_InGameValue::PlayLevelMousePos.X - APlayer::PlayerPos.X)) * 180.0f / UEngineMath::PI;
 		AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 
 		if (-90.0f <= Angle && 90.0f > Angle)

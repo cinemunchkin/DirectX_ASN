@@ -2,7 +2,7 @@
 #include "Holo_Back.h"
 #include <EngineCore/Renderer.h>
 #include <EngineCore/SpriteRenderer.h>
-#include "ContentsEnum.h"
+#include "Holo_ContentsEnum.h"
 
 AHolo_Back::AHolo_Back()
 {

@@ -1,7 +1,7 @@
 #pragma once
 #include <EngineCore/Actor.h>
 #include <EngineCore/StateManager.h>
-#include "ContentsEnum.h"
+#include "Holo_ContentsEnum.h"
 
 class USpriteRenderer;
 class APlayer : public AActor

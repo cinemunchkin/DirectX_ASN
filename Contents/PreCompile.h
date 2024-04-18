@@ -15,5 +15,5 @@
 #include <EngineCore/EngineDebugMsgWindow.h>
 #include <EngineCore/DefaultSceneComponent.h>
 
-#include "ContentsEnum.h"
-#include "ContentsValue.h"
+#include "Holo_ContentsEnum.h"
+#include "Holo_InGameValue.h"

@@ -1,6 +1,6 @@
 #include "PreCompile.h"
 #include "PlayGameMode.h"
-#include "ContentsValue.h"
+#include "Holo_InGameValue.h"
 #include "Monster.h"
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineCore/Camera.h>
@@ -48,18 +48,18 @@ void APlayGameMode::BeginPlay()
 		{
 			std::shared_ptr<APlayBackGround> BackGround = GetWorld()->SpawnActor<APlayBackGround>("PlayBackGround");
 
-			BackGround->SetActorScale3D(ContentsValue::GroundTileSize);
+			BackGround->SetActorScale3D(Holo_InGameValue::GroundTileSize);
 
 			FIntPoint Point;
 			Point.X = x;
 			Point.Y = y;
 
 			float4 Pos;
-			Pos.X = ContentsValue::GroundTileSize.X * x;
-			Pos.Y = ContentsValue::GroundTileSize.Y * y;
+			Pos.X = Holo_InGameValue::GroundTileSize.X * x;
+			Pos.Y = Holo_InGameValue::GroundTileSize.Y * y;
 
-			Pos.X += ContentsValue::GroundTileSize.hX();
-			Pos.Y += ContentsValue::GroundTileSize.hY();
+			Pos.X += Holo_InGameValue::GroundTileSize.hX();
+			Pos.Y += Holo_InGameValue::GroundTileSize.hY();
 			BackGround->SetActorLocation(Pos);
 
 			BackGroundVector.push_back(BackGround);
@@ -72,8 +72,8 @@ void APlayGameMode::Tick(float _DeltaTime)
 	Super::Tick(_DeltaTime);
 
 	AHolo_Pointer::CursorPos = GEngine->EngineWindow.GetScreenMousePos();
-	ContentsValue::PlayLevelMousePos = FVector{ APlayer::PlayerPos.X + AHolo_Pointer::CursorPos.X - 640, APlayer::PlayerPos.Y - AHolo_Pointer::CursorPos.Y + 360 };
-	Cursor->SetActorLocation(ContentsValue::PlayLevelMousePos);
+	Holo_InGameValue::PlayLevelMousePos = FVector{ APlayer::PlayerPos.X + AHolo_Pointer::CursorPos.X - 640, APlayer::PlayerPos.Y - AHolo_Pointer::CursorPos.Y + 360 };
+	Cursor->SetActorLocation(Holo_InGameValue::PlayLevelMousePos);
 
 	InfinityGroundCheck();
 
@@ -110,11 +110,11 @@ void APlayGameMode::LevelStart(ULevel* _PrevLevel)
 float4 APlayGameMode::IndexToCenterPos(FIntPoint _Index)
 {
 	float4 Pos;
-	Pos.X = ContentsValue::GroundTileSize.X * _Index.X;
-	Pos.Y = ContentsValue::GroundTileSize.Y * _Index.Y;
+	Pos.X = Holo_InGameValue::GroundTileSize.X * _Index.X;
+	Pos.Y = Holo_InGameValue::GroundTileSize.Y * _Index.Y;
 
-	Pos.X += ContentsValue::GroundTileSize.hX();
-	Pos.Y += ContentsValue::GroundTileSize.hY();
+	Pos.X += Holo_InGameValue::GroundTileSize.hX();
+	Pos.Y += Holo_InGameValue::GroundTileSize.hY();
 
 	return Pos;
 }
@@ -126,8 +126,8 @@ FIntPoint APlayGameMode::PosToIndex(float4 _Pos)
 	float4 Location = _Pos;
 
 	float4 Pos;
-	Pos.X = Location.X / ContentsValue::GroundTileSize.X;
-	Pos.Y = Location.Y / ContentsValue::GroundTileSize.Y;
+	Pos.X = Location.X / Holo_InGameValue::GroundTileSize.X;
+	Pos.Y = Location.Y / Holo_InGameValue::GroundTileSize.Y;
 
 	if (0 >= Pos.X)
 	{
@@ -152,8 +152,8 @@ void APlayGameMode::InfinityGroundCheck()
 		int GroundCount = 0;
 
 		float4 MovePos;
-		MovePos.X = Index.X * ContentsValue::GroundTileSize.X;
-		MovePos.Y = Index.Y * ContentsValue::GroundTileSize.Y;
+		MovePos.X = Index.X * Holo_InGameValue::GroundTileSize.X;
+		MovePos.Y = Index.Y * Holo_InGameValue::GroundTileSize.Y;
 
 		for (int y = -1; y < 2; y++)
 		{
@@ -161,18 +161,18 @@ void APlayGameMode::InfinityGroundCheck()
 			{
 				std::shared_ptr<APlayBackGround> BackGround = BackGroundVector[GroundCount];
 
-				BackGround->SetActorScale3D(ContentsValue::GroundTileSize);
+				BackGround->SetActorScale3D(Holo_InGameValue::GroundTileSize);
 
 				FIntPoint Point;
 				Point.X = x;
 				Point.Y = y;
 
 				float4 Pos;
-				Pos.X = ContentsValue::GroundTileSize.X * x;
-				Pos.Y = ContentsValue::GroundTileSize.Y * y;
+				Pos.X = Holo_InGameValue::GroundTileSize.X * x;
+				Pos.Y = Holo_InGameValue::GroundTileSize.Y * y;
 
-				Pos.X += ContentsValue::GroundTileSize.hX();
-				Pos.Y += ContentsValue::GroundTileSize.hY();
+				Pos.X += Holo_InGameValue::GroundTileSize.hX();
+				Pos.Y += Holo_InGameValue::GroundTileSize.hY();
 				BackGround->SetActorLocation(Pos + MovePos);
 
 				++GroundCount;

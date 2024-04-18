@@ -1,7 +1,7 @@
 #pragma once
 
 // Ό³Έν :
-class ContentsValue
+class Holo_InGameValue
 {
 public:
 	static const float4 GroundTileSize;

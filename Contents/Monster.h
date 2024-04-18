@@ -1,6 +1,6 @@
 #pragma once
 #include <EngineCore/Actor.h>
-#include "ContentsEnum.h"
+#include "Holo_ContentsEnum.h"
 
 class USpriteRenderer;
 class AMonster : public AActor
