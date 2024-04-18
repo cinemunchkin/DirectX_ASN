@@ -1,10 +1,10 @@
 #include "PreCompile.h"
-#include "HoloCursor.h"
+#include "Holo_Pointer.h"
 
-float4 AHoloCursor::CursorPos = FVector::Zero;
-bool AHoloCursor::MouseAimOn = false;
+float4 AHolo_Pointer::CursorPos = FVector::Zero;
+bool AHolo_Pointer::MouseAimOn = false;
 
-AHoloCursor::AHoloCursor()
+AHolo_Pointer::AHolo_Pointer()
 {
 	UDefaultSceneComponent* Root = CreateDefaultSubObject<UDefaultSceneComponent>("Renderer");
 	Renderer = CreateDefaultSubObject<USpriteRenderer>("Renderer");
@@ -14,11 +14,11 @@ AHoloCursor::AHoloCursor()
 	InputOn();
 }
 
-AHoloCursor::~AHoloCursor()
+AHolo_Pointer::~AHolo_Pointer()
 {
 }
 
-void AHoloCursor::BeginPlay()
+void AHolo_Pointer::BeginPlay()
 {
 	Super::BeginPlay();
 
@@ -30,7 +30,7 @@ void AHoloCursor::BeginPlay()
 	CursorPos = GEngine->EngineWindow.GetScreenMousePos();
 }
 
-void AHoloCursor::Tick(float _DeltaTime)
+void AHolo_Pointer::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
@@ -38,12 +38,12 @@ void AHoloCursor::Tick(float _DeltaTime)
 	CheckAimMode();
 }
 
-void AHoloCursor::CursorOFf()
+void AHolo_Pointer::CursorOFf()
 {
 	ShowCursor(FALSE);
 }
 
-void AHoloCursor::ChangeAimMode()
+void AHolo_Pointer::ChangeAimMode()
 {
 	if (true == IsDown(VK_LBUTTON))
 	{
@@ -58,7 +58,7 @@ void AHoloCursor::ChangeAimMode()
 	}
 }
 
-void AHoloCursor::CheckAimMode()
+void AHolo_Pointer::CheckAimMode()
 {
 	if (true != MouseAimOn)
 	{

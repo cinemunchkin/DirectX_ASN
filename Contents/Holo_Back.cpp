@@ -1,28 +1,28 @@
 #include "PreCompile.h"
-#include "BackGround.h"
+#include "Holo_Back.h"
 #include <EngineCore/Renderer.h>
 #include <EngineCore/SpriteRenderer.h>
 #include "ContentsEnum.h"
 
-ABackGround::ABackGround()
+AHolo_Back::AHolo_Back()
 {
 	Renderer = CreateDefaultSubObject<USpriteRenderer>("Renderer");
 	SetRoot(Renderer);
 }
 
-ABackGround::~ABackGround()
+AHolo_Back::~AHolo_Back()
 {
 }
 
-void ABackGround::BeginPlay()
+void AHolo_Back::BeginPlay()
 {
 	Super::BeginPlay();
 
 	Renderer->SetAutoSize(1.0f, true);
-	Renderer->SetOrder(ERenderOrder::BackGround);
+	Renderer->SetOrder(ERenderOrder::Holo_Back);
 }
 
-void ABackGround::Tick(float _DeltaTime)
+void AHolo_Back::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 }

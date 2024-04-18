@@ -2,7 +2,7 @@
 
 enum class ERenderOrder
 {
-	BackGround,
+	Holo_Back,
 	MonsterUp,
 	Player,
 	MonsterDown,

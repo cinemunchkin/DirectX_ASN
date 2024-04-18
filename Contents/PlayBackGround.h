@@ -1,7 +1,7 @@
 #pragma once
-#include "BackGround.h"
+#include "Holo_Back.h"
 
-class APlayBackGround : public ABackGround
+class APlayBackGround : public AHolo_Back
 {
 	GENERATED_BODY(AActor)
 

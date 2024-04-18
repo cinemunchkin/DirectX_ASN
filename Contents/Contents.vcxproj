@@ -31,7 +31,7 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="HoloCursor.h" />
+    <ClInclude Include="Holo_Pointer.h" />
     <ClInclude Include="Monster.h">
       <SubType>
       </SubType>
@@ -44,11 +44,11 @@
     </ClInclude>
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayGameMode.h" />
-    <ClInclude Include="TitleBackGround.h">
+    <ClInclude Include="Holo_TitleBack.h">
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="BackGround.h">
+    <ClInclude Include="Holo_Back.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -80,7 +80,7 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="HoloCursor.cpp" />
+    <ClCompile Include="Holo_Pointer.cpp" />
     <ClCompile Include="Monster.cpp">
       <SubType>
       </SubType>
@@ -93,11 +93,11 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Player_State.cpp" />
     <ClCompile Include="PlayGameMode.cpp" />
-    <ClCompile Include="TitleBackGround.cpp">
+    <ClCompile Include="Holo_TitleBack.cpp">
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="BackGround.cpp">
+    <ClCompile Include="Holo_Back.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -126,6 +126,7 @@
     <ProjectGuid>{459eb68f-d6b5-40c8-b3d1-6763c941c9e9}</ProjectGuid>
     <RootNamespace>Contents</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Holo_Contents</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

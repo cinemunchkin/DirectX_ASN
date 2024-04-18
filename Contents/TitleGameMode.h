@@ -1,6 +1,6 @@
 #pragma once
 #include <EngineCore/GameMode.h>
-#include "HoloCursor.h"
+#include "Holo_Pointer.h"
 
 // Ό³Έν :
 class ATitleGameMode : public AGameMode
@@ -25,7 +25,7 @@ protected:
 	void LevelEnd(ULevel* _NextLevel);
 	void LevelStart(ULevel* _PrevLevel);
 
-	std::shared_ptr<AHoloCursor> Cursor;
+	std::shared_ptr<AHolo_Pointer> Cursor;
 
 private:
 

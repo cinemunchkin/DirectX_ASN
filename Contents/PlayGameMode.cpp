@@ -36,10 +36,10 @@ void APlayGameMode::BeginPlay()
 	Player->SetActorLocation(PlayerStartPos);
 
 	// 目辑 积己
-	Cursor = GetWorld()->SpawnActor<AHoloCursor>("Cursor");
-	AHoloCursor::MouseAimOn = false;
-	AHoloCursor::CursorPos = GEngine->EngineWindow.GetScreenMousePos();
-	Cursor->SetActorLocation(AHoloCursor::CursorPos);
+	Cursor = GetWorld()->SpawnActor<AHolo_Pointer>("Cursor");
+	AHolo_Pointer::MouseAimOn = false;
+	AHolo_Pointer::CursorPos = GEngine->EngineWindow.GetScreenMousePos();
+	Cursor->SetActorLocation(AHolo_Pointer::CursorPos);
 
 	// 瘤搁 积己
 	for (int y = -1; y < 2; y++)
@@ -71,8 +71,8 @@ void APlayGameMode::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
-	AHoloCursor::CursorPos = GEngine->EngineWindow.GetScreenMousePos();
-	ContentsValue::PlayLevelMousePos = FVector{ APlayer::PlayerPos.X + AHoloCursor::CursorPos.X - 640, APlayer::PlayerPos.Y - AHoloCursor::CursorPos.Y + 360 };
+	AHolo_Pointer::CursorPos = GEngine->EngineWindow.GetScreenMousePos();
+	ContentsValue::PlayLevelMousePos = FVector{ APlayer::PlayerPos.X + AHolo_Pointer::CursorPos.X - 640, APlayer::PlayerPos.Y - AHolo_Pointer::CursorPos.Y + 360 };
 	Cursor->SetActorLocation(ContentsValue::PlayLevelMousePos);
 
 	InfinityGroundCheck();

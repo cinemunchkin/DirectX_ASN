@@ -1,6 +1,6 @@
 #pragma once
 #include <EngineCore/GameMode.h>
-#include "HoloCursor.h"
+#include "Holo_Pointer.h"
 #include "Player.h"
 #include "PlayBackGround.h"
 
@@ -42,7 +42,7 @@ protected:
 
 	std::vector<std::shared_ptr<APlayBackGround>> BackGroundVector;
 
-	std::shared_ptr<AHoloCursor> Cursor;
+	std::shared_ptr<AHolo_Pointer> Cursor;
 	std::shared_ptr<APlayer> Player;
 
 	float4 IndexToCenterPos(FIntPoint _Index);

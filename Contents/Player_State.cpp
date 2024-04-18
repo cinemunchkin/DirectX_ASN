@@ -2,7 +2,7 @@
 #include "Player.h"
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineCore/Camera.h>
-#include "HoloCursor.h"
+#include "Holo_Pointer.h"
 
 void APlayer::StateInit()
 {
@@ -53,7 +53,7 @@ void APlayer::Run(float _DeltaTime)
 	
 	if (true == IsPress('W') && true == IsPress('A'))
 	{
-		if (false == AHoloCursor::MouseAimOn)
+		if (false == AHolo_Pointer::MouseAimOn)
 		{
 			Renderer->SetDir(EEngineDir::Left);
 		}
@@ -62,7 +62,7 @@ void APlayer::Run(float _DeltaTime)
 	}
 	else if (true == IsPress('W') && true == IsPress('D'))
 	{
-		if (false == AHoloCursor::MouseAimOn)
+		if (false == AHolo_Pointer::MouseAimOn)
 		{
 			Renderer->SetDir(EEngineDir::Right);
 		}
@@ -71,7 +71,7 @@ void APlayer::Run(float _DeltaTime)
 	}
 	else if (true == IsPress('S') && true == IsPress('A'))
 	{
-		if (false == AHoloCursor::MouseAimOn)
+		if (false == AHolo_Pointer::MouseAimOn)
 		{
 			Renderer->SetDir(EEngineDir::Left);
 		}
@@ -80,7 +80,7 @@ void APlayer::Run(float _DeltaTime)
 	}
 	else if (true == IsPress('S') && true == IsPress('D'))
 	{
-		if (false == AHoloCursor::MouseAimOn)
+		if (false == AHolo_Pointer::MouseAimOn)
 		{
 			Renderer->SetDir(EEngineDir::Right);
 		}
@@ -89,7 +89,7 @@ void APlayer::Run(float _DeltaTime)
 	}
 	else if (true == IsPress('A'))
 	{
-		if (false == AHoloCursor::MouseAimOn)
+		if (false == AHolo_Pointer::MouseAimOn)
 		{
 			Renderer->SetDir(EEngineDir::Left);
 		}
@@ -98,7 +98,7 @@ void APlayer::Run(float _DeltaTime)
 	}
 	else if (true == IsPress('D'))
 	{
-		if (false == AHoloCursor::MouseAimOn)
+		if (false == AHolo_Pointer::MouseAimOn)
 		{
 			Renderer->SetDir(EEngineDir::Right);
 		}

@@ -3,7 +3,7 @@
 #include <EngineCore/StateManager.h>
 
 class USpriteRenderer;
-class AHoloCursor : public AActor
+class AHolo_Pointer : public AActor
 {
 	GENERATED_BODY(AActor)
 public:
@@ -11,14 +11,14 @@ public:
 	static bool MouseAimOn;
 
 	// constrcuter destructer
-	AHoloCursor();
-	~AHoloCursor();
+	AHolo_Pointer();
+	~AHolo_Pointer();
 
 	// delete Function
-	AHoloCursor(const AHoloCursor& _Other) = delete;
-	AHoloCursor(AHoloCursor&& _Other) noexcept = delete;
-	AHoloCursor& operator=(const AHoloCursor& _Other) = delete;
-	AHoloCursor& operator=(AHoloCursor&& _Other) noexcept = delete;
+	AHolo_Pointer(const AHolo_Pointer& _Other) = delete;
+	AHolo_Pointer(AHolo_Pointer&& _Other) noexcept = delete;
+	AHolo_Pointer& operator=(const AHolo_Pointer& _Other) = delete;
+	AHolo_Pointer& operator=(AHolo_Pointer&& _Other) noexcept = delete;
 
 protected:
 	void BeginPlay() override;

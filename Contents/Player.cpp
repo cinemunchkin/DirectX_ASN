@@ -4,7 +4,7 @@
 #include <EngineCore/Renderer.h>
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineBase/EngineMath.h>
-#include "HoloCursor.h"
+#include "Holo_Pointer.h"
 
 float4 APlayer::PlayerPos = float4::Zero;
 
@@ -69,7 +69,7 @@ void APlayer::CreatePlayerAnimation(std::string _Name)
 
 void APlayer::CheckMouseAimMode()
 {
-	if (false == AHoloCursor::MouseAimOn)
+	if (false == AHolo_Pointer::MouseAimOn)
 	{
 		AtkDir->SetSprite("spr_arrow_1.png");
 		AtkDir->SetAutoSize(1.0f, true);
@@ -83,7 +83,7 @@ void APlayer::CheckMouseAimMode()
 
 void APlayer::ChangeMoveAimAtkDir()
 {
-	if (false == AHoloCursor::MouseAimOn)
+	if (false == AHolo_Pointer::MouseAimOn)
 	{
 		switch (PlayerDir)
 		{
@@ -127,7 +127,7 @@ void APlayer::ChangeMoveAimAtkDir()
 
 void APlayer::ChangeMouseAimAtkDir()
 {
-	if (true == AHoloCursor::MouseAimOn)
+	if (true == AHolo_Pointer::MouseAimOn)
 	{
 		Angle = atan2f((ContentsValue::PlayLevelMousePos.Y - APlayer::PlayerPos.Y), (ContentsValue::PlayLevelMousePos.X - APlayer::PlayerPos.X)) * 180.0f / UEngineMath::PI;
 		AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });

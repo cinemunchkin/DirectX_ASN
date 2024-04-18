@@ -1,17 +1,17 @@
 #include "PreCompile.h"
-#include "TitleBackGround.h"
+#include "Holo_TitleBack.h"
 #include <EngineCore/Renderer.h>
 #include <EngineCore/SpriteRenderer.h>
 
-ATitleBackGround::ATitleBackGround()
+AHolo_TitleBack::AHolo_TitleBack()
 {
 }
 
-ATitleBackGround::~ATitleBackGround()
+AHolo_TitleBack::~AHolo_TitleBack()
 {
 }
 
-void ATitleBackGround::BeginPlay()
+void AHolo_TitleBack::BeginPlay()
 {
 	Super::BeginPlay();
 
@@ -20,7 +20,7 @@ void ATitleBackGround::BeginPlay()
 	Renderer->SetSprite("menu_charselecBG_0.png");
 }
 
-void ATitleBackGround::Tick(float _DeltaTime)
+void AHolo_TitleBack::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 }
