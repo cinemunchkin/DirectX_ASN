@@ -1,17 +1,17 @@
 #include "PreCompile.h"
-#include "PlayBackGround.h"
+#include "Holo_PlayBack.h"
 #include <EngineCore/Renderer.h>
 #include <EngineCore/SpriteRenderer.h>
 
-APlayBackGround::APlayBackGround()
+AHolo_PlayBack::AHolo_PlayBack()
 {
 }
 
-APlayBackGround::~APlayBackGround()
+AHolo_PlayBack::~AHolo_PlayBack()
 {
 }
 
-void APlayBackGround::BeginPlay()
+void AHolo_PlayBack::BeginPlay()
 {
 	Super::BeginPlay();
 
@@ -19,7 +19,7 @@ void APlayBackGround::BeginPlay()
 
 }
 
-void APlayBackGround::Tick(float _DeltaTime)
+void AHolo_PlayBack::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 }

@@ -1,7 +1,7 @@
 #include "PreCompile.h"
 #include "PlayGameMode.h"
 #include "Holo_InGameValue.h"
-#include "Monster.h"
+#include "Holo_Monster.h"
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineCore/Camera.h>
 #include <EngineCore/EngineDebugMsgWindow.h>
@@ -46,7 +46,7 @@ void APlayGameMode::BeginPlay()
 	{
 		for (int x = -1; x < 2; x++)
 		{
-			std::shared_ptr<APlayBackGround> BackGround = GetWorld()->SpawnActor<APlayBackGround>("PlayBackGround");
+			std::shared_ptr<AHolo_PlayBack> BackGround = GetWorld()->SpawnActor<AHolo_PlayBack>("PlayBackGround");
 
 			BackGround->SetActorScale3D(Holo_InGameValue::GroundTileSize);
 
@@ -159,7 +159,7 @@ void APlayGameMode::InfinityGroundCheck()
 		{
 			for (int x = -1; x < 2; x++)
 			{
-				std::shared_ptr<APlayBackGround> BackGround = BackGroundVector[GroundCount];
+				std::shared_ptr<AHolo_PlayBack> BackGround = BackGroundVector[GroundCount];
 
 				BackGround->SetActorScale3D(Holo_InGameValue::GroundTileSize);
 
@@ -196,9 +196,9 @@ void APlayGameMode::RandomSpawnMonster(std::string _Name, float _Size, float _Hp
 	
 	for (int i = 0; i < _Quantity; i++)
 	{
-		std::shared_ptr<AMonster> Monster;
+		std::shared_ptr<AHolo_Monster> Monster;
 
-		Monster = GetWorld()->SpawnActor<AMonster>(_Name);
+		Monster = GetWorld()->SpawnActor<AHolo_Monster>(_Name);
 		Monster->GetRenderer()->SetAutoSize(_Size, true);
 		Monster->GetRenderer()->ChangeAnimation(_Name);
 		Monster->SetMonsterStatus(_Hp, _Atk, _Speed, _Exp, _MoveType);

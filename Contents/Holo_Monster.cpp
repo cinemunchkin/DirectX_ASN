@@ -1,8 +1,8 @@
 #include "PreCompile.h"
-#include "Monster.h"
+#include "Holo_Monster.h"
 #include "Player.h"
 
-AMonster::AMonster()
+AHolo_Monster::AHolo_Monster()
 {
 	Renderer = CreateDefaultSubObject<USpriteRenderer>("Renderer");
 	Renderer->SetPivot(EPivot::BOT);
@@ -10,18 +10,18 @@ AMonster::AMonster()
 	SetRoot(Renderer);
 }
 
-AMonster::~AMonster()
+AHolo_Monster::~AHolo_Monster()
 {
 }
 
-void AMonster::BeginPlay()
+void AHolo_Monster::BeginPlay()
 {
 	Super::BeginPlay();
 
-	CreateMonsterAnimation("Shrimp");
-	CreateMonsterAnimation("Deadbeat");
-	CreateMonsterAnimation("Takodachi");
-	CreateMonsterAnimation("KFP");
+	CreateHolo_MonsterAnimation("Shrimp");
+	CreateHolo_MonsterAnimation("Deadbeat");
+	CreateHolo_MonsterAnimation("Takodachi");
+	CreateHolo_MonsterAnimation("KFP");
 
 	Renderer->SetAutoSize(1.0f, true);
 	Renderer->ChangeAnimation(Name);
@@ -29,7 +29,7 @@ void AMonster::BeginPlay()
 }
 
 
-void AMonster::Tick(float _DeltaTime)
+void AHolo_Monster::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
@@ -47,7 +47,7 @@ void AMonster::Tick(float _DeltaTime)
 	CheckPosComparePlayer();
 }
 
-void AMonster::SetMonsterStatus(float _Hp, float _Atk, float _Speed, float _Exp, EMonsterMoveType _MoveType)
+void AHolo_Monster::SetMonsterStatus(float _Hp, float _Atk, float _Speed, float _Exp, EMonsterMoveType _MoveType)
 {
 	Hp = _Hp;
 	Atk = _Atk;
@@ -57,26 +57,26 @@ void AMonster::SetMonsterStatus(float _Hp, float _Atk, float _Speed, float _Exp,
 	MoveType = _MoveType;
 }
 
-FVector AMonster::CreateGroupToPlayerDir()
+FVector AHolo_Monster::CreateGroupToPlayerDir()
 {
 	FVector GroupDir = APlayer::PlayerPos - GetActorLocation();
 	GroupDir = GroupDir.Normalize2DReturn();
 	return GroupDir;
 }
 
-void AMonster::CreateMonsterAnimation(std::string _Name)
+void AHolo_Monster::CreateHolo_MonsterAnimation(std::string _Name)
 {
 	Renderer->CreateAnimation(_Name, _Name, 0.1f, true, 0, 2);
 }
 
-void AMonster::Move(float _DeltaTime, EMonsterMoveType _MoveType)
+void AHolo_Monster::Move(float _DeltaTime, EMonsterMoveType _MoveType)
 {
-	FVector MonsterPos = GetActorLocation();
+	FVector Holo_MonsterPos = GetActorLocation();
 
 	switch (_MoveType)
 	{
 	case EMonsterMoveType::Follow:
-		Dir = APlayer::PlayerPos - MonsterPos;
+		Dir = APlayer::PlayerPos - Holo_MonsterPos;
 		Dir = Dir.Normalize2DReturn();
 		break;
 	case EMonsterMoveType::StraightToPlayer:
@@ -99,7 +99,7 @@ void AMonster::Move(float _DeltaTime, EMonsterMoveType _MoveType)
 	AddActorLocation(Dir * _DeltaTime * CalSpeed);
 }
 
-void AMonster::CheckPosComparePlayer()
+void AHolo_Monster::CheckPosComparePlayer()
 {
 	if (APlayer::PlayerPos.Y <= GetActorLocation().Y)
 	{

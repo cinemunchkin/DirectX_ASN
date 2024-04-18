@@ -3,19 +3,19 @@
 #include "Holo_ContentsEnum.h"
 
 class USpriteRenderer;
-class AMonster : public AActor
+class AHolo_Monster : public AActor
 {
 	GENERATED_BODY(AActor)
 public:
 	// constrcuter destructer
-	AMonster();
-	~AMonster();
+	AHolo_Monster();
+	~AHolo_Monster();
 
 	// delete Function
-	AMonster(const AMonster& _Other) = delete;
-	AMonster(AMonster&& _Other) noexcept = delete;
-	AMonster& operator=(const AMonster& _Other) = delete;
-	AMonster& operator=(AMonster&& _Other) noexcept = delete;
+	AHolo_Monster(const AHolo_Monster& _Other) = delete;
+	AHolo_Monster(AHolo_Monster&& _Other) noexcept = delete;
+	AHolo_Monster& operator=(const AHolo_Monster& _Other) = delete;
+	AHolo_Monster& operator=(AHolo_Monster&& _Other) noexcept = delete;
 
 	void SetName(std::string _Name)
 	{
@@ -57,7 +57,7 @@ private:
 
 	EMonsterMoveType MoveType = EMonsterMoveType::Follow;
 
-	void CreateMonsterAnimation(std::string _Name);
+	void CreateHolo_MonsterAnimation(std::string _Name);
 
 	void Move(float _DeltaTime, EMonsterMoveType _MoveType);
 	void CheckPosComparePlayer();

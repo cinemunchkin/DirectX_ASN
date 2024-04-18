@@ -2,7 +2,7 @@
 #include <EngineCore/GameMode.h>
 #include "Holo_Pointer.h"
 #include "Player.h"
-#include "PlayBackGround.h"
+#include "Holo_PlayBack.h"
 
 struct FIntPoint
 {
@@ -40,7 +40,7 @@ protected:
 	void LevelEnd(ULevel* _NextLevel);
 	void LevelStart(ULevel* _PrevLevel);
 
-	std::vector<std::shared_ptr<APlayBackGround>> BackGroundVector;
+	std::vector<std::shared_ptr<AHolo_PlayBack>> BackGroundVector;
 
 	std::shared_ptr<AHolo_Pointer> Cursor;
 	std::shared_ptr<APlayer> Player;

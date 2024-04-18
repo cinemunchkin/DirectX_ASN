@@ -25,32 +25,32 @@
     <ClCompile Include="Player_State.cpp">
       <Filter>Level\PlayLevel\Player</Filter>
     </ClCompile>
-    <ClCompile Include="PlayBackGround.cpp">
+    <ClCompile Include="Holo_PlayBack.cpp">
       <Filter>Level\PlayLevel</Filter>
     </ClCompile>
-    <ClCompile Include="Monster.cpp">
+    <ClCompile Include="Holo_Monster.cpp">
       <Filter>Level\PlayLevel\Monster</Filter>
     </ClCompile>
-    <ClCompile Include="Weapon.cpp">
+    <ClCompile Include="Holo_Weapon.cpp">
       <Filter>Level\PlayLevel\Equipment</Filter>
     </ClCompile>
     <ClCompile Include="Holo_Pointer.cpp">
       <Filter>Actor</Filter>
-    </ClCompile>
-    <ClCompile Include="Melee.cpp">
-      <Filter>Level\PlayLevel\Equipment</Filter>
-    </ClCompile>
-    <ClCompile Include="Ranged.cpp">
-      <Filter>Level\PlayLevel\Equipment</Filter>
-    </ClCompile>
-    <ClCompile Include="MultiShot.cpp">
-      <Filter>Level\PlayLevel\Equipment</Filter>
     </ClCompile>
     <ClCompile Include="TitleLogo.cpp">
       <Filter>Level\TitleLevel\Actor</Filter>
     </ClCompile>
     <ClCompile Include="Holo_TitleBack.cpp">
       <Filter>Level\TitleLevel\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Holo_PlayerIna.cpp">
+      <Filter>Level\PlayLevel\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiShot.cpp">
+      <Filter>Level\PlayLevel\Equipment\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="Ranged.cpp">
+      <Filter>Level\PlayLevel\Equipment\Attack</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -78,32 +78,32 @@
     <ClInclude Include="Player.h">
       <Filter>Level\PlayLevel\Player</Filter>
     </ClInclude>
-    <ClInclude Include="PlayBackGround.h">
+    <ClInclude Include="Holo_PlayBack.h">
       <Filter>Level\PlayLevel</Filter>
     </ClInclude>
-    <ClInclude Include="Monster.h">
+    <ClInclude Include="Holo_Monster.h">
       <Filter>Level\PlayLevel\Monster</Filter>
     </ClInclude>
-    <ClInclude Include="Weapon.h">
+    <ClInclude Include="Holo_Weapon.h">
       <Filter>Level\PlayLevel\Equipment</Filter>
     </ClInclude>
     <ClInclude Include="Holo_Pointer.h">
       <Filter>Actor</Filter>
-    </ClInclude>
-    <ClInclude Include="Melee.h">
-      <Filter>Level\PlayLevel\Equipment</Filter>
-    </ClInclude>
-    <ClInclude Include="Ranged.h">
-      <Filter>Level\PlayLevel\Equipment</Filter>
-    </ClInclude>
-    <ClInclude Include="MultiShot.h">
-      <Filter>Level\PlayLevel\Equipment</Filter>
     </ClInclude>
     <ClInclude Include="TitleLogo.h">
       <Filter>Level\TitleLevel\Actor</Filter>
     </ClInclude>
     <ClInclude Include="Holo_TitleBack.h">
       <Filter>Level\TitleLevel\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Holo_PlayerIna.h">
+      <Filter>Level\PlayLevel\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiShot.h">
+      <Filter>Level\PlayLevel\Equipment\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="Ranged.h">
+      <Filter>Level\PlayLevel\Equipment\Attack</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +142,9 @@
     </Filter>
     <Filter Include="Level\TitleLevel\Actor">
       <UniqueIdentifier>{fa849d48-1d6e-4472-8d58-e3918e6031da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level\PlayLevel\Equipment\Attack">
+      <UniqueIdentifier>{aa598ac5-4970-4978-9735-618950822520}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
