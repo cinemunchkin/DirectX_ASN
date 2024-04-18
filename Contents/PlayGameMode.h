@@ -3,6 +3,7 @@
 #include "Holo_Pointer.h"
 #include "Player.h"
 #include "Holo_PlayBack.h"
+#include "Holo_Attack.h"
 
 struct FIntPoint
 {
@@ -59,6 +60,9 @@ protected:
 	void SpawnMonsterTimeSet(float _DeltaTime, float _SpawnBegin, float _SpawnEnd, float _Term, std::string _Name, float _Size, float _Hp, float _Atk, float _Speed, float _Exp, EMonsterMoveType _MoveType, bool _Group = false, int _Quantity = 1);
 
 	void PlayDebugText();
+
+
+	
 
 private:
 	FIntPoint CurIndex;

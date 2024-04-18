@@ -5,6 +5,7 @@
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineBase/EngineMath.h>
 #include "Holo_Pointer.h"
+#include "Holo_Attack.h"
 
 float4 APlayer::PlayerPos = float4::Zero;
 
@@ -63,6 +64,9 @@ void APlayer::Tick(float _DeltaTime)
 	CheckMouseAimMode();
 	ChangeMoveAimAtkDir();
 	ChangeMouseAimAtkDir();
+
+
+	PlayerAttack(_DeltaTime);
 }
 
 void APlayer::CreatePlayerAnimation(std::string _Name)
@@ -92,35 +96,35 @@ void APlayer::ChangeMoveAimAtkDir()
 	{
 		switch (PlayerDir)
 		{
-		case EPlayerDir::N:
+		case EPlayerDir::Up:
 			Angle = 90.0f;
 			AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 			break;
-		case EPlayerDir::NE:
+		case EPlayerDir::UpRight:
 			Angle = 45.0f;
 			AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 			break;
-		case EPlayerDir::E:
+		case EPlayerDir::Right:
 			Angle = 0.0f;
 			AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 			break;
-		case EPlayerDir::SE:
+		case EPlayerDir::DownRight:
 			Angle = 315.0f;
 			AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 			break;
-		case EPlayerDir::S:
+		case EPlayerDir::Down:
 			Angle = 270.0f;
 			AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 			break;
-		case EPlayerDir::SW:
+		case EPlayerDir::DownLeft:
 			Angle = 225.0f;
 			AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 			break;
-		case EPlayerDir::W:
+		case EPlayerDir::Left:
 			Angle = 180.0f;
 			AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 			break;
-		case EPlayerDir::NW:
+		case EPlayerDir::UpLeft:
 			Angle = 135.0f;
 			AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 			break;
@@ -146,4 +150,19 @@ void APlayer::ChangeMouseAimAtkDir()
 			Renderer->SetDir(EEngineDir::Left);
 		}
 	}
+}
+
+
+
+
+
+void APlayer::PlayerAttack(float _DeltaTime)
+{
+	if (true == IsPress('Q'))
+	{
+
+	//SpawnAttack(_DeltaTime);
+
+	}
+
 }

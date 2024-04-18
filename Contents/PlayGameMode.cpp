@@ -316,29 +316,29 @@ void APlayGameMode::PlayDebugText()
 	std::string PlayerDir = "";
 	switch (Player->GetPlayerDir())
 	{
-	case EPlayerDir::N:
-		PlayerDir = "N";
+	case EPlayerDir::Up:
+		PlayerDir = "Up";
 		break;
-	case EPlayerDir::NE:
-		PlayerDir = "NE";
+	case EPlayerDir::UpRight:
+		PlayerDir = "UpRight";
 		break;
-	case EPlayerDir::NW:
-		PlayerDir = "NW";
+	case EPlayerDir::UpLeft:
+		PlayerDir = "UpLeft";
 		break;
-	case EPlayerDir::E:
-		PlayerDir = "E";
+	case EPlayerDir::Right:
+		PlayerDir = "Right";
 		break;
-	case EPlayerDir::W:
-		PlayerDir = "W";
+	case EPlayerDir::Left:
+		PlayerDir = "Left";
 		break;
-	case EPlayerDir::S:
-		PlayerDir = "S";
+	case EPlayerDir::Down:
+		PlayerDir = "Down";
 		break;
-	case EPlayerDir::SE:
-		PlayerDir = "SE";
+	case EPlayerDir::DownRight:
+		PlayerDir = "DownRight";
 		break;
-	case EPlayerDir::SW:
-		PlayerDir = "SW";
+	case EPlayerDir::DownLeft:
+		PlayerDir = "DownLeft";
 		break;
 	default:
 		break;

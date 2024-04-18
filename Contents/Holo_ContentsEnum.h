@@ -18,14 +18,14 @@ enum class EDir
 
 enum class EPlayerDir
 {
-	N,
-	NE,
-	E,
-	SE,
-	S,
-	SW,
-	W,
-	NW,
+	Up,
+	UpRight,
+	Right,
+	DownRight,
+	Down,
+	DownLeft,
+	Left,
+	UpLeft,
 };
 
 enum class EMonsterMoveType

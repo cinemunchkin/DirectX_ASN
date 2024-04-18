@@ -19,15 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Holo_Attack.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="Holo_PlayerIna.h">
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="MultiShot.h">
+    <ClInclude Include="Holo_Atk_MultiShot.h">
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Ranged.h">
+    <ClInclude Include="Holo_Atk_Ranged.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -68,15 +72,19 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Holo_Attack.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="Holo_PlayerIna.cpp">
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="MultiShot.cpp">
+    <ClCompile Include="Holo_Atk_MultiShot.cpp">
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="Ranged.cpp">
+    <ClCompile Include="Holo_Atk_Ranged.cpp">
       <SubType>
       </SubType>
     </ClCompile>

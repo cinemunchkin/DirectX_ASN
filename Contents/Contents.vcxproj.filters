@@ -46,10 +46,13 @@
     <ClCompile Include="Holo_PlayerIna.cpp">
       <Filter>Level\PlayLevel\Player</Filter>
     </ClCompile>
-    <ClCompile Include="MultiShot.cpp">
+    <ClCompile Include="Holo_Atk_MultiShot.cpp">
       <Filter>Level\PlayLevel\Equipment\Attack</Filter>
     </ClCompile>
-    <ClCompile Include="Ranged.cpp">
+    <ClCompile Include="Holo_Atk_Ranged.cpp">
+      <Filter>Level\PlayLevel\Equipment\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="Holo_Attack.cpp">
       <Filter>Level\PlayLevel\Equipment\Attack</Filter>
     </ClCompile>
   </ItemGroup>
@@ -99,10 +102,13 @@
     <ClInclude Include="Holo_PlayerIna.h">
       <Filter>Level\PlayLevel\Player</Filter>
     </ClInclude>
-    <ClInclude Include="MultiShot.h">
+    <ClInclude Include="Holo_Atk_MultiShot.h">
       <Filter>Level\PlayLevel\Equipment\Attack</Filter>
     </ClInclude>
-    <ClInclude Include="Ranged.h">
+    <ClInclude Include="Holo_Atk_Ranged.h">
+      <Filter>Level\PlayLevel\Equipment\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="Holo_Attack.h">
       <Filter>Level\PlayLevel\Equipment\Attack</Filter>
     </ClInclude>
   </ItemGroup>

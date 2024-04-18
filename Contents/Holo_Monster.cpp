@@ -68,7 +68,7 @@ FVector AHolo_Monster::CreateGroupToPlayerDir()
 
 void AHolo_Monster::CreateHolo_MonsterAnimation(std::string _Name)
 {
-	Renderer->CreateAnimation(_Name, _Name, 0.1f, true, 0,7 );
+	Renderer->CreateAnimation(_Name, _Name, 0.1f, true, 0,6 );
 	/*
 	if(_name이 오리면 0~7까지 돌도록)
 	*/

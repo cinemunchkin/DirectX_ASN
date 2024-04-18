@@ -44,6 +44,7 @@ protected:
 
 private:
 	USpriteRenderer* Renderer;
+	USpriteRenderer* Atk_Renderer;
 	USpriteRenderer* AtkDir;
 	std::shared_ptr<UCamera> Camera;
 
@@ -51,7 +52,7 @@ private:
 	float Angle;
 
 	std::string Name = "Ina";
-	EPlayerDir PlayerDir = EPlayerDir::E;
+	EPlayerDir PlayerDir = EPlayerDir::Right;
 	int Hp = 100;
 	float Atk = 1;
 	float Speed = 200.0f;
@@ -62,6 +63,12 @@ private:
 	void CheckMouseAimMode();
 	void ChangeMoveAimAtkDir();
 	void ChangeMouseAimAtkDir();
+
+
+
+	//Attack
+	void PlayerAttack(float _Deltatime);
+
 
 	//State
 	void StateInit();

@@ -49,6 +49,7 @@ void APlayer::RunStart()
 
 void APlayer::Run(float _DeltaTime)
 // AnykeyFree 로 수정하기
+// 방향키 수정
 {
 	Camera = GetWorld()->GetMainCamera();
 	
@@ -59,7 +60,7 @@ void APlayer::Run(float _DeltaTime)
 			Renderer->SetDir(EEngineDir::Left);
 		}
 		KeyLineMove(_DeltaTime, FVector::Up, FVector::Left);
-		PlayerDir = EPlayerDir::NW;
+		PlayerDir = EPlayerDir::UpLeft;
 	}
 	else if (true == IsPress('W') && true == IsPress('D'))
 	{
@@ -68,7 +69,7 @@ void APlayer::Run(float _DeltaTime)
 			Renderer->SetDir(EEngineDir::Right);
 		}
 		KeyLineMove(_DeltaTime, FVector::Up, FVector::Right);
-		PlayerDir = EPlayerDir::NE;
+		PlayerDir = EPlayerDir::UpRight;
 	}
 	else if (true == IsPress('S') && true == IsPress('A'))
 	{
@@ -77,7 +78,7 @@ void APlayer::Run(float _DeltaTime)
 			Renderer->SetDir(EEngineDir::Left);
 		}
 		KeyLineMove(_DeltaTime, FVector::Down, FVector::Left);
-		PlayerDir = EPlayerDir::SW;
+		PlayerDir = EPlayerDir::DownLeft;
 	}
 	else if (true == IsPress('S') && true == IsPress('D'))
 	{
@@ -86,7 +87,7 @@ void APlayer::Run(float _DeltaTime)
 			Renderer->SetDir(EEngineDir::Right);
 		}
 		KeyLineMove(_DeltaTime, FVector::Down, FVector::Right);
-		PlayerDir = EPlayerDir::SE;
+		PlayerDir = EPlayerDir::DownRight;
 	}
 	else if (true == IsPress('A'))
 	{
@@ -95,7 +96,7 @@ void APlayer::Run(float _DeltaTime)
 			Renderer->SetDir(EEngineDir::Left);
 		}
 		KeyMove(_DeltaTime, FVector::Left, Speed);
-		PlayerDir = EPlayerDir::W;
+		PlayerDir = EPlayerDir::Left;
 	}
 	else if (true == IsPress('D'))
 	{
@@ -104,17 +105,17 @@ void APlayer::Run(float _DeltaTime)
 			Renderer->SetDir(EEngineDir::Right);
 		}
 		KeyMove(_DeltaTime, FVector::Right, Speed);
-		PlayerDir = EPlayerDir::E;
+		PlayerDir = EPlayerDir::Right;
 	}
 	else if (true == IsPress('W'))
 	{
 		KeyMove(_DeltaTime, FVector::Up, Speed);
-		PlayerDir = EPlayerDir::N;
+		PlayerDir = EPlayerDir::Up;
 	}
 	else if (true == IsPress('S'))
 	{
 		KeyMove(_DeltaTime, FVector::Down, Speed);
-		PlayerDir = EPlayerDir::S;
+		PlayerDir = EPlayerDir::Down;
 	}
 
 	if (true == IsUp('A') || true == IsUp('D') || true == IsUp('W') || true == IsUp('S'))
