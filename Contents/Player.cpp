@@ -5,7 +5,7 @@
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineBase/EngineMath.h>
 #include "Holo_Pointer.h"
-#include "Holo_Attack.h"
+
 
 float4 APlayer::PlayerPos = float4::Zero;
 
@@ -158,11 +158,17 @@ void APlayer::ChangeMouseAimAtkDir()
 
 void APlayer::PlayerAttack(float _DeltaTime)
 {
-	if (true == IsPress('Q'))
+	int a = 0;
+
+	if (true == IsPress(VK_NUMPAD0))
 	{
+	
+		Atk_ptr->SpawnAttack(_DeltaTime);
 
-	//SpawnAttack(_DeltaTime);
+		
 
+
+		//SpawnAttack(_DeltaTime);
 	}
 
 }

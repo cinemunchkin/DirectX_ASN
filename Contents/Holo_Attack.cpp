@@ -16,11 +16,11 @@ AHolo_Attack::AHolo_Attack()
 	Atk_Renderer = CreateDefaultSubObject<USpriteRenderer>("Atk_Renderer");
 	Atk_Renderer->SetupAttachment(Root);
 	Atk_Renderer->SetPivot(EPivot::BOT);
-
+	
 
 	SetRoot(Root);
 
-	InputOff();
+	InputOn();
 	//InputOn();
 
 }
@@ -35,43 +35,58 @@ void AHolo_Attack::BeginPlay()
 {
 	Super::BeginPlay();
 
+	CreateAttackAnimation("MultiShot");
+	
+	Atk_Renderer->SetAutoSize(3.0f, true);
+	Atk_Renderer->SetOrder(ERenderOrder::Attack);
+
+	AtkStateInit();
+
 }
 
 void AHolo_Attack::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
+
+	AtkState.Update(_DeltaTime);
 }
+
+
 
 
 void AHolo_Attack::SpawnAttack(float _DeltaTime)
 {
-	InputOn();
 	
-CreateMultiShot(_DeltaTime);
 
-	//if (/*조건*/)
-	//{
-	//	CreateRangedShot(_DeltaTime)
-	//}
+	Atk_Renderer->ChangeAnimation("MultiShot");
+
 
 }
+/*
+레벨
 
-void AHolo_Attack::CreateMultiShot(float _DeltaTime)
-{	 
-	MultiShot = GetWorld()->SpawnActor<AHolo_Atk_MultiShot>("MultiShot");
-	
-	CreateAttackAnimation("FX_Atk_Ina");
+actor ???
+spawn pointer <- xxx
+
+일단 만들어야함
+생성을 해야햐ㅏㅁ
+
+this가 자기자신이라는 뜻인데
+이게 null이면
+걍 자기자신이 없다는소리임
+안만든거임
+안만들고 찾으면
+엑서스위반뜸
+
+공격을 할꺼다
+공격을 actor?
+콜리전으로 할꺼아님?
+
+공격키를 누르면
+
+player가 공격을 스폰
+그 공격은 콜리전과 렌더러를 가지고 있어야함
 
 
-}	 
-	 
-void AHolo_Attack::CreateRangedShot(float _DeltaTime)
-{
-	RangedShot = GetWorld()->SpawnActor<AHolo_Atk_Ranged>("RangedShot");
-}
 
-void AHolo_Attack::CreateAttackAnimation(std::string _Name)
-{
-	Atk_Renderer->CreateAnimation(_Name, _Name, 0.1f, true, 0, 3);
-
-}
+*/

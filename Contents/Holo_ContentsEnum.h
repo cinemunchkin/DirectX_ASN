@@ -8,6 +8,8 @@ enum class ERenderOrder
 	MonsterDown,
 	Weapon,
 	Cursor,
+	Attack,
+
 };
 
 enum class EDir

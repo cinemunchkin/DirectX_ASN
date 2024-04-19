@@ -72,6 +72,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Attack_State.cpp" />
     <ClCompile Include="Holo_Attack.cpp">
       <SubType>
       </SubType>

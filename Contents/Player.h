@@ -2,6 +2,7 @@
 #include <EngineCore/Actor.h>
 #include <EngineCore/StateManager.h>
 #include "Holo_ContentsEnum.h"
+#include "Holo_Attack.h"
 
 class USpriteRenderer;
 class APlayer : public AActor
@@ -44,9 +45,10 @@ protected:
 
 private:
 	USpriteRenderer* Renderer;
-	USpriteRenderer* Atk_Renderer;
+
 	USpriteRenderer* AtkDir;
 	std::shared_ptr<UCamera> Camera;
+	std::shared_ptr<AHolo_Attack> Atk_ptr;
 
 	float4 Color;
 	float Angle;

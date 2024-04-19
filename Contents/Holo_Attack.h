@@ -38,20 +38,42 @@ public:
 	void CreateMultiShot(float _DeltaTime);
 	void CreateRangedShot(float _DeltaTime);
 
+	void MultiShotStart();
+	void RangedShotStart();
+
+
+	void MultiShotInit(float _DeltaTime);
+	void RangedShotInit(float _DeltaTime);
+
 
 
 	std::shared_ptr<AHolo_Atk_MultiShot> MultiShot;
 	std::shared_ptr<AHolo_Atk_Ranged> RangedShot;
+	std::shared_ptr<AHolo_Attack> Attack;
+
 
 protected:
 
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
-
+	void SetName(std::string _Name)
+	{
+		Name = _Name;
+	}
 
 private:
+	//Attack state
+	void AtkStateInit();
+
+	UStateManager AtkState;
+
+
 
 	USpriteRenderer* Atk_Renderer;
+
 	std::shared_ptr<UCamera> Camera;
+
+	std::string Name = "FX_Atk_Ina";
+
 };

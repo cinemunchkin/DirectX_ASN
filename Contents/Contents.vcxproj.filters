@@ -55,6 +55,9 @@
     <ClCompile Include="Holo_Attack.cpp">
       <Filter>Level\PlayLevel\Equipment\Attack</Filter>
     </ClCompile>
+    <ClCompile Include="Attack_State.cpp">
+      <Filter>Level\PlayLevel\Equipment\Attack</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PreCompile.h">
