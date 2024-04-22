@@ -158,7 +158,7 @@ void AActor::SetActorLocation(FVector _Value)
 #ifdef _DEBUG
 	if (nullptr == RootComponent)
 	{
-		MsgBoxAssert("루트 컴포넌트가 지정되지 않았습니다." +GetName());
+		MsgBoxAssert("루트 컴포넌트가 지정되지 않았습니다.");
 	}
 #endif
 	RootComponent->SetPosition(_Value);
@@ -354,6 +354,5 @@ void AActor::WidgetInit(std::shared_ptr<UWidget> _Widget, std::string_view _Name
 {
 	_Widget->SetWorld(GetWorld());
 	_Widget->SetName(_Name);
-
-	// GetWorld()->PushWidget(_Widget);
+	GetWorld()->WidgetInits.push_back(_Widget);
 }

@@ -35,7 +35,7 @@ void AHolo_Attack::BeginPlay()
 {
 	Super::BeginPlay();
 
-	CreateAttackAnimation("MultiShot");
+	//CreateAttackAnimation("MultiShot");
 	
 	Atk_Renderer->SetAutoSize(3.0f, true);
 	Atk_Renderer->SetOrder(ERenderOrder::Attack);

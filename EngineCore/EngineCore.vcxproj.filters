@@ -91,6 +91,9 @@
     <Filter Include="Object\UI\Contents">
       <UniqueIdentifier>{6a17afd8-9664-4dbe-a520-7c63fe26b9ea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\Rendering\Contents">
+      <UniqueIdentifier>{595b519c-7147-45ad-b5d4-3f8d495027b6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EngineCore.cpp">
@@ -251,6 +254,9 @@
     </ClCompile>
     <ClCompile Include="Image.cpp">
       <Filter>Object\UI\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="BlurEffect.cpp">
+      <Filter>Object\Rendering\Contents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -421,6 +427,9 @@
     </ClInclude>
     <ClInclude Include="Image.h">
       <Filter>Object\UI\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="BlurEffect.h">
+      <Filter>Object\Rendering\Contents</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
