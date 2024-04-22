@@ -66,7 +66,8 @@ void APlayer::Tick(float _DeltaTime)
 	ChangeMouseAimAtkDir();
 
 
-	PlayerAttack(_DeltaTime);
+	PlayerAttackSpawn(_DeltaTime);
+
 }
 
 void APlayer::CreatePlayerAnimation(std::string _Name)
@@ -156,19 +157,18 @@ void APlayer::ChangeMouseAimAtkDir()
 
 
 
-void APlayer::PlayerAttack(float _DeltaTime)
+void APlayer::PlayerAttackSpawn(float _DeltaTime)
 {
 	int a = 0;
 
-	if (true == IsPress(VK_NUMPAD0))
+	if (1.0f <= AttackTime)
 	{
-	
-		Atk_ptr->SpawnAttack(_DeltaTime);
-
+		Attack = GetWorld()->SpawnActor<AHolo_Attack>("Attack");
+		Attack->SetActorLocation(GetActorLocation());
+		AttackTime = 0.0f;
+	}
+	AttackTime += _DeltaTime;
 		
 
-
-		//SpawnAttack(_DeltaTime);
-	}
 
 }

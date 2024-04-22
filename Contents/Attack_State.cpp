@@ -28,8 +28,8 @@ void AHolo_Attack::AtkStateInit()
 	AtkState.SetUpdateFunction("RangedShot", std::bind(&AHolo_Attack::RangedShotInit, this, std::placeholders::_1));
 
 	AtkState.SetStartFunction("RangedShot", std::bind(&AHolo_Attack::RangedShotStart, this));
-
-	AtkState.ChangeState("MultiShot");
+	
+	//AtkState.ChangeState("MultiShot");
 
 
 }

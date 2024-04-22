@@ -48,7 +48,9 @@ private:
 
 	USpriteRenderer* AtkDir;
 	std::shared_ptr<UCamera> Camera;
-	std::shared_ptr<AHolo_Attack> Atk_ptr;
+	std::shared_ptr<AHolo_Attack> Attack;
+
+	float AttackTime = 0;
 
 	float4 Color;
 	float Angle;
@@ -69,7 +71,7 @@ private:
 
 
 	//Attack
-	void PlayerAttack(float _Deltatime);
+	void PlayerAttackSpawn(float _Deltatime);
 
 
 	//State
