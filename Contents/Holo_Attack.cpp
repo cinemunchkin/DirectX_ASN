@@ -36,11 +36,16 @@ void AHolo_Attack::BeginPlay()
 	Super::BeginPlay();
 
 //	CreateAttackAnimation("MultiShot");
-	
+
+	Atk_Renderer->CreateAnimation("FX_Atk_Ina", "FX_Atk_Ina", 0.1, true,0,5);
+	Atk_Renderer->ChangeAnimation("FX_Atk_Ina");
 	Atk_Renderer->SetAutoSize(3.0f, true);
 	Atk_Renderer->SetOrder(ERenderOrder::Attack);
 
 	AtkStateInit();
+
+	SetActorLocation(GetActorLocation());
+
 
 }
 
