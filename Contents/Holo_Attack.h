@@ -50,6 +50,9 @@ public:
 	std::shared_ptr<AHolo_Atk_MultiShot> MultiShot;
 	std::shared_ptr<AHolo_Atk_Ranged> RangedShot;
 	std::shared_ptr<AHolo_Attack> Attack;
+	//std::shared_ptr<APlayer> Player;
+
+	//FVector PlayerPos = Player->GetActorLocation();
 
 
 protected:

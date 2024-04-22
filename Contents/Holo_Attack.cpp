@@ -5,6 +5,7 @@
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineBase/EngineMath.h>
 #include "Holo_Pointer.h"
+#include "Player.h"
 
 
 
@@ -37,15 +38,15 @@ void AHolo_Attack::BeginPlay()
 
 //	CreateAttackAnimation("MultiShot");
 
-	Atk_Renderer->CreateAnimation("FX_Atk_Ina", "FX_Atk_Ina", 0.1, true,0,5);
+	Atk_Renderer->CreateAnimation("FX_Atk_Ina", "FX_Atk_Ina", 0.1f, true,0,10);
 	Atk_Renderer->ChangeAnimation("FX_Atk_Ina");
 	Atk_Renderer->SetAutoSize(3.0f, true);
 	Atk_Renderer->SetOrder(ERenderOrder::Attack);
 
 	AtkStateInit();
 
-	SetActorLocation(GetActorLocation());
-
+	//SetActorLocation(GetActorLocation());
+	
 
 }
 
@@ -53,6 +54,9 @@ void AHolo_Attack::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
+	
+	//std::shared_ptr<APlayer> Player;
+	//SetActorLocation(PlayerPos);
 	//AtkState.Update(_DeltaTime);
 }
 

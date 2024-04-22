@@ -50,6 +50,8 @@ private:
 	std::shared_ptr<UCamera> Camera;
 	std::shared_ptr<AHolo_Attack> Attack;
 
+	
+
 	float AttackTime = 0;
 
 	float4 Color;

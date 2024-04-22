@@ -164,8 +164,13 @@ void APlayer::PlayerAttackSpawn(float _DeltaTime)
 	if (1.0f <= AttackTime)
 	{
 		Attack = GetWorld()->SpawnActor<AHolo_Attack>("Attack");
-		Attack->SetActorLocation(GetActorLocation());
-		AttackTime = 0.0f;
+		Attack->SetActorLocation(this->GetActorLocation());
+	}
+	else if (2.0f < AttackTime)
+	{
+		Attack->Destroy();
+		AttackTime = 0.0f;	
+		//return;
 	}
 	AttackTime += _DeltaTime;
 		
