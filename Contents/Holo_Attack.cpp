@@ -7,7 +7,10 @@
 #include "Holo_Pointer.h"
 #include "Player.h"
 
+EPlayerDir AHolo_Attack::PlayerDir = EPlayerDir::None;
+//이거 용법이 뭘까
 
+//EActorDir AMelee::PlayerDir = EActorDir::None;;
 
 AHolo_Attack::AHolo_Attack()
 {
@@ -45,6 +48,19 @@ void AHolo_Attack::BeginPlay()
 
 	AtkStateInit();
 
+	
+	// 공격 방향설정 -> 요거 마우스 쫓아가는 것만 남기기 (수정)
+	if (false == AHolo_Pointer::MousePointerOn)
+	{
+		AttackDir();
+	}
+	/*else if (true == AHolo_Pointer::MousePointerOn)
+	{
+		AttackAimDir();
+	}*/
+
+	SetActorLocation(AttackDir());
+
 	//SetActorLocation(GetActorLocation());
 	
 
@@ -58,6 +74,54 @@ void AHolo_Attack::Tick(float _DeltaTime)
 	//std::shared_ptr<APlayer> Player;
 	//SetActorLocation(PlayerPos);
 	//AtkState.Update(_DeltaTime);
+}
+
+FVector AHolo_Attack::AttackDir()
+{
+	if (AHolo_Attack::PlayerDir == EPlayerDir::Right)
+	{
+		SetActorRotation(FVector{ 0.0f, 0.0f, 0.0f });
+		AtkDir = { 1,0,0,0 };
+	}
+
+	else if (AHolo_Attack::PlayerDir == EPlayerDir::Up)
+	{
+		SetActorRotation(FVector{ 0.0f,0.0f,90.0f });
+		AtkDir = { 0,1,0,0 };
+	}
+	else if (AHolo_Attack::PlayerDir == EPlayerDir::Down)
+	{
+		SetActorRotation(FVector{ 0.0f,0.0f,270.0f });
+		AtkDir = { 0,-1,0,0 };
+	}
+	else if (AHolo_Attack::PlayerDir == EPlayerDir::Left)
+	{
+		SetActorRotation(FVector{ 0.0f,0.0f,180.0f });
+		AtkDir = { -1,0,0,0 };
+	}
+	else if (AHolo_Attack::PlayerDir == EPlayerDir::UpRight)
+	{
+		SetActorRotation(FVector{ 0.0f,0.0f,45.0f });
+		AtkDir = { 1,1,0,0 };
+	}
+	else if (AHolo_Attack::PlayerDir == EPlayerDir::UpLeft)
+	{
+		SetActorRotation(FVector{ 0.0f,0.0f,135.0f });
+		AtkDir = { -1,1,0,0 };
+	}
+	else if (AHolo_Attack::PlayerDir == EPlayerDir::DownRight)
+	{
+		SetActorRotation(FVector{ 0.0f,0.0f,315.0f });
+		AtkDir = { 1,-1,0,0 };
+	}
+	else if (AHolo_Attack::PlayerDir == EPlayerDir::DownLeft)
+	{
+		SetActorRotation(FVector{ 0.0f,0.0f,225.0f });
+		AtkDir = { -1,-1,0,0 };
+	}
+
+	AtkDir = AtkDir.Normalize3DReturn();
+	return FVector::Zero;
 }
 
 

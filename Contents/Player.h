@@ -39,6 +39,11 @@ public:
 		return Angle;
 	}
 
+	//FVector GetPlayerPos()
+	//{
+	//	return PlayerPos;
+	//}
+
 protected:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
@@ -63,6 +68,7 @@ private:
 	float Atk = 1;
 	float Speed = 200.0f;
 	float LineSpeed = Speed * 0.75f;
+
 
 	void CreatePlayerAnimation(std::string _Name);
 

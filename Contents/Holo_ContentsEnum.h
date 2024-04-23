@@ -20,6 +20,7 @@ enum class EDir
 
 enum class EPlayerDir
 {
+	None,
 	Up,
 	UpRight,
 	Right,

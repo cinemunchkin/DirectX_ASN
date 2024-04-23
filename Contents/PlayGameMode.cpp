@@ -40,7 +40,7 @@ void APlayGameMode::BeginPlay()
 
 	// 커서 생성
 	Cursor = GetWorld()->SpawnActor<AHolo_Pointer>("Cursor");
-	AHolo_Pointer::MouseAimOn = false;
+	AHolo_Pointer::MousePointerOn = false;
 	AHolo_Pointer::CursorPos = GEngine->EngineWindow.GetScreenMousePos();
 	Cursor->SetActorLocation(AHolo_Pointer::CursorPos);
 

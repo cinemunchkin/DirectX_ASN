@@ -61,6 +61,7 @@ void AHolo_Monster::SetMonsterStatus(float _Hp, float _Atk, float _Speed, float 
 
 FVector AHolo_Monster::CreateGroupToPlayerDir()
 {
+	//FVector GroupDir = APlayer::PlayerPos - GetActorLocation();
 	FVector GroupDir = APlayer::PlayerPos - GetActorLocation();
 	GroupDir = GroupDir.Normalize2DReturn();
 	return GroupDir;

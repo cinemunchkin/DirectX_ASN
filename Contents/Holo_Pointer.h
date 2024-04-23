@@ -8,7 +8,7 @@ class AHolo_Pointer : public AActor
 	GENERATED_BODY(AActor)
 public:
 	static float4 CursorPos;
-	static bool MouseAimOn;
+	static bool MousePointerOn;
 
 	// constrcuter destructer
 	AHolo_Pointer();

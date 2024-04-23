@@ -45,6 +45,10 @@ public:
 	void MultiShotInit(float _DeltaTime);
 	void RangedShotInit(float _DeltaTime);
 
+	FVector AttackDir();
+	
+	static EPlayerDir PlayerDir;
+	//이거 용법이 뭘까
 
 
 	std::shared_ptr<AHolo_Atk_MultiShot> MultiShot;
@@ -70,8 +74,7 @@ private:
 	void AtkStateInit();
 
 	UStateManager AtkState;
-
-
+	float4 AtkDir = float4::Zero;
 
 	USpriteRenderer* Atk_Renderer;
 

@@ -59,16 +59,18 @@ void APlayer::Tick(float _DeltaTime)
 
 	State.Update(_DeltaTime);
 
-	PlayerPos = GetActorLocation();
+	//PlayerPos = GetActorLocation();
 
 	CheckMouseAimMode();
 	ChangeMoveAimAtkDir();
 	ChangeMouseAimAtkDir();
 
+	
 
 	PlayerAttackSpawn(_DeltaTime);
 
 }
+
 
 void APlayer::CreatePlayerAnimation(std::string _Name)
 {
@@ -79,7 +81,7 @@ void APlayer::CreatePlayerAnimation(std::string _Name)
 
 void APlayer::CheckMouseAimMode()
 {// 마우스 포인터
-	if (false == AHolo_Pointer::MouseAimOn)
+	if (false == AHolo_Pointer::MousePointerOn)
 	{
 		AtkDir->SetSprite("spr_arrow_1.png");
 		AtkDir->SetAutoSize(1.0f, true);
@@ -93,7 +95,7 @@ void APlayer::CheckMouseAimMode()
 
 void APlayer::ChangeMoveAimAtkDir()
 {
-	if (false == AHolo_Pointer::MouseAimOn)
+	if (false == AHolo_Pointer::MousePointerOn)
 	{
 		switch (PlayerDir)
 		{
@@ -137,7 +139,7 @@ void APlayer::ChangeMoveAimAtkDir()
 
 void APlayer::ChangeMouseAimAtkDir()
 {
-	if (true == AHolo_Pointer::MouseAimOn)
+	if (true == AHolo_Pointer::MousePointerOn)
 	{
 		Angle = atan2f((Holo_InGameValue::PlayLevelMousePos.Y - APlayer::PlayerPos.Y), (Holo_InGameValue::PlayLevelMousePos.X - APlayer::PlayerPos.X)) * 180.0f / UEngineMath::PI;
 		AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
@@ -163,16 +165,23 @@ void APlayer::PlayerAttackSpawn(float _DeltaTime)
 
 	if (1.0f <= AttackTime)
 	{
+		
 		Attack = GetWorld()->SpawnActor<AHolo_Attack>("Attack");
-		Attack->SetActorLocation(this->GetActorLocation());
+		Attack->SetActorLocation(FVector{ 1280,1280 });
+
+		//Attack->SetActorLocation(PlayerPos);
+
+		int a = 0;
+
 	}
 	else if (2.0f < AttackTime)
 	{
 		Attack->Destroy();
 		AttackTime = 0.0f;	
-		//return;
+		return;
 	}
 	AttackTime += _DeltaTime;
+	
 		
 
 

@@ -2,7 +2,7 @@
 #include "Holo_Pointer.h"
 
 float4 AHolo_Pointer::CursorPos = FVector::Zero;
-bool AHolo_Pointer::MouseAimOn = false;
+bool AHolo_Pointer::MousePointerOn = false;
 
 AHolo_Pointer::AHolo_Pointer()
 {
@@ -47,20 +47,20 @@ void AHolo_Pointer::ChangeAimMode()
 {
 	if (true == IsDown(VK_LBUTTON))
 	{
-		if (true != MouseAimOn) 
+		if (true != MousePointerOn)
 		{
-			MouseAimOn = true;
+			MousePointerOn = true;
 		}
 		else
 		{
-			MouseAimOn = false;
+			MousePointerOn = false;
 		}
 	}
 }
 
 void AHolo_Pointer::CheckAimMode()
 {
-	if (true != MouseAimOn)
+	if (true != MousePointerOn)
 	{
 		CursorOFf();
 		Renderer->SetSprite("spr_GameCursor_0.png");
