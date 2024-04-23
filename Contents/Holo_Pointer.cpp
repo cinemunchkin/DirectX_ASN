@@ -7,10 +7,10 @@ bool AHolo_Pointer::MousePointerOn = false;
 AHolo_Pointer::AHolo_Pointer()
 {
 	UDefaultSceneComponent* Root = CreateDefaultSubObject<UDefaultSceneComponent>("Renderer");
-	Renderer = CreateDefaultSubObject<USpriteRenderer>("Renderer");
+	Pointer_Renderer = CreateDefaultSubObject<USpriteRenderer>("Renderer");
 
 	SetRoot(Root);
-	Renderer->SetupAttachment(Root);
+	Pointer_Renderer->SetupAttachment(Root);
 	InputOn();
 }
 
@@ -22,10 +22,10 @@ void AHolo_Pointer::BeginPlay()
 {
 	Super::BeginPlay();
 
-	CursorOFf();
-	Renderer->SetSprite("spr_GameCursor_0.png");
-	Renderer->SetAutoSize(1.0f, true);
-	Renderer->SetOrder(ERenderOrder::Cursor);
+	CursorOff();
+	Pointer_Renderer->SetSprite("spr_GameCursor_0.png");
+	Pointer_Renderer->SetAutoSize(1.0f, true);
+	Pointer_Renderer->SetOrder(ERenderOrder::Pointer);
 
 	CursorPos = GEngine->EngineWindow.GetScreenMousePos();
 }
@@ -38,7 +38,7 @@ void AHolo_Pointer::Tick(float _DeltaTime)
 	CheckAimMode();
 }
 
-void AHolo_Pointer::CursorOFf()
+void AHolo_Pointer::CursorOff()
 {
 	ShowCursor(FALSE);
 }
@@ -62,14 +62,14 @@ void AHolo_Pointer::CheckAimMode()
 {
 	if (true != MousePointerOn)
 	{
-		CursorOFf();
-		Renderer->SetSprite("spr_GameCursor_0.png");
-		Renderer->SetPivot(EPivot::LEFTTOP);
+		CursorOff();
+		Pointer_Renderer->SetSprite("spr_GameCursor_0.png");
+		Pointer_Renderer->SetPivot(EPivot::LEFTTOP);
 	}
 	else
 	{
-		CursorOFf();
-		Renderer->SetSprite("spr_GameCursor1_0.png");
-		Renderer->SetPivot(EPivot::MAX);
+		CursorOff();
+		Pointer_Renderer->SetSprite("spr_GameCursor1_0.png");
+		Pointer_Renderer->SetPivot(EPivot::MAX);
 	}
 }

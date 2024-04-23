@@ -81,5 +81,5 @@ private:
 	std::shared_ptr<UCamera> Camera;
 
 	std::string Name = "FX_Atk_Ina";
-
+	float DestroyTime = 0.f;
 };

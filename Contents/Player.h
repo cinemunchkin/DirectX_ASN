@@ -10,6 +10,7 @@ class APlayer : public AActor
 	GENERATED_BODY(AActor)
 
 public:
+
 	static float4 PlayerPos;
 
 	// constrcuter destructer
@@ -39,6 +40,9 @@ public:
 		return Angle;
 	}
 
+	FVector GetPlayerCurPos();
+
+
 	//FVector GetPlayerPos()
 	//{
 	//	return PlayerPos;
@@ -51,7 +55,7 @@ protected:
 private:
 	USpriteRenderer* Renderer;
 
-	USpriteRenderer* AtkDir;
+	USpriteRenderer* PointerDir;
 	std::shared_ptr<UCamera> Camera;
 	std::shared_ptr<AHolo_Attack> Attack;
 

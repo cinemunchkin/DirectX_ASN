@@ -7,7 +7,8 @@
 #include "Holo_Pointer.h"
 
 
-float4 APlayer::PlayerPos = float4::Zero;
+
+float4 APlayer::PlayerPos;
 
 APlayer::APlayer()
 {
@@ -17,9 +18,9 @@ APlayer::APlayer()
 	Renderer->SetupAttachment(Root);
 	Renderer->SetPivot(EPivot::BOT);
 
-	AtkDir = CreateDefaultSubObject<USpriteRenderer>("Renderer");
-	AtkDir->SetupAttachment(Root);
-	AtkDir->SetPivot(EPivot::MAX);
+	PointerDir = CreateDefaultSubObject<USpriteRenderer>("Pointer_Renderer");
+	PointerDir->SetupAttachment(Root);
+	PointerDir->SetPivot(EPivot::MAX);
 
 	SetRoot(Root);
 
@@ -32,41 +33,38 @@ APlayer::~APlayer()
 
 void APlayer::BeginPlay()
 {
+
 	Super::BeginPlay();
 
-	CreatePlayerAnimation("Ame");
-	CreatePlayerAnimation("Aqua");
-	CreatePlayerAnimation("Ayame");
-	CreatePlayerAnimation("AZKiPortrait");
-	CreatePlayerAnimation("Kronii");
-
+	//플레이어 생성
 	CreatePlayerAnimation("Ina");
 
-
-
+	//플레이어 auto size
 	Renderer->SetAutoSize(1.7f, true);
 	Renderer->SetOrder(ERenderOrder::Player);
 
-	AtkDir->SetOrder(ERenderOrder::Player);
-	AtkDir->SetPosition(FVector{ PlayerPos.X, PlayerPos.Y + 20.0f });
+	PointerDir->SetOrder(ERenderOrder::Pointer);
+	//PointerDir->SetPosition(FVector{ PlayerPos.X, PlayerPos.Y, PlayerPos.Z - 100.0f });
 
 	StateInit();
 }
 
 void APlayer::Tick(float _DeltaTime)
 {
+
 	Super::Tick(_DeltaTime);
 
 	State.Update(_DeltaTime);
 
-	//PlayerPos = GetActorLocation();
+	PlayerPos = GetActorLocation();
+
 
 	CheckMouseAimMode();
 	ChangeMoveAimAtkDir();
 	ChangeMouseAimAtkDir();
-
 	
 
+	//공격스폰
 	PlayerAttackSpawn(_DeltaTime);
 
 }
@@ -83,16 +81,18 @@ void APlayer::CheckMouseAimMode()
 {// 마우스 포인터
 	if (false == AHolo_Pointer::MousePointerOn)
 	{
-		AtkDir->SetSprite("spr_arrow_1.png");
-		AtkDir->SetAutoSize(1.0f, true);
+		PointerDir->SetSprite("spr_arrow_1.png");
+		PointerDir->SetAutoSize(1.0f, true);
 	}
 	else
 	{
-		AtkDir->SetSprite("spr_arrow_2.png");
-		AtkDir->SetAutoSize(1.0f, true);
+		PointerDir->SetSprite("spr_arrow_2.png");
+		PointerDir->SetAutoSize(1.0f, true);
 	}
 }
 
+
+//이건 AtkDir이긴 하지만.. 플레이어의 방향에 따른 공격방향이고... 
 void APlayer::ChangeMoveAimAtkDir()
 {
 	if (false == AHolo_Pointer::MousePointerOn)
@@ -101,35 +101,35 @@ void APlayer::ChangeMoveAimAtkDir()
 		{
 		case EPlayerDir::Up:
 			Angle = 90.0f;
-			AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
+			PointerDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 			break;
 		case EPlayerDir::UpRight:
 			Angle = 45.0f;
-			AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
+			PointerDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 			break;
 		case EPlayerDir::Right:
 			Angle = 0.0f;
-			AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
+			PointerDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 			break;
 		case EPlayerDir::DownRight:
 			Angle = 315.0f;
-			AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
+			PointerDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 			break;
 		case EPlayerDir::Down:
 			Angle = 270.0f;
-			AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
+			PointerDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 			break;
 		case EPlayerDir::DownLeft:
 			Angle = 225.0f;
-			AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
+			PointerDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 			break;
 		case EPlayerDir::Left:
 			Angle = 180.0f;
-			AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
+			PointerDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 			break;
 		case EPlayerDir::UpLeft:
 			Angle = 135.0f;
-			AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
+			PointerDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 			break;
 		default:
 			break;
@@ -139,10 +139,11 @@ void APlayer::ChangeMoveAimAtkDir()
 
 void APlayer::ChangeMouseAimAtkDir()
 {
+
 	if (true == AHolo_Pointer::MousePointerOn)
 	{
 		Angle = atan2f((Holo_InGameValue::PlayLevelMousePos.Y - APlayer::PlayerPos.Y), (Holo_InGameValue::PlayLevelMousePos.X - APlayer::PlayerPos.X)) * 180.0f / UEngineMath::PI;
-		AtkDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
+		PointerDir->SetRotationDeg(FVector{ 0.0f, 0.0f, Angle });
 
 		if (-90.0f <= Angle && 90.0f > Angle)
 		{
@@ -156,30 +157,36 @@ void APlayer::ChangeMouseAimAtkDir()
 }
 
 
+FVector APlayer::GetPlayerCurPos()
+{
+
+	PlayerPos = this -> GetActorLocation();
+	FVector PlayerCurPos = PlayerPos;
+	return PlayerCurPos;
+
+}
 
 
 
 void APlayer::PlayerAttackSpawn(float _DeltaTime)
 {
-	int a = 0;
 
-	if (1.0f <= AttackTime)
+	if (2.0f <= AttackTime)
 	{
 		
+		//PlayerPos = GetActorLocation();
 		Attack = GetWorld()->SpawnActor<AHolo_Attack>("Attack");
-		Attack->SetActorLocation(FVector{ 1280,1280 });
-
-		//Attack->SetActorLocation(PlayerPos);
-
+		Attack->SetActorLocation({ GetPlayerCurPos() });
+		//Attack->SetActorLocation({ PlayerPos.X + 500, PlayerPos.Y - 200 });
 		int a = 0;
 
 	}
-	else if (2.0f < AttackTime)
+	/*else if (2.0f < AttackTime)
 	{
 		Attack->Destroy();
 		AttackTime = 0.0f;	
 		return;
-	}
+	}*/
 	AttackTime += _DeltaTime;
 	
 		

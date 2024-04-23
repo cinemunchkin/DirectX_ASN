@@ -19,14 +19,14 @@ AHolo_Attack::AHolo_Attack()
 
 	Atk_Renderer = CreateDefaultSubObject<USpriteRenderer>("Atk_Renderer");
 	Atk_Renderer->SetupAttachment(Root);
-	Atk_Renderer->SetPivot(EPivot::BOT);
+	Atk_Renderer->SetPivot(EPivot::LEFTBOTTOM);
+	int a = 0;
 	
 
 	SetRoot(Root);
 
 	InputOn();
 	//InputOn();
-
 }
 
 AHolo_Attack::~AHolo_Attack()
@@ -61,25 +61,40 @@ void AHolo_Attack::BeginPlay()
 
 	SetActorLocation(AttackDir());
 
+	//SetActorScale3D(FVector( scale.X, scale.Y, scale.Z, 0.f ));
 	//SetActorLocation(GetActorLocation());
-	
-
-}
+	//SetActorLocation(playerpos);
+	}
 
 void AHolo_Attack::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
+	AttackDir();
 
-	
+	if (DestroyTime >= 2.f){
+		Destroy();
+	}
+	else {
+		DestroyTime += _DeltaTime;
+	}
+	//FVector scale = GetActorScale3D();
+	//SetActorScale3D(FVector{ -scale.X, scale.Y,scale.Z, 0.0f });
+
+
 	//std::shared_ptr<APlayer> Player;
 	//SetActorLocation(PlayerPos);
 	//AtkState.Update(_DeltaTime);
 }
 
+
+
+// 마우스Dir = 플레이어 Dir = AttackDir 로 만들어야함
 FVector AHolo_Attack::AttackDir()
 {
+
 	if (AHolo_Attack::PlayerDir == EPlayerDir::Right)
 	{
+		//SetActirS
 		SetActorRotation(FVector{ 0.0f, 0.0f, 0.0f });
 		AtkDir = { 1,0,0,0 };
 	}

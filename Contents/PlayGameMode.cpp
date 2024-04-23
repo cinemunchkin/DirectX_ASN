@@ -44,6 +44,11 @@ void APlayGameMode::BeginPlay()
 	AHolo_Pointer::CursorPos = GEngine->EngineWindow.GetScreenMousePos();
 	Cursor->SetActorLocation(AHolo_Pointer::CursorPos);
 
+
+	//傍拜 积己..?
+
+
+
 	// 瘤搁 积己
 	for (int y = -1; y < 2; y++)
 	{

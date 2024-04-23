@@ -24,9 +24,9 @@ protected:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
-	USpriteRenderer* Renderer;
+	USpriteRenderer* Pointer_Renderer;
 
-	void CursorOFf();
+	void CursorOff();
 	void ChangeAimMode();
 	void CheckAimMode();
 

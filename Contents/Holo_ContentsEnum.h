@@ -4,11 +4,11 @@ enum class ERenderOrder
 {
 	Holo_Back,
 	MonsterUp,
+	Attack,
 	Player,
 	MonsterDown,
 	Weapon,
-	Cursor,
-	Attack,
+	Pointer,
 
 };
 
