@@ -27,7 +27,6 @@ enum class EPivot
 	RIGHT,
 	BOT,
 	LEFTTOP,
-	LEFT,
 	LEFTBOTTOM,
 	RIGHTBOTTOM,
 	MAX,

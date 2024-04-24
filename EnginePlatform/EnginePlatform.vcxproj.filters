@@ -62,18 +62,6 @@
     <ClInclude Include="WindowImage.h">
       <Filter>Window</Filter>
     </ClInclude>
-    <ClInclude Include="EngineSound.h">
-      <Filter>Resources\Sound</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineResources.h">
-      <Filter>Resources</Filter>
-    </ClInclude>
-    <ClInclude Include="PreCompile.h">
-      <Filter>PreCompile</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\FMOD\inc\fmod.h">
-      <Filter>ThirdParty\FMOD\inc</Filter>
-    </ClInclude>
     <ClInclude Include="ThirdParty\FMOD\inc\fmod.hpp">
       <Filter>ThirdParty\FMOD\inc</Filter>
     </ClInclude>
@@ -95,14 +83,18 @@
     <ClInclude Include="ThirdParty\FMOD\inc\fmod_output.h">
       <Filter>ThirdParty\FMOD\inc</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ThirdParty\FMOD\Debug\fmodL.dll">
-      <Filter>ThirdParty\FMOD\Debug</Filter>
-    </None>
-    <None Include="ThirdParty\FMOD\Release\fmod.dll">
-      <Filter>ThirdParty\FMOD\Release</Filter>
-    </None>
+    <ClInclude Include="ThirdParty\FMOD\inc\fmod.h">
+      <Filter>ThirdParty\FMOD\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineSound.h">
+      <Filter>Resources\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineResources.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="PreCompile.h">
+      <Filter>PreCompile</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="ThirdParty\FMOD\Debug\fmodL_vc.lib">

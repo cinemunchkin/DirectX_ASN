@@ -133,8 +133,6 @@ void UImage::SetSpriteInfo(const FSpriteInfo& _Info)
 		CuttingDataValue.PivotMat.Position(Scale);
 		break;
 	}
-	
-	
 	case EPivot::LEFTTOP:
 	{
 		float4 Scale = Transform.WorldScale;
@@ -144,7 +142,6 @@ void UImage::SetSpriteInfo(const FSpriteInfo& _Info)
 		CuttingDataValue.PivotMat.Position(Scale);
 		break;
 	}
-
 	case EPivot::RIGHTBOTTOM:
 	{
 		float4 Scale = Transform.WorldScale;
