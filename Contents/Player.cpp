@@ -171,23 +171,30 @@ FVector APlayer::GetPlayerCurPos()
 void APlayer::PlayerAttackSpawn(float _DeltaTime)
 {
 
-	if (2.0f <= AttackTime)
+	if (1.1f <= AttackTime)
 	{
-		
+
 		//PlayerPos = GetActorLocation();
 		Attack = GetWorld()->SpawnActor<AHolo_Attack>("Attack");
-		Attack->SetActorLocation({ GetPlayerCurPos() });
+		Attack->SetActorLocation({ GetPlayerCurPos().X + 20, GetPlayerCurPos().Y - 60 });
 		//Attack->SetActorLocation({ PlayerPos.X + 500, PlayerPos.Y - 200 });
-		int a = 0;
 
 	}
+	else
+	{
+		AttackTime += _DeltaTime;
+	}
+
+	
+
+
 	/*else if (2.0f < AttackTime)
 	{
 		Attack->Destroy();
 		AttackTime = 0.0f;	
 		return;
 	}*/
-	AttackTime += _DeltaTime;
+	
 	
 		
 

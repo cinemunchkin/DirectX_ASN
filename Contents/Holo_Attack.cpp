@@ -6,6 +6,7 @@
 #include <EngineBase/EngineMath.h>
 #include "Holo_Pointer.h"
 #include "Player.h"
+#include "EngineCore/Image.h"
 
 EPlayerDir AHolo_Attack::PlayerDir = EPlayerDir::None;
 //이거 용법이 뭘까
@@ -41,9 +42,9 @@ void AHolo_Attack::BeginPlay()
 
 //	CreateAttackAnimation("MultiShot");
 
-	Atk_Renderer->CreateAnimation("FX_Atk_Ina", "FX_Atk_Ina", 0.1f, true,0,10);
+	Atk_Renderer->CreateAnimation("FX_Atk_Ina", "FX_Atk_Ina", 0.05f, true,0,10);
 	Atk_Renderer->ChangeAnimation("FX_Atk_Ina");
-	Atk_Renderer->SetAutoSize(3.0f, true);
+	Atk_Renderer->SetAutoSize(2.0f, true);
 	Atk_Renderer->SetOrder(ERenderOrder::Attack);
 
 	AtkStateInit();
@@ -71,13 +72,20 @@ void AHolo_Attack::Tick(float _DeltaTime)
 	Super::Tick(_DeltaTime);
 	AttackDir();
 
-	if (DestroyTime >= 2.f){
+	//if (DestroyTime >= 0.1f)
+	if(true == Atk_Renderer->IsCurAnimationEnd())
+	{
 		Destroy();
 	}
-	else {
-		DestroyTime += _DeltaTime;
-	}
-	//FVector scale = GetActorScale3D();
+	//else 
+	//{
+	//	DestroyTime += _DeltaTime;
+	//}
+	// 
+	 
+	 
+	// 
+	////FVector scale = GetActorScale3D();
 	//SetActorScale3D(FVector{ -scale.X, scale.Y,scale.Z, 0.0f });
 
 
@@ -91,7 +99,8 @@ void AHolo_Attack::Tick(float _DeltaTime)
 // 마우스Dir = 플레이어 Dir = AttackDir 로 만들어야함
 FVector AHolo_Attack::AttackDir()
 {
-
+	FVector Scale = GetActorScale3D();
+	//SetActorScale3D(FVector{ -scale.X, scale.Y,scale.Z, 0.0f });
 	if (AHolo_Attack::PlayerDir == EPlayerDir::Right)
 	{
 		//SetActirS
@@ -111,7 +120,8 @@ FVector AHolo_Attack::AttackDir()
 	}
 	else if (AHolo_Attack::PlayerDir == EPlayerDir::Left)
 	{
-		SetActorRotation(FVector{ 0.0f,0.0f,180.0f });
+		SetActorScale3D(FVector{ -Scale.X, Scale.Y,Scale.Z, 0.0f });
+	//	SetActorRotation(FVector{ 0.0f,0.0f,180.0f });
 		AtkDir = { -1,0,0,0 };
 	}
 	else if (AHolo_Attack::PlayerDir == EPlayerDir::UpRight)

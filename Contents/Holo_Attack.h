@@ -10,6 +10,8 @@
 
 
 
+
+
 class USpriteRenderer;
 class AHolo_Attack : public AActor
 {
@@ -44,6 +46,7 @@ public:
 
 	void MultiShotInit(float _DeltaTime);
 	void RangedShotInit(float _DeltaTime);
+
 
 	FVector AttackDir();
 	
