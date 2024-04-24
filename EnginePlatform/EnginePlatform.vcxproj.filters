@@ -62,6 +62,18 @@
     <ClInclude Include="WindowImage.h">
       <Filter>Window</Filter>
     </ClInclude>
+    <ClInclude Include="EngineSound.h">
+      <Filter>Resources\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineResources.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="PreCompile.h">
+      <Filter>PreCompile</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\FMOD\inc\fmod.h">
+      <Filter>ThirdParty\FMOD\inc</Filter>
+    </ClInclude>
     <ClInclude Include="ThirdParty\FMOD\inc\fmod.hpp">
       <Filter>ThirdParty\FMOD\inc</Filter>
     </ClInclude>
@@ -82,18 +94,6 @@
     </ClInclude>
     <ClInclude Include="ThirdParty\FMOD\inc\fmod_output.h">
       <Filter>ThirdParty\FMOD\inc</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\FMOD\inc\fmod.h">
-      <Filter>ThirdParty\FMOD\inc</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineSound.h">
-      <Filter>Resources\Sound</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineResources.h">
-      <Filter>Resources</Filter>
-    </ClInclude>
-    <ClInclude Include="PreCompile.h">
-      <Filter>PreCompile</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

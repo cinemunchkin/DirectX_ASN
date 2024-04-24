@@ -451,17 +451,19 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="ThirdParty\DirectxTex\Debug\DirectXTex.lib">
+    <Library Include="ThirdParty\DirectxTex\Debug\DirectXTex.lib">
       <Filter>ThirdParty\DirectXTex\Debug</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="ThirdParty\DirectxTex\Release\DirectXTex.lib">
+    </Library>
+    <Library Include="ThirdParty\DirectxTex\Release\DirectXTex.lib">
       <Filter>ThirdParty\DirectXTex\Release</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="ThirdParty\DirectxTex\Debug\DirectXTex.pdb">
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ThirdParty\DirectxTex\Debug\DirectXTex.pdb">
       <Filter>ThirdParty\DirectXTex\Debug</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="ThirdParty\DirectxTex\Release\DirectXTex.pdb">
+    </None>
+    <None Include="ThirdParty\DirectxTex\Release\DirectXTex.pdb">
       <Filter>ThirdParty\DirectXTex\Release</Filter>
-    </CopyFileToFolders>
+    </None>
   </ItemGroup>
 </Project>
