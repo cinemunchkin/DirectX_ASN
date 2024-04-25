@@ -15,6 +15,7 @@ AHolo_Monster::AHolo_Monster()
 
 	UCollision* Collision = CreateDefaultSubObject<UCollision>("Collision");
 	Collision->SetupAttachment(Root);
+	Collision->SetScale(FVector(64.0f,80.0f, 100.0f));
 	Collision->SetCollisionGroup(ECollisionOrder::Monster);
 	Collision->SetCollisionType(ECollisionType::Rect);
 

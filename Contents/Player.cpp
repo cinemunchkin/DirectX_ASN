@@ -30,9 +30,10 @@ APlayer::APlayer()
 
 	Collision = CreateDefaultSubObject<UCollision>("Collision");
 	Collision->SetupAttachment(Root);
-	Collision->SetScale(FVector(100.0f, 300.0f, 100.0f));
+	Collision->SetScale(FVector(64.0f, 64.0f, 100.0f));
+	//Collision->SetPosition(FVector{this-> GetActorLocation().X,this->GetActorLocation().Y + 20 });
 	Collision->SetCollisionGroup(ECollisionOrder::Player);
-
+	Collision->SetCollisionType(ECollisionType::Rect);
 
 
 	float Y = 0.0f;
