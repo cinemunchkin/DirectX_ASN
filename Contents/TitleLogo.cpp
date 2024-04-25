@@ -16,9 +16,10 @@ void ATitleLogo::BeginPlay()
 {
 	Super::BeginPlay();
 
-	SetActorScale3D(FVector(700.0f, 300.0f, 100.0f));
-
-	Renderer->SetSprite("holocure.png");
+	SetActorScale3D(FVector(580.0f, 240.0f, 100.0f));
+	SetActorLocation(FVector(200.0f * 1.6, 240.0f*0.8,100.0f));
+	Renderer->SetSprite("MainTitle_Eng.png");
+	//Renderer->SetSprite("holocure.png");
 }
 
 void ATitleLogo::Tick(float _DeltaTime)

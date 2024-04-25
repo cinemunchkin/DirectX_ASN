@@ -60,6 +60,7 @@ void UHoloCureCore::Initialize()
 			Dir.MoveParent();
 			Dir.Move("FX");
 
+
 			std::vector<UEngineDirectory> Directorys = Dir.GetAllDirectory();
 			for (size_t i = 0; i < Directorys.size(); i++)
 			{
@@ -67,6 +68,22 @@ void UHoloCureCore::Initialize()
 				UEngineSprite::LoadFolder(Directorys[i].GetFullPath());
 			}
 		}
+
+		{
+			Dir.MoveParent();
+			Dir.Move("Title");
+			Dir.Move("TitleBack_FX");
+
+
+			std::vector<UEngineDirectory> Directorys = Dir.GetAllDirectory();
+			for (size_t i = 0; i < Directorys.size(); i++)
+			{
+				std::string Name = Directorys[i].GetFolderName();
+				UEngineSprite::LoadFolder(Directorys[i].GetFullPath());
+			}
+		}
+
+
 
 	}
 
@@ -83,5 +100,5 @@ void UHoloCureCore::Initialize()
 
 	GEngine->CreateLevel<APlayGameMode>("PlayLevel");
 	GEngine->CreateLevel<ATitleGameMode>("TitleLevel");
-	GEngine->ChangeLevel("PlayLevel");
+	GEngine->ChangeLevel("TitleLevel");
 }
