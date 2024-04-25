@@ -12,6 +12,12 @@ enum class ERenderOrder
 
 };
 
+enum class ECollisionOrder
+{
+	Player,
+	Monster,
+};
+
 enum class EDir
 {
 	Left,

@@ -77,6 +77,7 @@ private:
 	float FreeCameraMoveSpeed = 500.0f;
 
 	ECameraType PrevProjectionType = ECameraType::Orthographic;
+	//ECameraType PrevProjectionType = ECameraType::Perspective;
 
 	void CameraTransformUpdate();
 };

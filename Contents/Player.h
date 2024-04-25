@@ -1,6 +1,7 @@
 #pragma once
 #include <EngineCore/Actor.h>
 #include <EngineCore/StateManager.h>
+#include <EngineBase/EngineSerializer.h>
 #include "Holo_ContentsEnum.h"
 #include "Holo_Attack.h"
 
@@ -54,6 +55,7 @@ protected:
 
 private:
 	USpriteRenderer* Renderer;
+	UCollision* Collision;
 
 	USpriteRenderer* PointerDir;
 	std::shared_ptr<UCamera> Camera;
@@ -98,4 +100,8 @@ private:
 
 	void KeyMove(float _DeltaTime, float4 _Dir, float _Speed);
 	void KeyLineMove(float _DeltaTime, float4 _Dir1, float4 _Dir2);
+
+
+	//msg
+	void DebugMsgFunction(float _DeltaTime);
 };

@@ -24,7 +24,7 @@ public:
 
 	USpriteRenderer* GetRenderer()
 	{
-		return Renderer;
+		return Mon_Renderer;
 	}
 
 	void SetMonsterStatus(float _Hp, float _Atk, float _Speed, float _Exp, EMonsterMoveType _MoveType);
@@ -41,7 +41,7 @@ protected:
 	void Tick(float _DeltaTime) override;
 
 private:
-	USpriteRenderer* Renderer;
+	USpriteRenderer* Mon_Renderer;
 	UCollision* Collision;
 
 	FVector PlayerLocation;

@@ -1,13 +1,31 @@
 #include "PreCompile.h"
 #include "Holo_Monster.h"
 #include "Player.h"
+#include <EngineCore/Collision.h>
+#include <EngineCore/SpriteRenderer.h>
+#include <EngineCore/DefaultSceneComponent.h>
 
 AHolo_Monster::AHolo_Monster()
 {
-	Renderer = CreateDefaultSubObject<USpriteRenderer>("Renderer");
-	Renderer->SetPivot(EPivot::BOT);
+	UDefaultSceneComponent* Root = CreateDefaultSubObject<UDefaultSceneComponent>("Render");
 
-	SetRoot(Renderer);
+	Mon_Renderer = CreateDefaultSubObject<USpriteRenderer>("Renderer");
+	Mon_Renderer->SetupAttachment(Root);
+	// 이게 부모자식 만드는 구조?
+
+	UCollision* Collision = CreateDefaultSubObject<UCollision>("Collision");
+	Collision->SetupAttachment(Root);
+	Collision->SetCollisionGroup(ECollisionOrder::Monster);
+	Collision->SetCollisionType(ECollisionType::Rect);
+
+	Mon_Renderer->SetPivot(EPivot::BOT);
+
+
+
+	//Renderer = CreateDefaultSubObject<USpriteRenderer>("Renderer");
+	//Renderer->SetPivot(EPivot::BOT);
+
+	SetRoot(Root);
 }
 
 AHolo_Monster::~AHolo_Monster()
@@ -25,9 +43,14 @@ void AHolo_Monster::BeginPlay()
 
 	CreateHolo_MonsterAnimation("Shubangelion");
 
-	Renderer->SetAutoSize(2.0f, true);
+
+	Mon_Renderer->SetAutoSize(2.0f, true);
+	Mon_Renderer->ChangeAnimation(Name);
+	Mon_Renderer->SetOrder(ERenderOrder::MonsterUp);
+
+	/*Renderer->SetAutoSize(2.0f, true);
 	Renderer->ChangeAnimation(Name);
-	Renderer->SetOrder(ERenderOrder::MonsterUp);
+	Renderer->SetOrder(ERenderOrder::MonsterUp);*/
 }
 
 
@@ -39,11 +62,11 @@ void AHolo_Monster::Tick(float _DeltaTime)
 
 	if (0 > Dir.X)
 	{
-		Renderer->SetDir(EEngineDir::Left);
+		Mon_Renderer->SetDir(EEngineDir::Left);
 	}
 	else
 	{
-		Renderer->SetDir(EEngineDir::Right);
+		Mon_Renderer->SetDir(EEngineDir::Right);
 	}
 
 	CheckPosComparePlayer();
@@ -69,7 +92,7 @@ FVector AHolo_Monster::CreateGroupToPlayerDir()
 
 void AHolo_Monster::CreateHolo_MonsterAnimation(std::string _Name)
 {
-	Renderer->CreateAnimation(_Name, _Name, 0.1f, true, 0,6 );
+	Mon_Renderer->CreateAnimation(_Name, _Name, 0.1f, true, 0,6 );
 	/*
 	if(_name이 오리면 0~7까지 돌도록)
 	*/
@@ -109,10 +132,10 @@ void AHolo_Monster::CheckPosComparePlayer()
 {
 	if (APlayer::PlayerPos.Y <= GetActorLocation().Y)
 	{
-		Renderer->SetOrder(ERenderOrder::MonsterUp);
+		Mon_Renderer->SetOrder(ERenderOrder::MonsterUp);
 	}
 	else
 	{
-		Renderer->SetOrder(ERenderOrder::MonsterDown);
+		Mon_Renderer->SetOrder(ERenderOrder::MonsterDown);
 	}
 }

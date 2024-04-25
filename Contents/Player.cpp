@@ -1,10 +1,14 @@
 #include "PreCompile.h"
+
 #include "Player.h"
+#include "Holo_Pointer.h"
 #include "Holo_InGameValue.h"
+
 #include <EngineCore/Renderer.h>
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineBase/EngineMath.h>
-#include "Holo_Pointer.h"
+#include <EngineCore/DefaultSceneComponent.h>
+#include <EngineCore/SpriteInstancingRender.h>
 
 
 
@@ -22,8 +26,19 @@ APlayer::APlayer()
 	PointerDir->SetupAttachment(Root);
 	PointerDir->SetPivot(EPivot::MAX);
 
-	SetRoot(Root);
 
+
+	Collision = CreateDefaultSubObject<UCollision>("Collision");
+	Collision->SetupAttachment(Root);
+	Collision->SetScale(FVector(100.0f, 300.0f, 100.0f));
+	Collision->SetCollisionGroup(ECollisionOrder::Player);
+
+
+
+	float Y = 0.0f;
+	float X = 0.0f;
+
+	SetRoot(Root);
 	InputOn();
 }
 
@@ -56,17 +71,55 @@ void APlayer::Tick(float _DeltaTime)
 
 	State.Update(_DeltaTime);
 
-	PlayerPos = GetActorLocation();
+	//Collision
+	Collision->CollisionEnter(ECollisionOrder::Monster, [=](std::shared_ptr<UCollision>_Collision)
+		{
+			_Collision->GetActor()->Destroy();
+			int a = 0;
+		}
+	);
+	Collision->CollisionStay(ECollisionOrder::Monster, [=](std::shared_ptr<UCollision>_Collision)
+		{
+			int a = 0;
+		}
+	);
+	Collision->CollisionExit(ECollisionOrder::Monster, [=](std::shared_ptr<UCollision>_Collision)
+		{
+			int a = 0;
+		}
+	);
 
+
+
+
+	PlayerPos = GetActorLocation();
 
 	CheckMouseAimMode();
 	ChangeMoveAimAtkDir();
 	ChangeMouseAimAtkDir();
-	
 
 	//공격스폰
 	PlayerAttackSpawn(_DeltaTime);
+	DebugMsgFunction(_DeltaTime);
 
+}
+
+void APlayer::DebugMsgFunction(float _DeltaTime)
+{
+	{
+		std::string Msg = std::format("PlayerPos : {}\n", GetActorLocation().ToString());
+		UEngineDebugMsgWindow::PushMsg(Msg);
+	}
+
+	{
+		std::string Msg = std::format("MousePos : {}\n", GEngine->EngineWindow.GetScreenMousePos().ToString());
+		UEngineDebugMsgWindow::PushMsg(Msg);
+	}
+
+	{
+		std::string Msg = std::format("Frame : {}\n", 1.0f / _DeltaTime);
+		UEngineDebugMsgWindow::PushMsg(Msg);
+	}
 }
 
 
