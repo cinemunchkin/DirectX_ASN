@@ -21,7 +21,17 @@ AHolo_Attack::AHolo_Attack()
 	Atk_Renderer = CreateDefaultSubObject<USpriteRenderer>("Atk_Renderer");
 	Atk_Renderer->SetupAttachment(Root);
 	Atk_Renderer->SetPivot(EPivot::LEFTBOTTOM);
-	int a = 0;
+
+	Atk_Collision = CreateDefaultSubObject<UCollision>("Collision");
+	Atk_Collision->SetupAttachment(Root);
+	Atk_Collision->SetScale(FVector(256.0f, 32.0f, 100.0f));
+	Atk_Collision->SetPosition(FVector(10.0f, 50.0f));
+
+	Atk_Collision->SetCollisionGroup(ECollisionOrder::Attack);
+	Atk_Collision->SetCollisionType(ECollisionType::Rect);
+
+
+
 	
 
 	SetRoot(Root);
@@ -42,7 +52,7 @@ void AHolo_Attack::BeginPlay()
 
 //	CreateAttackAnimation("MultiShot");
 
-	Atk_Renderer->CreateAnimation("FX_Atk_Ina", "FX_Atk_Ina", 0.05f, true,0,10);
+	Atk_Renderer->CreateAnimation("FX_Atk_Ina", "FX_Atk_Ina", 0.5f, true,0,10);
 	Atk_Renderer->ChangeAnimation("FX_Atk_Ina");
 	Atk_Renderer->SetAutoSize(2.0f, true);
 	Atk_Renderer->SetOrder(ERenderOrder::Attack);
@@ -72,11 +82,32 @@ void AHolo_Attack::Tick(float _DeltaTime)
 	Super::Tick(_DeltaTime);
 	AttackDir();
 
+
 	//if (DestroyTime >= 0.1f)
 	if(true == Atk_Renderer->IsCurAnimationEnd())
 	{
 		Destroy();
 	}
+
+	Atk_Collision->CollisionEnter(ECollisionOrder::Monster, [=](std::shared_ptr<UCollision>_Collision)
+		{
+			_Collision->GetActor()->Destroy();
+			int a = 0;
+		}
+	);
+	Atk_Collision->CollisionStay(ECollisionOrder::Monster, [=](std::shared_ptr<UCollision>_Collision)
+		{
+			_Collision->GetActor()->Destroy();
+			int a = 0;
+		}
+	);
+	Atk_Collision->CollisionExit(ECollisionOrder::Monster, [=](std::shared_ptr<UCollision>_Collision)
+		{
+			_Collision->GetActor()->Destroy();
+			int a = 0;
+		}
+	); 
+
 	//else 
 	//{
 	//	DestroyTime += _DeltaTime;
@@ -94,6 +125,26 @@ void AHolo_Attack::Tick(float _DeltaTime)
 	//AtkState.Update(_DeltaTime);
 }
 
+
+
+void AHolo_Attack::SpawnAttack(float _DeltaTime)
+{
+	if (AttackTime >= 0.5f)
+	{
+		Attack = GetWorld()->SpawnActor<AHolo_Attack>("Attack");
+		Attack->SetActorLocation(GetActorLocation());
+		
+	}
+	else if (true == Atk_Renderer->IsCurAnimationEnd())
+	{
+		AttackTime = 0.0f;
+
+	}
+
+	int a = 0;
+
+
+}
 
 
 // 마우스Dir = 플레이어 Dir = AttackDir 로 만들어야함

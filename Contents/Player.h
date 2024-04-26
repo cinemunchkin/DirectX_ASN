@@ -5,6 +5,8 @@
 #include "Holo_ContentsEnum.h"
 #include "Holo_Attack.h"
 
+
+
 class USpriteRenderer;
 class APlayer : public AActor
 {
@@ -43,6 +45,24 @@ public:
 
 	FVector GetPlayerCurPos();
 
+	void PlayerSprite(std::string_view _Name, UINT _Index)
+	{
+
+	std::shared_ptr<UEngineSprite> Sprite = UEngineSprite::FindRes(_Name);
+
+	if (nullptr == Sprite)
+	{
+		MsgBoxAssert("존재하지 않는 스프라이트를 세팅해주려고 했습니다.");
+		return;
+	}
+
+	FVector SpriteInfo = Sprite->GetSpriteInfo(0).CuttingSize;
+
+	}
+
+	void PlayerStrobe(float _DeltaTime);
+
+
 
 	//FVector GetPlayerPos()
 	//{
@@ -62,7 +82,6 @@ private:
 	std::shared_ptr<AHolo_Attack> Attack;
 
 	
-
 	float AttackTime = 0;
 
 	float4 Color;

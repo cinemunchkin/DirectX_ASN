@@ -16,6 +16,7 @@ enum class ECollisionOrder
 {
 	Player,
 	Monster,
+	Attack,
 };
 
 enum class EDir

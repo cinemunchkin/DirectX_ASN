@@ -27,13 +27,15 @@ APlayer::APlayer()
 	PointerDir->SetPivot(EPivot::MAX);
 
 
-
 	Collision = CreateDefaultSubObject<UCollision>("Collision");
 	Collision->SetupAttachment(Root);
 	Collision->SetScale(FVector(64.0f, 64.0f, 100.0f));
+	
+	//Collision->SetPosition(FVector{ GetActorLocation().X, GetActorLocation().Y + SpriteInfo.CuttingSize.hY() });
 	//Collision->SetPosition(FVector{this-> GetActorLocation().X,this->GetActorLocation().Y + 20 });
 	Collision->SetCollisionGroup(ECollisionOrder::Player);
 	Collision->SetCollisionType(ECollisionType::Rect);
+
 
 
 	float Y = 0.0f;
@@ -42,6 +44,8 @@ APlayer::APlayer()
 	SetRoot(Root);
 	InputOn();
 }
+
+
 
 APlayer::~APlayer()
 {
@@ -73,7 +77,7 @@ void APlayer::Tick(float _DeltaTime)
 	State.Update(_DeltaTime);
 
 	//Collision
-	Collision->CollisionEnter(ECollisionOrder::Monster, [=](std::shared_ptr<UCollision>_Collision)
+	/*Collision->CollisionEnter(ECollisionOrder::Monster, [=](std::shared_ptr<UCollision>_Collision)
 		{
 			_Collision->GetActor()->Destroy();
 			int a = 0;
@@ -88,7 +92,7 @@ void APlayer::Tick(float _DeltaTime)
 		{
 			int a = 0;
 		}
-	);
+	);*/
 
 
 
@@ -122,7 +126,6 @@ void APlayer::DebugMsgFunction(float _DeltaTime)
 		UEngineDebugMsgWindow::PushMsg(Msg);
 	}
 }
-
 
 void APlayer::CreatePlayerAnimation(std::string _Name)
 {
@@ -221,27 +224,51 @@ FVector APlayer::GetPlayerCurPos()
 }
 
 
+void APlayer::PlayerStrobe(float _DeltaTime)
+{
+	int a = 0;
+
+}
 
 void APlayer::PlayerAttackSpawn(float _DeltaTime)
 {
 
-	if (1.1f <= AttackTime)
-	{
+	//Attack->SpawnAttack(_DeltaTime);
+	//Attack->SetActorLocation({ GetPlayerCurPos().X + 20, GetPlayerCurPos().Y - 60 });
 
-		//PlayerPos = GetActorLocation();
+
+	if (AttackTime >= 0.5f)
+	{
 		Attack = GetWorld()->SpawnActor<AHolo_Attack>("Attack");
 		Attack->SetActorLocation({ GetPlayerCurPos().X + 20, GetPlayerCurPos().Y - 60 });
-		//Attack->SetActorLocation({ PlayerPos.X + 500, PlayerPos.Y - 200 });
-
 	}
-	else
-	{
-		AttackTime += _DeltaTime;
-	}
-
+	//else if (true == Atk_Renderer->IsCurAnimationEnd()) // 여기서는 스폰만 하고, Holo_Attack에 함수 만들어서 Tick에 넣어야겟다.. 
+	//{
+	//	//AttackTime = 0.0f;
+	//}
 	
+	AttackTime += _DeltaTime;
+}
 
 
+
+
+
+
+	//if (1.1f <= AttackTime)
+	//{
+
+	//	Attack = GetWorld()->SpawnActor<AHolo_Attack>("Attack");
+	//	//PlayerPos = GetActorLocation();
+	//	Attack->SetActorLocation({ GetPlayerCurPos().X + 20, GetPlayerCurPos().Y - 60 });
+	//	//Attack->SetActorLocation({ PlayerPos.X + 500, PlayerPos.Y - 200 });
+
+	//}
+	//else
+	//{
+	//	AttackTime += _DeltaTime;
+	//}
+	//
 	/*else if (2.0f < AttackTime)
 	{
 		Attack->Destroy();
@@ -253,4 +280,3 @@ void APlayer::PlayerAttackSpawn(float _DeltaTime)
 		
 
 
-}

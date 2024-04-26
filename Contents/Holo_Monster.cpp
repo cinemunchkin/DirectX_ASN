@@ -59,7 +59,30 @@ void AHolo_Monster::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
+
 	Move(_DeltaTime, MoveType);
+
+
+
+	////Collision
+	//Collision->CollisionEnter(ECollisionOrder::Player, [=](std::shared_ptr<UCollision>_Collision)
+	//	{
+	//		_Collision->GetActor();
+	//	}
+	//);
+	//Collision->CollisionStay(ECollisionOrder::Player, [=](std::shared_ptr<UCollision>_Collision)
+	//	{
+	//		int a = 0;
+	//	}
+	//);
+	//Collision->CollisionExit(ECollisionOrder::Player, [=](std::shared_ptr<UCollision>_Collision)
+	//	{
+	//		int a = 0;
+	//	}
+	//);
+
+
+
 
 	if (0 > Dir.X)
 	{
@@ -71,6 +94,11 @@ void AHolo_Monster::Tick(float _DeltaTime)
 	}
 
 	CheckPosComparePlayer();
+
+
+
+
+
 }
 
 void AHolo_Monster::SetMonsterStatus(float _Hp, float _Atk, float _Speed, float _Exp, EMonsterMoveType _MoveType)

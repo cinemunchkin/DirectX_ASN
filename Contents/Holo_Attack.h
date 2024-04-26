@@ -80,9 +80,11 @@ private:
 	float4 AtkDir = float4::Zero;
 
 	USpriteRenderer* Atk_Renderer;
+	UCollision* Atk_Collision;
 
 	std::shared_ptr<UCamera> Camera;
 
 	std::string Name = "FX_Atk_Ina";
 	float DestroyTime = 0.f;
+	float AttackTime = 0.0f;
 };
