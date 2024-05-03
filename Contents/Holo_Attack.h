@@ -49,6 +49,9 @@ public:
 
 
 	FVector AttackDir();
+	void AtkAnimationCheck();
+	void AtkCollisionCheck();
+
 	
 	static EPlayerDir PlayerDir;
 	//이거 용법이 뭘까

@@ -76,25 +76,6 @@ void APlayer::Tick(float _DeltaTime)
 
 	State.Update(_DeltaTime);
 
-	//Collision
-	/*Collision->CollisionEnter(ECollisionOrder::Monster, [=](std::shared_ptr<UCollision>_Collision)
-		{
-			_Collision->GetActor()->Destroy();
-			int a = 0;
-		}
-	);
-	Collision->CollisionStay(ECollisionOrder::Monster, [=](std::shared_ptr<UCollision>_Collision)
-		{
-			int a = 0;
-		}
-	);
-	Collision->CollisionExit(ECollisionOrder::Monster, [=](std::shared_ptr<UCollision>_Collision)
-		{
-			int a = 0;
-		}
-	);*/
-
-
 
 
 	PlayerPos = GetActorLocation();
@@ -242,6 +223,8 @@ void APlayer::PlayerAttackSpawn(float _DeltaTime)
 		Attack = GetWorld()->SpawnActor<AHolo_Attack>("Attack");
 		Attack->SetActorLocation({ GetPlayerCurPos().X + 20, GetPlayerCurPos().Y - 60 });
 	}
+	// 한번만 스폰되어야할거같은데
+	
 	//else if (true == Atk_Renderer->IsCurAnimationEnd()) // 여기서는 스폰만 하고, Holo_Attack에 함수 만들어서 Tick에 넣어야겟다.. 
 	//{
 	//	//AttackTime = 0.0f;

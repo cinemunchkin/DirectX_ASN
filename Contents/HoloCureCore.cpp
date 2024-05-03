@@ -20,6 +20,9 @@ void UHoloCureCore::Initialize()
 	UEngineFont::Load("±Ã¼­");
 	UEngineFont::Load("Galmuri7");
 	UEngineFont::Load("Galmuri9");
+	UEngineFont::Load("DF-GameOver");
+	UEngineFont::Load("outline_pixel-7");
+
 
 	{
 		UEngineDirectory Dir;
@@ -79,6 +82,20 @@ void UHoloCureCore::Initialize()
 			Dir.MoveParent();
 			Dir.Move("Title");
 			Dir.Move("TitleBack_FX");
+
+
+			std::vector<UEngineDirectory> Directorys = Dir.GetAllDirectory();
+			for (size_t i = 0; i < Directorys.size(); i++)
+			{
+				std::string Name = Directorys[i].GetFolderName();
+				UEngineSprite::LoadFolder(Directorys[i].GetFullPath());
+			}
+		}
+
+		{
+			Dir.MoveParent();
+			Dir.MoveParent();
+			Dir.Move("Interface");
 
 
 			std::vector<UEngineDirectory> Directorys = Dir.GetAllDirectory();

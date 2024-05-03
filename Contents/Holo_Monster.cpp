@@ -64,25 +64,18 @@ void AHolo_Monster::Tick(float _DeltaTime)
 
 
 
-	////Collision
-	//Collision->CollisionEnter(ECollisionOrder::Player, [=](std::shared_ptr<UCollision>_Collision)
-	//	{
-	//		_Collision->GetActor();
-	//	}
-	//);
-	//Collision->CollisionStay(ECollisionOrder::Player, [=](std::shared_ptr<UCollision>_Collision)
-	//	{
-	//		int a = 0;
-	//	}
-	//);
-	//Collision->CollisionExit(ECollisionOrder::Player, [=](std::shared_ptr<UCollision>_Collision)
-	//	{
-	//		int a = 0;
-	//	}
-	//);
+
+
+	CheckPosComparePlayer();
+	MonsterDirCheck();
 
 
 
+
+}
+
+void AHolo_Monster::MonsterDirCheck()
+{
 
 	if (0 > Dir.X)
 	{
@@ -92,12 +85,6 @@ void AHolo_Monster::Tick(float _DeltaTime)
 	{
 		Mon_Renderer->SetDir(EEngineDir::Right);
 	}
-
-	CheckPosComparePlayer();
-
-
-
-
 
 }
 

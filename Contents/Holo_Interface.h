@@ -17,8 +17,12 @@ public:
 protected:
 
 	void BeginPlay();
+	void Interface_Char();
+
+	void TimeFlow(float _DeltaTime);
 
 
-private:
+
+	private:
 
 };

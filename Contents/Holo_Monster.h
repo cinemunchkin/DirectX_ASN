@@ -62,6 +62,7 @@ private:
 	EMonsterMoveType MoveType = EMonsterMoveType::Follow;
 
 	void CreateHolo_MonsterAnimation(std::string _Name);
+	void MonsterDirCheck();
 
 	void Move(float _DeltaTime, EMonsterMoveType _MoveType);
 	void CheckPosComparePlayer();
