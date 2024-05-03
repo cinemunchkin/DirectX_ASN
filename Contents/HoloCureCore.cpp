@@ -4,6 +4,7 @@
 #include "TitleGameMode.h"
 #include <EngineCore/EngineSprite.h>
 #include <EnginePlatform/EngineWindow.h>
+#include <EngineCore/EngineFont.h>
 
 UHoloCureCore::UHoloCureCore()
 {
@@ -15,6 +16,9 @@ UHoloCureCore::~UHoloCureCore()
 
 void UHoloCureCore::Initialize()
 {
+
+	UEngineFont::Load("±Ã¼­");
+
 	{
 		UEngineDirectory Dir;
 		Dir.MoveToSearchChild("Resources");

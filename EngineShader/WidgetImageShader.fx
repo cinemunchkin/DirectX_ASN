@@ -74,7 +74,7 @@ struct ImagePSOutPut
 };
 
 
-ImageVSOutPut ImageShader_VS(FEngineVertex _Input)
+ImageVSOutPut WidgetImageShader_VS(FEngineVertex _Input)
 {
     ImageVSOutPut Out = (ImageVSOutPut) 0;
     
@@ -138,7 +138,7 @@ cbuffer ResultColorValue : register(b10)
 };
 
 
-ImagePSOutPut ImageShader_PS(ImageVSOutPut _Input)
+ImagePSOutPut WidgetImageShader_PS(ImageVSOutPut _Input)
 {
         // 언어를 배울때는 왜 안돼 어리석은 초보적인 생각은 그만두고 배워야한다.
         // 그냥 구조체처럼 초기화 하는게 안되는데.

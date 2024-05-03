@@ -3,6 +3,7 @@
 #include "PlayGameMode.h"
 #include "Holo_InGameValue.h"
 #include "Holo_Monster.h"
+#include "Holo_Interface.h"
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineCore/Camera.h>
 #include <EngineCore/EngineDebugMsgWindow.h>
@@ -30,6 +31,9 @@ void APlayGameMode::BeginPlay()
 	float4 CameraPos = PlayerStartPos;
 	CameraPos.Z = -500.0f;
 	Camera->SetActorLocation(CameraPos);
+	{
+		AHolo_Interface* Interface = CreateWidget<AHolo_Interface>(GetWorld(), "Test");
+	}
 	
 	// 플레이어 생성
 	Player = GetWorld()->SpawnActor<APlayer>("Player");

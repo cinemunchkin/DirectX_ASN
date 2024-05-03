@@ -8,7 +8,7 @@
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="Holo_Back.cpp">
-      <Filter>Actor</Filter>
+      <Filter>Level\Actor</Filter>
     </ClCompile>
     <ClCompile Include="TitleGameMode.cpp">
       <Filter>Level\TitleLevel</Filter>
@@ -35,7 +35,7 @@
       <Filter>Level\PlayLevel\Equipment</Filter>
     </ClCompile>
     <ClCompile Include="Holo_Pointer.cpp">
-      <Filter>Actor</Filter>
+      <Filter>Level\Actor</Filter>
     </ClCompile>
     <ClCompile Include="TitleLogo.cpp">
       <Filter>Level\TitleLevel\Actor</Filter>
@@ -58,6 +58,9 @@
     <ClCompile Include="Attack_State.cpp">
       <Filter>Level\PlayLevel\Equipment\Attack</Filter>
     </ClCompile>
+    <ClCompile Include="Holo_Interface.cpp">
+      <Filter>Level\Actor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PreCompile.h">
@@ -67,7 +70,7 @@
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="Holo_Back.h">
-      <Filter>Actor</Filter>
+      <Filter>Level\Actor</Filter>
     </ClInclude>
     <ClInclude Include="TitleGameMode.h">
       <Filter>Level\TitleLevel</Filter>
@@ -94,7 +97,7 @@
       <Filter>Level\PlayLevel\Equipment</Filter>
     </ClInclude>
     <ClInclude Include="Holo_Pointer.h">
-      <Filter>Actor</Filter>
+      <Filter>Level\Actor</Filter>
     </ClInclude>
     <ClInclude Include="TitleLogo.h">
       <Filter>Level\TitleLevel\Actor</Filter>
@@ -114,6 +117,9 @@
     <ClInclude Include="Holo_Attack.h">
       <Filter>Level\PlayLevel\Equipment\Attack</Filter>
     </ClInclude>
+    <ClInclude Include="Holo_Interface.h">
+      <Filter>Level\Actor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -130,9 +136,6 @@
     </Filter>
     <Filter Include="Level\TitleLevel">
       <UniqueIdentifier>{ee7bda5c-afc3-49ea-b806-4f1e5d6ba4d5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Actor">
-      <UniqueIdentifier>{fd88dc8c-8311-4494-a29a-d99b587f8ee7}</UniqueIdentifier>
     </Filter>
     <Filter Include="Global">
       <UniqueIdentifier>{4dbe0f79-8413-440c-9a91-031851ebfa2a}</UniqueIdentifier>
@@ -154,6 +157,9 @@
     </Filter>
     <Filter Include="Level\PlayLevel\Equipment\Attack">
       <UniqueIdentifier>{aa598ac5-4970-4978-9735-618950822520}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level\Actor">
+      <UniqueIdentifier>{fd88dc8c-8311-4494-a29a-d99b587f8ee7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

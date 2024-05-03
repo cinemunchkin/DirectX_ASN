@@ -17,6 +17,21 @@ void USpriteRenderer::SetFrameCallback(std::string_view _AnimationName, int _Ind
 
 }
 
+void USpriteRenderer::SetLastFrameCallback(std::string_view _AnimationName, std::function<void()> _Function)
+{
+	std::string UpperName = UEngineString::ToUpper(_AnimationName);
+
+	if (false == Animations.contains(UpperName))
+	{
+		MsgBoxAssert("존재하지 않는 애니메이션에 콜백을 지정할수 없습니다." + std::string(_AnimationName));
+		return;
+	}
+
+	std::shared_ptr<USpriteAnimation> Animation = Animations[UpperName];
+	int LastIndex = static_cast<int>(Animation->Frame.size()) - 1;
+	Animations[UpperName]->FrameCallback[LastIndex] = _Function;
+}
+
 void USpriteAnimation::FrameCallBackCheck()
 {
 	if (false == FrameCallback.contains(CurFrame))
@@ -84,6 +99,7 @@ void USpriteRenderer::MaterialSettingEnd()
 	CurTexture = nullptr;
 	Resources->SettingConstantBuffer("ResultColorValue", ColorData);
 	Resources->SettingConstantBuffer("FCuttingData", CuttingDataValue);
+	Resources->SettingConstantBuffer("FVertexUV", VertexUVValue);
 }
 
 
@@ -172,6 +188,15 @@ void USpriteRenderer::SetSpriteInfo(const FSpriteInfo& _Info)
 		CuttingDataValue.PivotMat.Position(Scale);
 		break;
 	}
+	case EPivot::RIGHTTOP:
+	{
+		float4 Scale = Transform.WorldScale;
+		Scale.X = -abs(Scale.X) * 0.5f;
+		Scale.Y = -abs(Scale.Y) * 0.5f;
+		Scale.Z = 0.0f;
+		CuttingDataValue.PivotMat.Position(Scale);
+		break;
+	}
 	case EPivot::MAX:
 	default:
 	{
@@ -199,6 +224,22 @@ void USpriteRenderer::SetSpriteInfo(const FSpriteInfo& _Info)
 			if (0 > Scale.X)
 			{
 				Scale.X = -Scale.X;
+			}
+			break;
+		}
+		case EEngineDir::Up:
+		{
+			if (0 > Scale.Y)
+			{
+				Scale.Y = -Scale.Y;
+			}
+			break;
+		}
+		case EEngineDir::Down:
+		{
+			if (0 < Scale.Y)
+			{
+				Scale.Y = -Scale.Y;
 			}
 			break;
 		}
