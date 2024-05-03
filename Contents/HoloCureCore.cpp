@@ -18,6 +18,8 @@ void UHoloCureCore::Initialize()
 {
 
 	UEngineFont::Load("±Ã¼­");
+	UEngineFont::Load("Galmuri7");
+	UEngineFont::Load("Galmuri9");
 
 	{
 		UEngineDirectory Dir;
