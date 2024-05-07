@@ -17,6 +17,7 @@ public:
 protected:
 
 	void BeginPlay();
+	void Tick(float _DeltaTime);
 	void Interface_Char();
 
 	void TimeFlow(float _DeltaTime);

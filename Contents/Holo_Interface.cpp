@@ -21,13 +21,16 @@ void AHolo_Interface::BeginPlay()
 	
 }
 
+void AHolo_Interface::Tick(float _DeltaTime)
+{
+	TimeFlow(_DeltaTime);
+
+}
+
 
 void  AHolo_Interface::Interface_Char()
 {
-
-
-
-	
+		
 	{// 인터페이스 상단바
 		UImage* Image = CreateWidget<UImage>(GetWorld(), "Interface_Bar");
 		Image->SetupAttachment(this);
@@ -59,7 +62,7 @@ void  AHolo_Interface::Interface_Char()
 
 	}
 
-	{// 텍스트 테스트 갈무리체
+	{// 텍스트 테스트 갈무리체 음영
 		UTextWidget* Image = CreateWidget<UTextWidget>(GetWorld(), "TestText");
 		Image->SetupAttachment(this);
 		Image->SetFont("Galmuri9");
@@ -70,7 +73,7 @@ void  AHolo_Interface::Interface_Char()
 
 	}
 
-	{// 텍스트 테스트 갈무리체 음영
+	{// 텍스트 테스트 갈무리체 
 		UTextWidget* Image = CreateWidget<UTextWidget>(GetWorld(), "TestText");
 		Image->SetupAttachment(this);
 		Image->SetFont("Galmuri9");
@@ -108,18 +111,20 @@ void  AHolo_Interface::Interface_Char()
 void  AHolo_Interface::TimeFlow(float _DeltaTime)
 {
 
+	for (int i = 0; i < 1000000; i++)
+	{
+		
 
-	
+		{ //HP 체력치 숫자
+			UTextWidget* Image = CreateWidget<UTextWidget>(GetWorld(), "TestText");
+			Image->SetupAttachment(this);
+			Image->SetScale(17.0f);
+			Image->SetColor(Color8Bit::White);
+			Image->SetPosition({ -400, 338 });
+			Image->SetFont("Galmuri7");
+			Image->SetText("AAA");
 
-	{ //HP 체력치 숫자
-		UTextWidget* Image = CreateWidget<UTextWidget>(GetWorld(), "TestText");
-		Image->SetupAttachment(this);
-		Image->SetScale(17.0f);
-		Image->SetColor(Color8Bit::White);
-		Image->SetPosition({ -400, 338 });
-		Image->SetFont("Galmuri7");
-		Image->SetText("75/75");
+		}
 
 	}
-
 }
