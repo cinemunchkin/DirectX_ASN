@@ -34,6 +34,8 @@ public:
 		Name = _Name;
 	}
 
+	EPlayerDir PlayerDir = EPlayerDir::Right;
+	
 	EPlayerDir GetPlayerDir()
 	{
 		return PlayerDir;
@@ -95,7 +97,7 @@ private:
 	float Angle;
 
 	std::string Name = "Ina";
-	EPlayerDir PlayerDir = EPlayerDir::Right;
+	
 	
 
 

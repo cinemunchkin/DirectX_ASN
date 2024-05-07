@@ -8,7 +8,7 @@
 #include "Player.h"
 #include "EngineCore/Image.h"
 
-EPlayerDir AHolo_Attack::PlayerDir = EPlayerDir::None;
+//EPlayerDir AHolo_Attack::PlayerDir = EPlayerDir::None;
 //이거 용법이 뭘까
 
 //EActorDir AMelee::PlayerDir = EActorDir::None;;
@@ -55,12 +55,12 @@ void AHolo_Attack::BeginPlay()
 
 	Atk_Renderer->ChangeAnimation("FX_Atk_Ina");
 	//AtkStateInit();
-	this -> SetActorLocation(AttackDir());
+	
 
-	if (false == AHolo_Pointer::MousePointerOn)
+	/*if (false == AHolo_Pointer::MousePointerOn)
 	{
 		AttackDir();
-	}
+	}*/
 	/*else if (true == AHolo_Pointer::MousePointerOn)
 	{
 		AttackAimDir();
@@ -71,8 +71,10 @@ void AHolo_Attack::BeginPlay()
 void AHolo_Attack::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
-	AttackDir();
-
+	
+	//SetActorRotation(AttackDir());
+	SetActorRotation(AttackDir());
+		
 
 	//if (DestroyTime >= 0.1f)
 
@@ -149,54 +151,105 @@ void AHolo_Attack::AtkCollisionCheck()
 // 마우스Dir = 플레이어 Dir = AttackDir 로 만들어야함
 FVector AHolo_Attack::AttackDir()
 {
-	FVector Scale = GetActorScale3D();
-	//SetActorScale3D(FVector{ -scale.X, scale.Y,scale.Z, 0.0f });
-	if (AHolo_Attack::PlayerDir == EPlayerDir::Right)
-	{
-		//SetActirS
-		SetActorRotation(FVector{ 0.0f, 0.0f, 0.0f });
-		AtkDir = { 1,0,0,0 };
-	}
+	//PlayerDir를 받아와야하는데
+	//아니면 Pointer로 받아와야겠다
 
-	else if (AHolo_Attack::PlayerDir == EPlayerDir::Up)
+	CurPointerDir();
+
+
+
+	switch (PointerDir)
 	{
-		SetActorRotation(FVector{ 0.0f,0.0f,90.0f });
+	case EPointerDir::Up:
+		Atk_Renderer->SetRotationDeg(FVector{ 0.0f, 0.0f, -90.0f });
 		AtkDir = { 0,1,0,0 };
-	}
-	else if (AHolo_Attack::PlayerDir == EPlayerDir::Down)
-	{
-		SetActorRotation(FVector{ 0.0f,0.0f,270.0f });
-		AtkDir = { 0,-1,0,0 };
-	}
-	else if (AHolo_Attack::PlayerDir == EPlayerDir::Left)
-	{
-		SetActorScale3D(FVector{ -Scale.X, Scale.Y,Scale.Z, 0.0f });
-	//	SetActorRotation(FVector{ 0.0f,0.0f,180.0f });
-		AtkDir = { -1,0,0,0 };
-	}
-	else if (AHolo_Attack::PlayerDir == EPlayerDir::UpRight)
-	{
-		SetActorRotation(FVector{ 0.0f,0.0f,45.0f });
+		break;
+	case EPointerDir::UpRight:
+		Atk_Renderer->SetRotationDeg(FVector{ 0.0f, 0.0f, -45.0f });
 		AtkDir = { 1,1,0,0 };
-	}
-	else if (AHolo_Attack::PlayerDir == EPlayerDir::UpLeft)
-	{
-		SetActorRotation(FVector{ 0.0f,0.0f,135.0f });
-		AtkDir = { -1,1,0,0 };
-	}
-	else if (AHolo_Attack::PlayerDir == EPlayerDir::DownRight)
-	{
-		SetActorRotation(FVector{ 0.0f,0.0f,315.0f });
+		break;
+	case EPointerDir::Right:
+		Atk_Renderer->SetRotationDeg(FVector{ 0.0f, 0.0f, 0.0f });
+		AtkDir = { 1,0,0,0 };
+		break;
+	case EPointerDir::DownRight:
+		Atk_Renderer->SetRotationDeg(FVector{ 0.0f, 0.0f, 45.0f });
 		AtkDir = { 1,-1,0,0 };
-	}
-	else if (AHolo_Attack::PlayerDir == EPlayerDir::DownLeft)
-	{
-		SetActorRotation(FVector{ 0.0f,0.0f,225.0f });
+		break;
+	case EPointerDir::Down:
+		Atk_Renderer->SetRotationDeg(FVector{ 0.0f, 0.0f, 90.0f });
+		AtkDir = { 0,-1,0,0 };
+		break;
+	case EPointerDir::DownLeft:
+		Atk_Renderer->SetRotationDeg(FVector{ 0.0f, 0.0f, 135.0f });
 		AtkDir = { -1,-1,0,0 };
+		break;
+	case EPointerDir::Left:
+		Atk_Renderer->SetRotationDeg(FVector{ 0.0f, 0.0f, 180.0f });
+		AtkDir = { -1,0,0,0 };
+		break;
+	case EPointerDir::UpLeft:
+		Atk_Renderer->SetRotationDeg(FVector{ 0.0f, 0.0f, 215.0f });
+		AtkDir = { -1,1,0,0 };
+		break;
+	default:
+		break;
 	}
 
-	AtkDir = AtkDir.Normalize3DReturn();
-	return FVector::Zero;
+	FVector AtkCurRot = Atk_Renderer->GetLocalRotation();
+	AtkCurRot = AtkCurRot.Normalize3DReturn();
+
+	int a = 0;
+
+	//AtkDir = AtkDir.Normalize3DReturn();
+	return AtkCurRot;
+	//FVector Scale = GetActorScale3D();
+	////SetActorScale3D(FVector{ -scale.X, scale.Y,scale.Z, 0.0f });
+	//if (AHolo_Attack::PlayerDir == EPlayerDir::Right)
+	//{
+	//	//SetActirS
+	//	SetActorRotation(FVector{ 0.0f, 0.0f, 0.0f });
+	//	AtkDir = { 1,0,0,0 };
+	//}
+
+	//else if (AHolo_Attack::PlayerDir == EPlayerDir::Up)
+	//{
+	//	SetActorRotation(FVector{ 0.0f,0.0f,90.0f });
+	//	AtkDir = { 0,1,0,0 };
+	//}
+	//else if (AHolo_Attack::PlayerDir == EPlayerDir::Down)
+	//{
+	//	SetActorRotation(FVector{ 0.0f,0.0f,270.0f });
+	//	AtkDir = { 0,-1,0,0 };
+	//}
+	//else if (AHolo_Attack::PlayerDir == EPlayerDir::Left)
+	//{
+	//	SetActorScale3D(FVector{ -Scale.X, Scale.Y,Scale.Z, 0.0f });
+	////	SetActorRotation(FVector{ 0.0f,0.0f,180.0f });
+	//	AtkDir = { -1,0,0,0 };
+	//}
+	//else if (AHolo_Attack::PlayerDir == EPlayerDir::UpRight)
+	//{
+	//	SetActorRotation(FVector{ 0.0f,0.0f,45.0f });
+	//	AtkDir = { 1,1,0,0 };
+	//}
+	//else if (AHolo_Attack::PlayerDir == EPlayerDir::UpLeft)
+	//{
+	//	SetActorRotation(FVector{ 0.0f,0.0f,135.0f });
+	//	AtkDir = { -1,1,0,0 };
+	//}
+	//else if (AHolo_Attack::PlayerDir == EPlayerDir::DownRight)
+	//{
+	//	SetActorRotation(FVector{ 0.0f,0.0f,315.0f });
+	//	AtkDir = { 1,-1,0,0 };
+	//}
+	//else if (AHolo_Attack::PlayerDir == EPlayerDir::DownLeft)
+	//{
+	//	SetActorRotation(FVector{ 0.0f,0.0f,225.0f });
+	//	AtkDir = { -1,-1,0,0 };
+	//}
+
+
 }
 
 

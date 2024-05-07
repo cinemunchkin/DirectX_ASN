@@ -47,6 +47,20 @@ enum class EPlayerDir
 	UpLeft,
 };
 
+
+enum class EPointerDir
+{
+	None,
+	Up,
+	UpRight,
+	Right,
+	DownRight,
+	Down,
+	DownLeft,
+	Left,
+	UpLeft,
+};
+
 enum class EMonsterMoveType
 {
 	Follow,

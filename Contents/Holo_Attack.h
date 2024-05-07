@@ -84,7 +84,16 @@ private:
 	//Attack state
 	void AtkStateInit();
 
-	
+
+	EPointerDir PointerDir = EPointerDir::None;
+	EPointerDir CurPointerDir()
+	{
+		return PointerDir;
+	}
+	/*
+	* Pointer의 현재방향을 받아야함!!!
+	* 
+	*/
 
 	UStateManager AtkState;
 	float4 AtkDir = float4::Zero;
