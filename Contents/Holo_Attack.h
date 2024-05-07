@@ -29,7 +29,7 @@ public:
 	AHolo_Attack& operator=(const AHolo_Attack& _Other) = delete;
 	AHolo_Attack& operator=(AHolo_Attack&& _Other) noexcept = delete;
 
-
+	
 
 
 	//공격 스폰
@@ -51,10 +51,13 @@ public:
 	FVector AttackDir();
 	void AtkAnimationCheck();
 	void AtkCollisionCheck();
+	
 
 	
 	static EPlayerDir PlayerDir;
 	//이거 용법이 뭘까
+
+
 
 
 	std::shared_ptr<AHolo_Atk_MultiShot> MultiShot;
@@ -62,8 +65,9 @@ public:
 	std::shared_ptr<AHolo_Attack> Attack;
 	//std::shared_ptr<APlayer> Player;
 
-	//FVector PlayerPos = Player->GetActorLocation();
-
+	
+	 USpriteRenderer* Atk_Renderer;
+	 FVector Atk_Pos = FVector::Zero;
 
 protected:
 
@@ -75,17 +79,22 @@ protected:
 		Name = _Name;
 	}
 
+
 private:
 	//Attack state
 	void AtkStateInit();
 
+	
+
 	UStateManager AtkState;
 	float4 AtkDir = float4::Zero;
 
-	USpriteRenderer* Atk_Renderer;
 	UCollision* Atk_Collision;
 
 	std::shared_ptr<UCamera> Camera;
+
+
+
 
 	std::string Name = "FX_Atk_Ina";
 	float DestroyTime = 0.f;

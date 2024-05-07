@@ -15,15 +15,10 @@ AHolo_Interface::~AHolo_Interface()
 void AHolo_Interface::BeginPlay()
 {//인터페이스를 관리하는 개념의 클래스
 
-
-
 	Interface_Char();
 
 	AddToViewPort(1);
-
 	
-
-
 }
 
 
@@ -32,15 +27,16 @@ void  AHolo_Interface::Interface_Char()
 
 
 
-
-	//{
-	//	UImage* Image = CreateWidget<UImage>(GetWorld(), "Holo_HpBar");
-	//	Image->SetupAttachment(this);
-	//	Image->SetSprite("Holo_HpBar.png");
-	//	Image->SetAutoSize(0.5f, true);
-	//	Image->SetPosition({ -400, 300 });
-
-	//}
+	
+	{// 인터페이스 상단바
+		UImage* Image = CreateWidget<UImage>(GetWorld(), "Interface_Bar");
+		Image->SetupAttachment(this);
+		Image->SetSprite("Interface_Bar.png");
+		Image->SetAutoSize(2.1f, true);
+		Image->SetPosition({ 0, 340 });
+		//Image->SetMulColor(FVector{255,255,255,100});
+		Image->SetPlusColor(FVector(0,0,0,0));
+	}
 
 
 	{// HP 글씨

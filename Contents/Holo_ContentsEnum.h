@@ -25,6 +25,15 @@ enum class EDir
 	Right,
 };
 
+enum class Atk_State
+{
+	None,
+	Atk_Animation,
+	Atk_Animation_End,
+};
+
+
+
 enum class EPlayerDir
 {
 	None,

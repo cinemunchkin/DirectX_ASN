@@ -15,6 +15,7 @@ class APlayer : public AActor
 public:
 
 	static float4 PlayerPos;
+	float AttackTime = 0;
 
 	// constrcuter destructer
 	APlayer();
@@ -43,7 +44,6 @@ public:
 		return Angle;
 	}
 
-	FVector GetPlayerCurPos();
 
 	void PlayerSprite(std::string_view _Name, UINT _Index)
 	{
@@ -61,13 +61,9 @@ public:
 	}
 
 	void PlayerStrobe(float _DeltaTime);
+	void AttackTimeReset(float _DeltaTime);
 
 
-
-	//FVector GetPlayerPos()
-	//{
-	//	return PlayerPos;
-	//}
 
 protected:
 	void BeginPlay() override;
@@ -81,14 +77,30 @@ private:
 	std::shared_ptr<UCamera> Camera;
 	std::shared_ptr<AHolo_Attack> Attack;
 
+
+	FVector GetPlayerCurPos()
+	{
+
+		PlayerPos = this->GetActorLocation();
+		FVector PlayerCurPos = PlayerPos;
+		return PlayerCurPos;
+
+	}
+
+
 	
-	float AttackTime = 0;
+	
 
 	float4 Color;
 	float Angle;
 
 	std::string Name = "Ina";
 	EPlayerDir PlayerDir = EPlayerDir::Right;
+	
+
+
+
+
 	int Hp = 100;
 	float Atk = 1;
 	float Speed = 200.0f;
@@ -100,6 +112,7 @@ private:
 	void CheckMouseAimMode();
 	void ChangeMoveAimAtkDir();
 	void ChangeMouseAimAtkDir();
+
 
 
 

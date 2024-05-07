@@ -88,6 +88,7 @@ void APlayer::Tick(float _DeltaTime)
 	PlayerAttackSpawn(_DeltaTime);
 	DebugMsgFunction(_DeltaTime);
 
+
 }
 
 void APlayer::DebugMsgFunction(float _DeltaTime)
@@ -194,16 +195,16 @@ void APlayer::ChangeMouseAimAtkDir()
 	}
 }
 
-
-FVector APlayer::GetPlayerCurPos()
-{
-
-	PlayerPos = this -> GetActorLocation();
-	FVector PlayerCurPos = PlayerPos;
-	return PlayerCurPos;
-
-}
-
+//
+//void APlayer::AtkPosCheck(float _DeltaTime)
+//{
+//	//FVector AtkPos = Attack->Atk_Pos;
+//	FVector Atk_CurPos = Attack->GetActorLocation();
+//	FVector AtkDir =  { GetPlayerCurPos() - Atk_CurPos };
+//	FVector NorAtkDir = AtkDir.Normalize3DReturn();
+//
+//	Attack-> AddActorLocation(NorAtkDir);
+//}
 
 void APlayer::PlayerStrobe(float _DeltaTime)
 {
@@ -211,55 +212,60 @@ void APlayer::PlayerStrobe(float _DeltaTime)
 
 }
 
+
 void APlayer::PlayerAttackSpawn(float _DeltaTime)
 {
+	//만약에 애니메이션이 안끝났으면, SetActive false / Spawn ㄴㄴ 
+	//애니메이션이 끝나면 SetActive true / spawn oo
+	//오늘 이거 조진다!!
+	
+	
+	
 
-	//Attack->SpawnAttack(_DeltaTime);
-	//Attack->SetActorLocation({ GetPlayerCurPos().X + 20, GetPlayerCurPos().Y - 60 });
+	if (AttackTime < 1.0f && AttackTime > 0.97f) 
+	{// 한번만 스폰되도록 해야함!!!!!!!!!!
 
-
-	if (AttackTime >= 0.5f)
-	{
 		Attack = GetWorld()->SpawnActor<AHolo_Attack>("Attack");
 		Attack->SetActorLocation({ GetPlayerCurPos().X + 20, GetPlayerCurPos().Y - 60 });
-	}
-	// 한번만 스폰되어야할거같은데
-	
-	//else if (true == Atk_Renderer->IsCurAnimationEnd()) // 여기서는 스폰만 하고, Holo_Attack에 함수 만들어서 Tick에 넣어야겟다.. 
-	//{
-	//	//AttackTime = 0.0f;
-	//}
-	
-	AttackTime += _DeltaTime;
-}
 
+		FVector Atk_CurPos = Attack->GetActorLocation();
+		FVector AtkDir = { Atk_CurPos - GetPlayerCurPos() };
+		FVector NorAtkDir = AtkDir.Normalize3DReturn();
 
-
-
-
-
-	//if (1.1f <= AttackTime)
-	//{
-
-	//	Attack = GetWorld()->SpawnActor<AHolo_Attack>("Attack");
-	//	//PlayerPos = GetActorLocation();
-	//	Attack->SetActorLocation({ GetPlayerCurPos().X + 20, GetPlayerCurPos().Y - 60 });
-	//	//Attack->SetActorLocation({ PlayerPos.X + 500, PlayerPos.Y - 200 });
-
-	//}
-	//else
-	//{
-	//	AttackTime += _DeltaTime;
-	//}
-	//
-	/*else if (2.0f < AttackTime)
-	{
-		Attack->Destroy();
-		AttackTime = 0.0f;	
-		return;
-	}*/
-	
-	
+		Attack->AddActorLocation(NorAtkDir);
 		
+		//Atk_State AtkState = Atk_State::None;
+
+		//switch (AtkState)
+		//{
+		//case Atk_State::None:
+
+		//	break;
+
+		//case Atk_State::Atk_Animation:
+
+		//	Attack->SetActive(false);
+		//	break;
+
+		//case Atk_State::Atk_Animation_End:
+
+		//	Attack->SetActive(true);
+		//	break;
+
+
+		//}
+		////Attack->AtkAnimationCheck();
+		//Attack->IsActive();
+	
+	}
+	else if (2.5f < AttackTime)
+	{
+		AttackTime = 0.0f;
+	}
+
+	AttackTime += _DeltaTime;
+	return;
+	
+}
 
 

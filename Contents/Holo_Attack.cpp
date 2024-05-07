@@ -40,8 +40,7 @@ AHolo_Attack::AHolo_Attack()
 
 AHolo_Attack::~AHolo_Attack()
 {
-
-
+	Destroy();
 }
 
 void AHolo_Attack::BeginPlay()
@@ -49,16 +48,15 @@ void AHolo_Attack::BeginPlay()
 	Super::BeginPlay();
 
 //	CreateAttackAnimation("MultiShot");
-
-	Atk_Renderer->CreateAnimation("FX_Atk_Ina", "FX_Atk_Ina", 0.06f, true,0,11);
-	Atk_Renderer->ChangeAnimation("FX_Atk_Ina");
+	//오늘 공격애니메이션 부순다
+	Atk_Renderer->CreateAnimation("FX_Atk_Ina", "FX_Atk_Ina", 0.07f, true,1,5);
 	Atk_Renderer->SetAutoSize(2.0f, true);
 	Atk_Renderer->SetOrder(ERenderOrder::Attack);
 
-	AtkStateInit();
+	Atk_Renderer->ChangeAnimation("FX_Atk_Ina");
+	//AtkStateInit();
+	this -> SetActorLocation(AttackDir());
 
-	
-	// 공격 방향설정 -> 요거 마우스 쫓아가는 것만 남기기 (수정)
 	if (false == AHolo_Pointer::MousePointerOn)
 	{
 		AttackDir();
@@ -68,11 +66,6 @@ void AHolo_Attack::BeginPlay()
 		AttackAimDir();
 	}*/
 
-	SetActorLocation(AttackDir());
-
-	//SetActorScale3D(FVector( scale.X, scale.Y, scale.Z, 0.f ));
-	//SetActorLocation(GetActorLocation());
-	//SetActorLocation(playerpos);
 	}
 
 void AHolo_Attack::Tick(float _DeltaTime)
@@ -86,43 +79,29 @@ void AHolo_Attack::Tick(float _DeltaTime)
 	AtkAnimationCheck();
 	AtkCollisionCheck();
 
-	SpawnAttack(_DeltaTime);
-
-	
-	
 }
+
 
 
 
 void AHolo_Attack::AtkAnimationCheck()
 {
-	if (true == Atk_Renderer->IsCurAnimationEnd())
+		if (true == Atk_Renderer->IsCurAnimationEnd())
 	{
 		this->Destroy();
+		Atk_State::Atk_Animation_End;
+		return;
 	}
-
+	else
+	{
+		return;
+	}
 }
 
 
-void AHolo_Attack::SpawnAttack(float _DeltaTime)
-{
-	if (AttackTime >= 0.5f)
-	{
-		Attack = GetWorld()->SpawnActor<AHolo_Attack>("Attack");
-		Attack->SetActorLocation(GetActorLocation());
-		
-	}
-	else if (true == Atk_Renderer->IsCurAnimationEnd())
-	{
-		AttackTime = 0.0f;
+//오늘 이거 무조건 해결한다 
+// 애니메이션 방향 무조건 해결한다
 
-	}
-
-
-	int a = 0;
-
-
-}
 
 void AHolo_Attack::AtkCollisionCheck()
 {
@@ -163,6 +142,7 @@ void AHolo_Attack::AtkCollisionCheck()
 	//AtkState.Update(_DeltaTime);
 
 }
+
 
 
 
