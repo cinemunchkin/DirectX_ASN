@@ -285,6 +285,12 @@
     <ClCompile Include="TextWidget.cpp">
       <Filter>Object\UI\Contents</Filter>
     </ClCompile>
+    <ClCompile Include="EngineNetWindow.cpp">
+      <Filter>Editor\Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineDepthStencil.cpp">
+      <Filter>Resources\RenderingSetting</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EngineCore.h">
@@ -475,6 +481,12 @@
     </ClInclude>
     <ClInclude Include="TextWidget.h">
       <Filter>Object\UI\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineNetWindow.h">
+      <Filter>Editor\Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineDepthStencil.h">
+      <Filter>Resources\RenderingSetting</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

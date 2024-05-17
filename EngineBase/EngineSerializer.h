@@ -17,6 +17,8 @@ public:
 	UEngineSerializer();
 	~UEngineSerializer();
 
+	void Paste(int Offset, const void* _Data, size_t _Size);
+
 	void Write(const void* _Data, size_t _Size);
 
 	void WriteText(const std::string& _Text);
@@ -25,7 +27,12 @@ public:
 
 	void operator<<(UEngineSerializeObject* _Data);
 
-	void operator<<(const int& _Data) 
+	void operator<<(const float& _Data)
+	{
+		Write(&_Data, sizeof(float));
+	}
+
+	void operator<<(const int& _Data)
 	{
 		Write(&_Data, sizeof(int));
 	}
@@ -44,8 +51,10 @@ public:
 	void operator<<(const std::string& _Data)
 	{
 		int Size = static_cast<int>(_Data.size());
-		operator<<(Size);
+		operator<<(Size+1);
 		Write(_Data.c_str(), Size);
+		char Test = 0;
+		Write(&Test,1);
 	}
 
 	template<typename DataType>
@@ -63,9 +72,19 @@ public:
 
 	void Read(void* _Data, size_t _Size);
 
+	void operator>>(float& _Data)
+	{
+		Read(&_Data, sizeof(float));
+	}
+
 	void operator>>(int& _Data)
 	{
 		Read(&_Data, sizeof(int));
+	}
+
+	void operator>>(bool& _Data)
+	{
+		Read(&_Data, sizeof(bool));
 	}
 
 	void operator>>(float4& _Data)
@@ -110,13 +129,26 @@ public:
 	}
 
 
+	int BufferSize()
+	{
+		return static_cast<int>(Data.size());
+	}
+
+	int RemainSize()
+	{
+		return static_cast<int>(Data.size() - WriteOffset);
+	}
+
+	void Reset();
+
+	void ResetRead();
 	void ResetWrite();
 
 	void BufferResize(int _Size);
 
 	std::string ToString();
 
-	unsigned int WriteSize()
+	int WriteSize()
 	{
 		return WriteOffset;
 	}
@@ -126,12 +158,49 @@ public:
 		return &Data[0];
 	}
 
+	char* DataCharPtr()
+	{
+		return &Data[0];
+	}
+
+	char* DataCharPtrToWriteOffset()
+	{
+		return &Data[WriteOffset];
+	}
+
+	char* DataCharPtrToReadOffset()
+	{
+		return &Data[ReadOffset];
+	}
+
+	int GetWriteOffset()
+	{
+		return WriteOffset;
+	}
+
+	int GetReadOffset()
+	{
+		return ReadOffset;
+	}
+
+	void SetWriteOffset(int _Offset)
+	{
+		WriteOffset = _Offset;
+	}
+
+	void AddWriteOffset(int _Offset)
+	{
+		WriteOffset += _Offset;
+	}
+
+
+	void DataToReadOffsetPush();
 
 protected:
 
 private:
-	unsigned int WriteOffset = 0;
-	unsigned int ReadOffset = 0;
+	int WriteOffset = 0;
+	int ReadOffset = 0;
 
 	std::vector<char> Data;
 };

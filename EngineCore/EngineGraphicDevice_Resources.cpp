@@ -11,6 +11,7 @@
 #include "EngineBlend.h"
 #include "EngineMaterial.h"
 #include "EngineSprite.h"
+#include "EngineDepthStencil.h"
 
 #include "EngineRenderTarget.h"
 
@@ -37,7 +38,7 @@ void UEngineGraphicDevice::EngineResourcesRelease()
 	UEnginePixelShader::ResourcesRelease();
 	UEngineRasterizer::ResourcesRelease();
 	UEngineBlend::ResourcesRelease();
-
+	UEngineDepthStencil::ResourcesRelease();
 
 	UEngineMaterial::ResourcesRelease();
 }
@@ -266,6 +267,19 @@ void SettingInit()
 
 
 	{
+		D3D11_DEPTH_STENCIL_DESC Desc = { 0, };
+		Desc.DepthEnable = true;
+		// 깊이버퍼의 z값을 저장한다 => float
+		// 4바이트
+		Desc.DepthWriteMask = D3D11_DEPTH_WRITE_MASK::D3D11_DEPTH_WRITE_MASK_ALL;
+		Desc.DepthFunc = D3D11_COMPARISON_FUNC::D3D11_COMPARISON_LESS;
+		Desc.StencilEnable = false;
+
+		UEngineDepthStencil::Create("EngineBase", Desc);
+	}
+
+
+	{
 		D3D11_SAMPLER_DESC Desc = {};
 
 		// 옵션바꾸면서 설명드리겠습니다.
@@ -309,6 +323,36 @@ void SettingInit()
 		Desc.MaxLOD = FLT_MAX;
 		UEngineSampler::Create("LINEAR", Desc);
 	}
+
+
+	{
+		D3D11_SAMPLER_DESC Desc = {};
+
+		Desc.AddressW = Desc.AddressV = Desc.AddressU = D3D11_TEXTURE_ADDRESS_MODE::D3D11_TEXTURE_ADDRESS_CLAMP;
+		Desc.Filter = D3D11_FILTER::D3D11_FILTER_MIN_MAG_MIP_POINT;
+		Desc.MipLODBias = 0.0f; // 보간하지 않는다.
+		Desc.MaxAnisotropy = 1;
+		Desc.ComparisonFunc = D3D11_COMPARISON_FUNC::D3D11_COMPARISON_ALWAYS;
+		Desc.MinLOD = -FLT_MAX;
+		Desc.MaxLOD = FLT_MAX;
+		UEngineSampler::Create("POINTCLAMP", Desc);
+	}
+
+
+	{
+		D3D11_SAMPLER_DESC Desc = {};
+
+		Desc.AddressW = Desc.AddressV = Desc.AddressU = D3D11_TEXTURE_ADDRESS_MODE::D3D11_TEXTURE_ADDRESS_CLAMP;
+		Desc.Filter = D3D11_FILTER::D3D11_FILTER_MIN_MAG_MIP_LINEAR;
+		Desc.MipLODBias = 0.0f; // 보간하지 않는다.
+		Desc.MaxAnisotropy = 1;
+		Desc.ComparisonFunc = D3D11_COMPARISON_FUNC::D3D11_COMPARISON_ALWAYS;
+		Desc.MinLOD = -FLT_MAX;
+		Desc.MaxLOD = FLT_MAX;
+		UEngineSampler::Create("LINEARCLAMP", Desc);
+	}
+
+
 
 	{
 		D3D11_BLEND_DESC Desc = {};

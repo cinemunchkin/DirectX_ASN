@@ -115,7 +115,7 @@ void APlayGameMode::Tick(float _DeltaTime)
 {
 	
 	*/
-	PlayTime += _DeltaTime;
+//	PlayTime += _DeltaTime;
 
 	PlayDebugText();
 }

@@ -179,11 +179,19 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="EngineClient.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="EngineDebug.h">
       <SubType>
       </SubType>
     </ClInclude>
     <ClInclude Include="EngineDirectory.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="EngineDispatcher.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -195,6 +203,11 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="EngineNet.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="EngineNetHeader.h" />
     <ClInclude Include="EnginePath.h">
       <SubType>
       </SubType>
@@ -204,6 +217,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="EngineSerializer.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="EngineServer.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -220,11 +237,27 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="NameObject.h" />
+    <ClInclude Include="NetObject.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="PathObject.h">
       <SubType>
       </SubType>
     </ClInclude>
     <ClInclude Include="PreCompile.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="NetStartUpHelper.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Session.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="TCPSession.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -240,8 +273,16 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="EngineProtocol.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="EngineClient.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="EngineDebug.cpp">
       <SubType>
       </SubType>
@@ -250,11 +291,19 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="EngineDispatcher.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="EngineFile.cpp">
       <SubType>
       </SubType>
     </ClCompile>
     <ClCompile Include="EngineMath.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="EngineNet.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -267,6 +316,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="EngineSerializer.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="EngineServer.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -283,6 +336,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="NameObject.cpp" />
+    <ClCompile Include="NetObject.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="PathObject.cpp">
       <SubType>
       </SubType>
@@ -295,6 +352,18 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="NetStartUpHelper.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Session.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="TCPSession.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ThreadPool.cpp">
       <SubType>
       </SubType>
@@ -304,6 +373,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="TransformObject.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="EngineProtocol.cpp">
       <SubType>
       </SubType>
     </ClCompile>

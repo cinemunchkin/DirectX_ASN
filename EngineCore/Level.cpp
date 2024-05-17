@@ -9,6 +9,7 @@
 #include "EngineGraphicDevice.h"
 #include "InstancingRender.h"
 #include "Widget.h"
+#include <EngineBase/NetObject.h>
 
 bool ULevel::IsActorConstructer = true;
 
@@ -41,6 +42,20 @@ ULevel::~ULevel()
 
 void ULevel::Tick(float _DeltaTime)
 {
+	{
+		std::lock_guard<std::mutex> Lock(FunctionLock);
+		for (std::function<void()> Function : Functions)
+		{
+			Function();
+		}
+		Functions.clear();
+	}
+
+	// UNetObject::UpdateProtocol();
+
+	// 1 플레이어 그룹 [][]
+	// 2 몬스터 그룹 [][]
+
 	Super::Tick(_DeltaTime);
 	for (std::pair<const int, std::list<std::shared_ptr<AActor>>>& TickGroup : Actors)
 	{
@@ -55,6 +70,11 @@ void ULevel::Tick(float _DeltaTime)
 
 		for (std::shared_ptr<AActor> Actor : GroupActors)
 		{
+			if (false == Actor->IsActive())
+			{
+				continue;
+			}
+
 			Actor->Tick(_DeltaTime * TimeScale);
 		}
 	}
@@ -66,8 +86,8 @@ void ULevel::Render(float _DeltaTime)
 
 	GEngine->GetEngineDevice().BackBufferRenderTarget->Setting();
 	
-	MainCamera->CameraTarget->Clear();
-	MainCamera->CameraTarget->Setting();
+	MainCamera->CamTargetSetting();
+
 	MainCamera->CameraTransformUpdate();
 
 	for (std::pair<const int, std::list<std::shared_ptr<URenderer>>>& RenderGroup : Renderers)
@@ -142,8 +162,7 @@ void ULevel::Render(float _DeltaTime)
 	// 모든 일반오브젝트들이 랜더링을 하고
 
 	// 언리얼은 제약이 많다.
-	UICamera->CameraTarget->Clear();
-	UICamera->CameraTarget->Setting();
+	UICamera->CamTargetSetting();
 	UICamera->CameraTransformUpdate();
 
 	WidgetInits.clear();
