@@ -111,20 +111,5 @@ void  AHolo_Interface::Interface_Char()
 void  AHolo_Interface::TimeFlow(float _DeltaTime)
 {
 
-	for (int i = 0; i < 1000000; i++)
-	{
-		
 
-		{ //HP 체력치 숫자
-			UTextWidget* Image = CreateWidget<UTextWidget>(GetWorld(), "TestText");
-			Image->SetupAttachment(this);
-			Image->SetScale(17.0f);
-			Image->SetColor(Color8Bit::White);
-			Image->SetPosition({ -400, 338 });
-			Image->SetFont("Galmuri7");
-			Image->SetText("AAA");
-
-		}
-
-	}
 }
