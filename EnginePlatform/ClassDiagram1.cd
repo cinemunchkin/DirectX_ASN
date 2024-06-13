@@ -1,0 +1,1537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="NameAndType">
+  <Class Name="UInputInitCreator" Collapsed="true">
+    <Position X="40.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EngineInput.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UEngineInput" Collapsed="true">
+    <Position X="33.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCAgCAAACAAAAQAAAABQAAAAgQEADgAIAAEgAAAAEBI=</HashCode>
+      <FileName>EngineInput.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UEngineWindow" Collapsed="true">
+    <Position X="37.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CIAAAJBACEaEoAIgjZKApALgwAAACCgYAAIyQACAAJA=</HashCode>
+      <FileName>EngineWindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UImageInfo" Collapsed="true">
+    <Position X="39" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAiAAAAAAIAAAAIAgAAAA=</HashCode>
+      <FileName>WindowImage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UWindowImage" Collapsed="true">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAgCAYgAggAQACAAAEgAAAgAAMAFCIoCAgoAEACBA=</HashCode>
+      <FileName>WindowImage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResControl" Collapsed="true">
+    <Position X="37.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>EngineSound.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UEngineSoundPlayer" Collapsed="true">
+    <Position X="35.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAIAMAAAAAAAAAAAAAAQAAAAAAACAAQAAAAAAAIA=</HashCode>
+      <FileName>EngineSound.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UEngineSound" Collapsed="true">
+    <Position X="2.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAIAAAAASAAIAAAAAAAAAAAABAAAAAAoAAAAAAA=</HashCode>
+      <FileName>EngineSound.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UEngineResources&lt;ResType&gt;" Collapsed="true">
+    <Position X="1.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAgQAACAEZAAAQAAAAAAACEAAAEQAAAAgAAAAAAA=</HashCode>
+      <FileName>EngineResources.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FMOD::System" Collapsed="true">
+    <Position X="32" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GCCaUJIqEuJgARqBFwGMUg5ADQBPAAoQoKArEZgEwR4=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FMOD::Sound" Collapsed="true">
+    <Position X="40.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MSBISLEIMIAEAioCIQICIAIAAgAEgCAKJgQEAIAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FMOD::ChannelControl" Collapsed="true">
+    <Position X="1.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QmDgCAAIAARAACuCBQZAAEoQaFCgAigMgihEgIIgZAI=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FMOD::Channel" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIEAgAAAIAgAAAAAAEAACAAAAAiAGIIAAAAAAARA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FMOD::ChannelGroup" Collapsed="true">
+    <Position X="2.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAABAAAAAIAAAAAAAAQCAAAAIAAMBAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FMOD::SoundGroup" Collapsed="true">
+    <Position X="42.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECAAAgAEAYAQAAAAAQAAAAIAAAIgQAAAgAgEiAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FMOD::DSP" Collapsed="true">
+    <Position X="32" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kCIAAjEECCCEAAQAJUAAhCYIRQAAQkABAAACAQiEiAQ=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FMOD::DSPConnection" Collapsed="true">
+    <Position X="33.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECAAAAEAACAAAAAAAgIAAQIAAQAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FMOD::Geometry" Collapsed="true">
+    <Position X="35.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kCQBoIAAAACAAAAAAAAAAAICCAAgAAICAAAAAAAgiEA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FMOD::Reverb3D" Collapsed="true">
+    <Position X="39" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kiAAAAAAAAiAAAAAAAAAAAKAAAAAAAAAAAAAAAAAKAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="FMOD_CODEC_STATE" Collapsed="true">
+    <Position X="39" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAIBAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_codec.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_CODEC_WAVEFORMAT" Collapsed="true">
+    <Position X="42.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAQAIACAAAABCACAAgAEAQCAAAAQEAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_codec.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_CODEC_DESCRIPTION" Collapsed="true">
+    <Position X="37.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAACAAAGAAAAAABCAAAAABAAAEAgAAAIAAAAAAEAI=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_codec.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_CODEC_STATE_FUNCTIONS" Collapsed="true">
+    <Position X="40.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAgAAAAAIAAAACKAACAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_codec.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_ASYNCREADINFO" Collapsed="true">
+    <Position X="35.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BACAAAAAQAQAAAAAAAAAAAAAAAAACAAAACBCAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_VECTOR" Collapsed="true">
+    <Position X="42.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAQAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_3D_ATTRIBUTES" Collapsed="true">
+    <Position X="32" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAIAAAAAAAAAAAAAQAAgAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_GUID" Collapsed="true">
+    <Position X="42.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAACAQAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_PLUGINLIST" Collapsed="true">
+    <Position X="37.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_ADVANCEDSETTINGS" Collapsed="true">
+    <Position X="33.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IABgAAEAQgBBAAAJhACAgwCEAAAAAABkAAAKAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_TAG" Collapsed="true">
+    <Position X="40.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAFAEAAAAAQAEAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_CREATESOUNDEXINFO" Collapsed="true">
+    <Position X="35.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQIgWCSBACIKQQkEAQjAACIEAQCgQACAEAQAAAAAk=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_REVERB_PROPERTIES" Collapsed="true">
+    <Position X="39" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAEQBBACEAAAAAIAAQEAAACAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_ERRORCALLBACK_INFO" Collapsed="true">
+    <Position X="40.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAABAAAAAAAAgBAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_CPU_USAGE" Collapsed="true">
+    <Position X="33.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAACACAEAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_DATA_PARAMETER_INFO" Collapsed="true">
+    <Position X="39" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAQAAABAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_STATE" Collapsed="true">
+    <Position X="33.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAABAAAAAAwABAAAAAABQAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_BUFFER_ARRAY" Collapsed="true">
+    <Position X="37.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IACAAAAAAAAQAAAAAAAAAAAAAAAAgAAAEAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_COMPLEX" Collapsed="true">
+    <Position X="32" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_PARAMETER_FLOAT_MAPPING_PIECEWISE_LINEAR" Collapsed="true">
+    <Position X="40.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_PARAMETER_FLOAT_MAPPING" Collapsed="true">
+    <Position X="39" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_PARAMETER_DESC_FLOAT" Collapsed="true">
+    <Position X="33.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEgAAAAAQAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_PARAMETER_DESC_INT" Collapsed="true">
+    <Position X="35.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEgAAAAAQAAAAAAABAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_PARAMETER_DESC_BOOL" Collapsed="true">
+    <Position X="42.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_PARAMETER_DESC_DATA" Collapsed="true">
+    <Position X="32" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_PARAMETER_DESC" Collapsed="true">
+    <Position X="40.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAIAAAAAAAAAAFAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_PARAMETER_OVERALLGAIN" Collapsed="true">
+    <Position X="42.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_PARAMETER_3DATTRIBUTES" Collapsed="true">
+    <Position X="35.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_PARAMETER_3DATTRIBUTES_MULTI" Collapsed="true">
+    <Position X="37.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAABAAAAAgIAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_PARAMETER_ATTENUATION_RANGE" Collapsed="true">
+    <Position X="39" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_PARAMETER_SIDECHAIN" Collapsed="true">
+    <Position X="32" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_PARAMETER_FFT" Collapsed="true">
+    <Position X="37.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_DESCRIPTION" Collapsed="true">
+    <Position X="40.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEAAIiAkAAAAAAAACCAAIGYIAAAECgAAAABACEiEgAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_STATE_DFT_FUNCTIONS" Collapsed="true">
+    <Position X="35.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_STATE_PAN_FUNCTIONS" Collapsed="true">
+    <Position X="39" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAkAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAAAAACEAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_STATE_FUNCTIONS" Collapsed="true">
+    <Position X="37.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAECgACAAAAAAEACAAACAAAAAAAAAAIABAAAAACAIg=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_METERING_INFO" Collapsed="true">
+    <Position X="33.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAACAAAAAAIAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_LOUDNESS_METER_INFO_TYPE" Collapsed="true">
+    <Position X="42.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAIAAAAgAAAAAAACYAAAAAAAAAAAAgAgAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_DSP_LOUDNESS_METER_WEIGHTING_TYPE" Collapsed="true">
+    <Position X="32" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_OUTPUT_STATE" Collapsed="true">
+    <Position X="35.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAgAAAAAAAAAACAAACAAAAABQAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_output.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_OUTPUT_OBJECT3DINFO" Collapsed="true">
+    <Position X="33.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAIAAAAAAAAAAAAQDAAAQAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_output.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FMOD_OUTPUT_DESCRIPTION" Collapsed="true">
+    <Position X="32" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAKACgAAAAAACEgAACAAAAAAAAkAAIAgIAAIAAEMCA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_output.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="FMOD_CODEC_SEEK_METHOD" Collapsed="true">
+    <Position X="35.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_codec.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_CODEC_ALLOC_FUNC" Collapsed="true">
+    <Position X="42.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_codec.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_CODEC_FREE_FUNC" Collapsed="true">
+    <Position X="32" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_codec.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_CODEC_LOG_FUNC" Collapsed="true">
+    <Position X="33.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_codec.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_BOOL" Collapsed="true">
+    <Position X="33.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_SYSTEM" Collapsed="true">
+    <Position X="33.75" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_SOUND" Collapsed="true">
+    <Position X="40.75" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_CHANNELCONTROL" Collapsed="true">
+    <Position X="37.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_CHANNEL" Collapsed="true">
+    <Position X="35.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_CHANNELGROUP" Collapsed="true">
+    <Position X="39" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_SOUNDGROUP" Collapsed="true">
+    <Position X="42.5" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_REVERB3D" Collapsed="true">
+    <Position X="39" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP" Collapsed="true">
+    <Position X="40.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSPCONNECTION" Collapsed="true">
+    <Position X="37.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_POLYGON" Collapsed="true">
+    <Position X="35.5" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_GEOMETRY" Collapsed="true">
+    <Position X="40.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_SYNCPOINT" Collapsed="true">
+    <Position X="32" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DEBUG_FLAGS" Collapsed="true">
+    <Position X="37.25" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_MEMORY_TYPE" Collapsed="true">
+    <Position X="37.25" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_INITFLAGS" Collapsed="true">
+    <Position X="42.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DRIVER_STATE" Collapsed="true">
+    <Position X="39" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_TIMEUNIT" Collapsed="true">
+    <Position X="42.5" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_SYSTEM_CALLBACK_TYPE" Collapsed="true">
+    <Position X="35.5" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_MODE" Collapsed="true">
+    <Position X="39" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_CHANNELMASK" Collapsed="true">
+    <Position X="40.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_PORT_INDEX" Collapsed="true">
+    <Position X="37.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_THREAD_PRIORITY" Collapsed="true">
+    <Position X="39" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_THREAD_STACK_SIZE" Collapsed="true">
+    <Position X="40.75" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_THREAD_AFFINITY" Collapsed="true">
+    <Position X="37.25" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_FILE_ASYNCDONE_FUNC" Collapsed="true">
+    <Position X="39" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_MEMORY_ALLOC_CALLBACK" Collapsed="true">
+    <Position X="32" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_MEMORY_REALLOC_CALLBACK" Collapsed="true">
+    <Position X="35.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_MEMORY_FREE_CALLBACK" Collapsed="true">
+    <Position X="33.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_3D_ROLLOFF_CALLBACK" Collapsed="true">
+    <Position X="32" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_PROCESS_OPERATION" Collapsed="true">
+    <Position X="29.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_PARAMETER_TYPE" Collapsed="true">
+    <Position X="5.5" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_PARAMETER_FLOAT_MAPPING_TYPE" Collapsed="true">
+    <Position X="28.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_PARAMETER_DATA_TYPE" Collapsed="true">
+    <Position X="9.5" Y="30.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_ALLOC_FUNC" Collapsed="true">
+    <Position X="42.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_REALLOC_FUNC" Collapsed="true">
+    <Position X="35.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_FREE_FUNC" Collapsed="true">
+    <Position X="32" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_LOG_FUNC" Collapsed="true">
+    <Position X="33.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_TYPE" Collapsed="true">
+    <Position X="1.5" Y="30.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_OSCILLATOR" Collapsed="true">
+    <Position X="26.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_LOWPASS" Collapsed="true">
+    <Position X="25.5" Y="27.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_ITLOWPASS" Collapsed="true">
+    <Position X="25.5" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_HIGHPASS" Collapsed="true">
+    <Position X="25.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_ECHO" Collapsed="true">
+    <Position X="25.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_FLANGE" Collapsed="true">
+    <Position X="21.5" Y="27.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_DISTORTION" Collapsed="true">
+    <Position X="17.5" Y="27.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_NORMALIZE" Collapsed="true">
+    <Position X="13.5" Y="27.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_LIMITER" Collapsed="true">
+    <Position X="5.5" Y="27.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_PARAMEQ" Collapsed="true">
+    <Position X="24.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_PITCHSHIFT" Collapsed="true">
+    <Position X="9.5" Y="25.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_CHORUS" Collapsed="true">
+    <Position X="1.5" Y="25.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_ITECHO" Collapsed="true">
+    <Position X="22.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_COMPRESSOR" Collapsed="true">
+    <Position X="21.5" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_SFXREVERB" Collapsed="true">
+    <Position X="21.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_LOWPASS_SIMPLE" Collapsed="true">
+    <Position X="21.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_DELAY" Collapsed="true">
+    <Position X="20.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_TREMOLO" Collapsed="true">
+    <Position X="17.5" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_SEND" Collapsed="true">
+    <Position X="13.5" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_RETURN" Collapsed="true">
+    <Position X="5.5" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_HIGHPASS_SIMPLE" Collapsed="true">
+    <Position X="18.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_PAN_2D_STEREO_MODE_TYPE" Collapsed="true">
+    <Position X="17.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_PAN_MODE_TYPE" Collapsed="true">
+    <Position X="9.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_PAN_3D_ROLLOFF_TYPE" Collapsed="true">
+    <Position X="17.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_PAN_3D_EXTENT_MODE_TYPE" Collapsed="true">
+    <Position X="1.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_PAN" Collapsed="true">
+    <Position X="16.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_THREE_EQ_CROSSOVERSLOPE_TYPE" Collapsed="true">
+    <Position X="13.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_THREE_EQ" Collapsed="true">
+    <Position X="5.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_FFT_WINDOW" Collapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_FFT" Collapsed="true">
+    <Position X="13.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_LOUDNESS_METER" Collapsed="true">
+    <Position X="9.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_LOUDNESS_METER_STATE_TYPE" Collapsed="true">
+    <Position X="1.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_ENVELOPEFOLLOWER" Collapsed="true">
+    <Position X="12.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_CONVOLUTION_REVERB" Collapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_CHANNELMIX_OUTPUT" Collapsed="true">
+    <Position X="9.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_CHANNELMIX" Collapsed="true">
+    <Position X="5.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_TRANSCEIVER_SPEAKERMODE" Collapsed="true">
+    <Position X="1.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_TRANSCEIVER" Collapsed="true">
+    <Position X="6.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_DSP_OBJECTPAN" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_OUTPUT_METHOD" Collapsed="true">
+    <Position X="33.75" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_output.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_OUTPUT_ALLOC_FUNC" Collapsed="true">
+    <Position X="40.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_output.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_OUTPUT_FREE_FUNC" Collapsed="true">
+    <Position X="42.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_output.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="FMOD_OUTPUT_LOG_FUNC" Collapsed="true">
+    <Position X="32" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_output.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="EImageLoadType" Collapsed="true">
+    <Position X="32" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>WindowImage.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EWIndowImageType" Collapsed="true">
+    <Position X="33.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WindowImage.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_RESULT" Collapsed="true">
+    <Position X="40.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MBBAAMJiEACRAAOQgwy7I4AQSoSGABBsGowI1sWYhEA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_THREAD_TYPE" Collapsed="true">
+    <Position X="42.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAEIAoAAAAAgAEAAAJAAAAAIGQAAAAAAAE=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_CHANNELCONTROL_TYPE" Collapsed="true">
+    <Position X="39" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAIAEAAAIAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_OUTPUTTYPE" Collapsed="true">
+    <Position X="35.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AiAgAAAIIEABIAABAAQQCEAEAAAAAIAACQCBBCAAEEA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_DEBUG_MODE" Collapsed="true">
+    <Position X="42.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABgAAAAAAAAQAAAAAAAAAAEA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_SPEAKERMODE" Collapsed="true">
+    <Position X="37.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAYAAAAAAAABAAAAFAAAAAAAIQAAAAAACAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_SPEAKER" Collapsed="true">
+    <Position X="35.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAgAABCAAAAgAAEAAAAAAAAKBMAACAAAAAAAhAAAI=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_CHANNELORDER" Collapsed="true">
+    <Position X="40.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAQAgACAARAAABAAgAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_PLUGINTYPE" Collapsed="true">
+    <Position X="37.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAgAAAABAMAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_SOUND_TYPE" Collapsed="true">
+    <Position X="32" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEIgAEAABRwAAEAEBAAABAAoiAABAoAYQQQAAoA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_SOUND_FORMAT" Collapsed="true">
+    <Position X="42.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIABAEAACAAAIgACAAAAAAAAIAAAAAEA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_OPENSTATE" Collapsed="true">
+    <Position X="33.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAQAAAAEAQAAAAAAIBBAIAQAAAAAACAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_SOUNDGROUP_BEHAVIOR" Collapsed="true">
+    <Position X="33.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAgAAAAAAAAAAAEAAEAAACAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_CHANNELCONTROL_CALLBACK_TYPE" Collapsed="true">
+    <Position X="35.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEBgAAIAIAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_CHANNELCONTROL_DSP_INDEX" Collapsed="true">
+    <Position X="37.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAABAAAAAAAAAAAggAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_ERRORCALLBACK_INSTANCETYPE" Collapsed="true">
+    <Position X="32" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAABAAAAQAAAIAAIAAgIBAAAEAAMAAgBAhFAlAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_DSP_RESAMPLER" Collapsed="true">
+    <Position X="40.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAgAEAIAAAABAAAAAAAAAAAAAABAAAAgAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_DSP_CALLBACK_TYPE" Collapsed="true">
+    <Position X="32" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAQAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_DSPCONNECTION_TYPE" Collapsed="true">
+    <Position X="42.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABIAAAAAQAAAAAAABAEAAAAAAAgAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_TAGTYPE" Collapsed="true">
+    <Position X="40.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAQCAAIBAAgAAAAgAAAAAAAAAEAAAABAAEAAABAQAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_TAGDATATYPE" Collapsed="true">
+    <Position X="39" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAwAAAACAAABAAAAAAAAgEAAAAAAgAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_PORT_TYPE" Collapsed="true">
+    <Position X="39" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAACAAAiEAQgAAiAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_common.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0507_1" Collapsed="true">
+    <Position X="29.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_DSP_PAN_SURROUND_FLAGS" Collapsed="true">
+    <Position X="39" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAACAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0507_2" Collapsed="true">
+    <Position X="5.5" Y="30.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAQAAAAAAACBAAAAAABAAAAAAAAAAACAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0507_3" Collapsed="true">
+    <Position X="28.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAQAAAACAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0507_4" Collapsed="true">
+    <Position X="9.5" Y="28.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACABAAAAAgAAAAAAQAAQAAAAAkAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_1" Collapsed="true">
+    <Position X="1.5" Y="28.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAABEgKGBEAAOiAgACQCHSgJAgAiAAAQAAJAIEBEAI=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_2" Collapsed="true">
+    <Position X="26.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_3" Collapsed="true">
+    <Position X="25.5" Y="25.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_4" Collapsed="true">
+    <Position X="25.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAIAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_5" Collapsed="true">
+    <Position X="25.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_6" Collapsed="true">
+    <Position X="25.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAKAAAAAIAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_DSP_FADER" Collapsed="true">
+    <Position X="33.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_7" Collapsed="true">
+    <Position X="21.5" Y="25.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAACAAAABAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_8" Collapsed="true">
+    <Position X="17.5" Y="25.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_9" Collapsed="true">
+    <Position X="13.5" Y="25.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAEAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_10" Collapsed="true">
+    <Position X="5.5" Y="25.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAgAAAAAQAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_11" Collapsed="true">
+    <Position X="24.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAQ=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_DSP_MULTIBAND_EQ" Collapsed="true">
+    <Position X="35.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEAAIAAAgIAgCAAAAgQACBAAgAAEAEAAQEAAAgABEgA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="FMOD_DSP_MULTIBAND_EQ_FILTER_TYPE" Collapsed="true">
+    <Position X="37.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAA0EEBAAAAAEAQAgAAAAAAAAAAAAAAAIABQAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_12" Collapsed="true">
+    <Position X="9.5" Y="23.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAABAgAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_13" Collapsed="true">
+    <Position X="1.5" Y="23.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAgAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_14" Collapsed="true">
+    <Position X="22.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEACEAAAAAAAAAAAAIAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_15" Collapsed="true">
+    <Position X="21.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAEAAAAAAQIAAAAAAAAAAAAgEAAAAAAQ=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_16" Collapsed="true">
+    <Position X="21.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCAACQAIAIEAAgAAgAAAAAAIAAAAAAAAAAAEAIAAAAI=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_17" Collapsed="true">
+    <Position X="21.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_18" Collapsed="true">
+    <Position X="20.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAZwIAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_19" Collapsed="true">
+    <Position X="17.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIBIAAABEAAAAAAAAAAAAAAAAEAAAABAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_20" Collapsed="true">
+    <Position X="13.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_21" Collapsed="true">
+    <Position X="5.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_22" Collapsed="true">
+    <Position X="18.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_23" Collapsed="true">
+    <Position X="17.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_24" Collapsed="true">
+    <Position X="9.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAIAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_25" Collapsed="true">
+    <Position X="17.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAEAAAAAAAIAEAAAAEAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_26" Collapsed="true">
+    <Position X="1.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_27" Collapsed="true">
+    <Position X="16.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAEKKIAACAAAAwAAAAJCAAIFAAABABCAAAAgACIAACA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_28" Collapsed="true">
+    <Position X="13.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_29" Collapsed="true">
+    <Position X="5.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAQAAAAAABAAAgAAAAAAAACAAAAAAAAAQ=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_30" Collapsed="true">
+    <Position X="14.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAYAAAAAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAADA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_31" Collapsed="true">
+    <Position X="13.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACEAAAAAAAAAAABAAAAE=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_32" Collapsed="true">
+    <Position X="9.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACgAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_33" Collapsed="true">
+    <Position X="1.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAEAAAAAAAgAAAIAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_34" Collapsed="true">
+    <Position X="10.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAACAAAAAAQAAAAAE=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_35" Collapsed="true">
+    <Position X="10.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAUAAAAAAAAAAAEAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_36" Collapsed="true">
+    <Position X="9.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SAEAAAQAAAAAAAAAAAAAAAAgAAAACAAAgAAAAAAAIAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_37" Collapsed="true">
+    <Position X="5.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>nzEYAAwAAAAMAA7jfwAABoAJAgAAAMABAAAAwAAAAOA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_38" Collapsed="true">
+    <Position X="1.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAoAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_39" Collapsed="true">
+    <Position X="6.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAACAAAAAAAAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0508_40" Collapsed="true">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAFAIAAAAAAAQQAAQAACAABAAAAAAAAEAAAA=</HashCode>
+      <FileName>ThirdParty\FMOD\inc\fmod_dsp_effects.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

@@ -89,9 +89,12 @@ void APlayGameMode::Tick(float _DeltaTime)
 
 	InfinityGroundCheck();
 
-	//SpawnMonsterTimeSet(_DeltaTime, 0.0f, 20.0f, 5.0f, 
-	//	"Shrimp", 1.0f, 8.0f, 2.0f, 0.35f, 6.0f, EMonsterMoveType::Follow, 
-	//	false, 10);
+	/*SpawnMonsterTimeSet(_DeltaTime, 3.0f, 20.0f, 5.0f,
+		"Shubangelion", 1.5f, 20.0f, 2.0f, 0.5f, 3.0f, EMonsterMoveType::Follow,
+		false, 10);*/
+	SpawnMonsterTimeSet(_DeltaTime, 0.0f, 20.0f, 5.0f, 
+		"Shrimp", 1.0f, 8.0f, 2.0f, 0.35f, 6.0f, EMonsterMoveType::Follow, 
+		false, 10);
 	//SpawnMonsterTimeSet(_DeltaTime, 0.0f, 20.0f, 10.0f,
 	//	"Shrimp", 1.0f, 8.0f, 2.0f, 0.35f, 6.0f, EMonsterMoveType::Follow,
 	//	true, 10);
@@ -100,13 +103,10 @@ void APlayGameMode::Tick(float _DeltaTime)
 	//	false, 5);
 	//SpawnMonsterTimeSet(_DeltaTime, 40.0f, 60.0f, 5.0f, 
 	//	"Takodachi", 1.0f, 80.0f, 4.0f, 0.4f, 8.0f, EMonsterMoveType::Follow);
-	//SpawnMonsterTimeSet(_DeltaTime, 60.0f, 80.0f, 5.0f, 
-	//	"KFP", 1.0f, 20.0f, 2.0f, 1.0f, 3.0f, EMonsterMoveType::StraightToPlayer,
-	//	true, 10);
-
-	SpawnMonsterTimeSet(_DeltaTime, 3.0f, 20.0f, 5.0f,
-		"Shubangelion", 1.5f, 20.0f, 2.0f, 0.5f, 3.0f, EMonsterMoveType::Follow,
+	SpawnMonsterTimeSet(_DeltaTime, 60.0f, 80.0f, 5.0f, 
+		"KFP", 1.0f, 20.0f, 2.0f, 1.0f, 3.0f, EMonsterMoveType::StraightToPlayer,
 		true, 10);
+
 
 	/*
 	void APlayGameMode::SpawnMonsterTimeSet(float _DeltaTime, float _SpawnBegin, float _SpawnEnd, float _Term, 
